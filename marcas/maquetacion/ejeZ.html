@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjeZ</title>
+    <meta name="description" content="ejeZ">
+    <meta name="keywords" content="html">
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #uno{
+            background-color: aquamarine;
+            z-index: 1;
+            position: absolute;
+        }
+        #dos{
+            background-color: greenyellow;
+            z-index: 2;
+            position: absolute;
+            left: 15px;
+            top: 15px;
+        }
+        #tres{
+            background-color: firebrick;
+            z-index: 3;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+        }
+        #cuatro{
+            background-color: yellow;
+            z-index: 4;
+            position: absolute;
+            left: 45px;
+            top: 45px;
+        }
+        #uno:hover,#dos:hover,#tres:hover,#cuatro:hover{z-index: 5;}
+    </style>
+</head>
+<body>
+    <div id="uno"></div>
+    <div id="dos"></div>
+    <div id="tres"></div>
+    <div id="cuatro"></div>
+</body>
+</html>

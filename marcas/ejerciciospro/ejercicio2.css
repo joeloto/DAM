@@ -1,0 +1,46 @@
+html,body{
+    height: 100%;
+}
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section{
+    float: left;
+    position: relative;
+    left: 100px;
+    width: 500px;
+    height: 400px;
+}
+aside{
+    position: relative;
+    right: 85px;
+    width: 615px;
+    height: 600px;
+    float: right;
+    padding-left: 10px;
+}
+ul:hover{
+    font-family: 'Courier New', Courier, monospace;
+    color: crimson;
+    font-size: 10px;
+}
+span{
+    display: none;
+}
+.esconder{
+    display: none;
+}
+.mostrar:hover .esconder{
+    display: flex;
+}
+.junto{
+    display: flex;
+    position: relative;
+    right: 10px;    
+}
+.separar{
+    margin: 0 10px;
+
+}    

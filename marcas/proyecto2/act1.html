@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El texto en HTML</title>
+    <link rel="stylesheet" href="estilosact1.css">
+    <meta name="description" content="this is a exercise">
+    <meta name="keywords" content="page,html">
+    <meta http-equiv="refresh" content="180">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div align="center"><h1>El texto en HTML</h1></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div id="nav">
+        <ol>
+            <li><a href="http://www.colegiovivas.com">Markup language</a></li>
+            <li><a href="http://www.colegiovivas.com">Programation</a></li>
+            <li><a href="http://www.colegiovivas.com">Informatic systems</a></li>
+            <li><a href="http://www.colegiovivas.com">Data bases</a></li>
+        </ol>
+    </div>
+    <hr>
+    <table>
+        <thead> 
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Nota</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td colspan="2">celda 1</td>
+        </tr>
+        <tr>
+            <td rowspan="2">celda 2</td>
+            <td>celda 3</td>
+        </tr>
+        <tr>
+            <td>celda 4</td>
+        </tr>
+    </table>
+    <div align="justify">
+        <p>Los navegadores no "entienden" el lenguaje que hablan los editores de texto: las instrucciones
+            que estos utilizan para insertar saltos de línea, poner en negrita una palabra, etc., no son las que
+            los browsers necesitan para reproducir el texto en pantalla tal y como se desea. Para ello, HTML
+            cuenta con unas etiquetas especiales destinadas al formato y estructuración del texto.
+    </div>
+    </p>
+    <!--EXAMPLE OF LIST -->
+    <ul type="square">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+    </ul>
+    <hr>
+    <ol type="i">
+        <li>Ferrari</li>
+        <li>Mercedes</li>
+        <li>RedBull</li>
+    </ol>
+    <a href="#section1" target="_blank" download="ejercicio1.pdf"></a>
+    <h2>Espaciado y estructura básica del texto</h2>
+    <hr>
+    <div align="center">
+        <div align="justify"></div>
+        <p>Si se escriben varios espacios en blanco o se introducen tabuladores o saltos de línea en el texto
+            tal y como se puede hacer en un documento cualquiera, estos formatos no se visualizarán en el
+            navegador. Esto es debido a que en HTML se necesitan unas etiquetas concretas para definir la
+            estructura que va a tener el texto y los espacios que se quieran introducir en el mismo.
+    </div>
+    </p>
+    <div align="justify">
+        <p id="section1">La etiqueta &#60;p&#62; de párrafo, es una de las más utilizadas en HTML a la hora de estructurar un
+            texto. Introduce un espacio de dos líneas de separación (equivalente a pulsar dos veces enter en
+            un editor de texto) con el siguiente párrafo de texto. Aunque se trata de una etiqueta opcional, su
+            uso es muy recomendable al servir como separador de bloques de texto y elemento de
+            espaciado.<span> Existen también etiquetas para <sub>subíndice</sub> y <sup>superíndice</sup>.</span>
+    </div>
+    </p>
+    <div align="right">
+        <div align="justify"></div>
+        <p><i>Joel Muñiz Expósito</i></p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
+</body>
+
+</html>

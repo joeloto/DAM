@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <meta name="description" content="mu first formular">
+    <meta name="keywords" content="html,formular,input,select,checkbox">
+    <meta http-equiv="refresh" content="300">
+</head>
+
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend><strong>Datos del usuario</strong></legend>
+            <table>
+                <tr>
+                    <td><label for="nombre">Nombre del usuario:</label></td>
+                    <td><input type="text" name="nombre" id="nombre" minlength="8" maxlength="20" size="30" required></td>
+                </tr>
+                <tr>
+                    <td><label for="apellidos">Apellidos del usuario:</label></td>
+                    <td><input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" size="30" required></td>
+                </tr>
+                <tr>
+                    <td><label for="edad">Edad del usuario:</label></td>
+                    <td><input type="number" name="edad" id="edad" min="18" max="80" style="width: 239px;"></td>
+                </tr>
+                <tr>
+                    <td><label for="correo">Correo del usuario:</label></td>
+                    <td><input type="email" name="correo" id="correo" readonly placeholder="joel@gmail.com" size="30"></td>
+                </tr>
+                <tr>
+                    <td><label for="pass">Contraseña del usuario:</label></td>
+                    <td><input type="password" name="pass" id="pass" size="30"></td>
+                </tr>
+            </table>
+            <label for="estado">Estado civil del usuario</label>
+            <!-- En un radiobutton todos los elementos deben tener el mismo name-->
+            <span>soltero/a</span><input type="radio" name="estado" id="soltero/a">
+            <span>casado/a</span><input type="radio" name="estado" id="casado/a">
+            <span>viudo/a</span><input type="radio" name="estado" id="viudo/a">
+            <span>divorciado/a</span><input type="radio" name="estado" id="divorciado/a">
+            <br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><strong>Datos de subscripción</strong></legend>
+            <label for="subscripciones">Subscripciones del usuario:</label>
+            <span>Science</span><input type="checkbox" name="subscripcion[]" id="uno" checked="checked"><br>
+            <span>Muy interesante</span><input type="checkbox" name="subscripcion[]" id="dos"><br>
+            <span>Salud y Bienestar </span><input type="checkbox" name="subscripcion[]" id="tres"><br>
+            <span>Science</span><input type="checkbox" name="subscripcion[]" id="cuatro"><br>
+            <span>Nacional Geographic </span> <input type="checkbox" name="subscripcion[]" id="cinco"><br>
+            <select name="residencia" id="residencia">
+                <optgroup label="Provincias de Galicia">
+                    <option value="">----</option>
+                    <option value="Pontevedra" selected=selected>Pontevedra</option>
+                    <option value="A Coruña">A Coruña</option>
+                    <option value="Ourense">Ourense</option>
+                    <option value="Lugo">Lugo</option>
+                </optgroup>
+                <optgroup label="Provincias de León">
+                    <option value="">----</option>
+                    <option value="León">León</option>
+                    <option value="Burgos">Burgos</option>
+                    <option value="Zamora">Zamora</option>
+                    <option value="Valladolid">Valladolid</option>
+                </optgroup>
+            </select>
+            <br>
+            <textarea name="comentarios" id="" placeholder="Comentarios del usuario" cols="40" rows="15"
+                style="resize: none;"></textarea>
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Reestablecer">
+        </fieldset>
+        <input type="button" value="Boton de tipo button" style="border-radius: 15px;">
+        <button>Etiqueta button</button>
+    </form>
+</body>
+
+</html>
