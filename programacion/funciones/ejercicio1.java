@@ -1,4 +1,5 @@
 
+
 import java.util.Scanner;
 
 public class ejercicio1 {
@@ -7,7 +8,7 @@ public class ejercicio1 {
 
     public static void lineasblanco(int n){
         for (int i = 0; i < n; i++) {
-            System.out.println("\n");
+            System.out.println("");
         }
         System.out.println();
     }
