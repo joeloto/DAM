@@ -19,11 +19,11 @@ public class ejercicio1 {
 
     /** apartado b
      * funcion que devuelve true si el numero es par y false si no lo es
-     * @param n1
+     * @param n
      * @return
      */
-    public static boolean par(int n1){
-        return n1 % 2 == 0;
+    public static boolean par(int n){
+        return n % 2 == 0;
     }
 
     /** apartado c
@@ -64,14 +64,11 @@ public class ejercicio1 {
         //apartado d
         System.out.println();
         lineasblanco(10);
-        int n1;
-        System.out.println("Dime un número para sabr si es par");
-        n1 = sc.nextInt();
         int n;
-
-
-
-
+        System.out.println("Dime un número para saber si es par y positivo o negativo");
+        n = sc.nextInt();
+        System.out.println(par(n));
+        System.out.println(positivo(n));
     }
 
 }
