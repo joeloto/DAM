@@ -1,46 +1,50 @@
 
-
 import java.util.Scanner;
 
 public class ejercicio1 {
 
     Scanner sc = new Scanner(System.in);
 
-    /** apartado a
+    /**
+     * apartado a
      * funcion que pone lineas en blanco
+     * 
      * @param n
      */
-    public static void lineasblanco(int n){
+    public static void lineasblanco(int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("");
         }
         System.out.println();
     }
 
-    /** apartado b
+    /**
+     * apartado b
      * funcion que devuelve true si el numero es par y false si no lo es
+     * 
      * @param n
      * @return
      */
-    public static boolean par(int n){
+    public static boolean par(int n) {
         return n % 2 == 0;
     }
 
-    /** apartado c
+    /**
+     * apartado c
      * funcion para identificar numeros positivos
+     * 
      * @param n
      * @return
      */
-    public static char positivo(int n){
-        return (n >= 0) ? 'P' : 'N';//operador ternario--- si n es positivo devuelpe P sino, devuelve N
+    public static char positivo(int n) {
+        return (n >= 0) ? 'P' : 'N';// operador ternario--- si n es positivo devuelpe P sino, devuelve N
     }
 
-
     public static void main(String[] args) {
-        
+
         Scanner sc = new Scanner(System.in);
 
-        //apartado a
+        // apartado a
         // int n;
         // System.out.println();
         // System.out.println();
@@ -48,23 +52,23 @@ public class ejercicio1 {
         // n = sc.nextInt();
         // lineasblanco(n);
 
-        //apartado b
+        // apartado b
         // int n1;
         // System.out.println("Dime un número");
         // n = sc.nextInt();
         // System.out.println(par(n1));
 
-        //apartado c
+        // apartado c
         // int n;
         // System.out.println("Dime un número");
         // n = sc.nextInt();
         // System.out.println(positivo(n));
-       
-        //apartado d
+
+        // apartado d
         System.out.println();
         System.out.println("Dime un nombre");
         String nombre = sc.nextLine();
-        
+
         lineasblanco(10);
         int n;
         System.out.println("Dime un número para saber si es par y positivo o negativo");
@@ -74,4 +78,3 @@ public class ejercicio1 {
     }
 
 }
-
