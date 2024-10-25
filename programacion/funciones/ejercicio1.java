@@ -35,7 +35,6 @@ public class ejercicio1 {
         return (n >= 0) ? 'P' : 'N';//operador ternario--- si n es positivo devuelpe P sino, devuelve N
     }
 
-    
 
     public static void main(String[] args) {
         
@@ -63,6 +62,9 @@ public class ejercicio1 {
        
         //apartado d
         System.out.println();
+        System.out.println("Dime un nombre");
+        String nombre = sc.nextLine();
+        
         lineasblanco(10);
         int n;
         System.out.println("Dime un número para saber si es par y positivo o negativo");
