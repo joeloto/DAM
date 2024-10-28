@@ -1,0 +1,3 @@
+rea
+34
+El numero es par y positivo
