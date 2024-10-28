@@ -5,12 +5,16 @@
 }
 header{
     width: 100%;
-    height: 80px;
-    background-color: black;
+    height: 200px;
+    /* background-color: black;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     border-bottom: grey;
+    background-image: url("olamaquetacion.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 header h1{
     color:white;
@@ -66,10 +70,11 @@ aside{
 footer{
     width: 100%;
     height: 60px;
-    background-color: black;
     clear: both;
+    background: linear-gradient(aquamarine, greenyellow,green);
+    /* background-color: black;
     color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
