@@ -8,104 +8,108 @@
 </head>
 
 <body>
-    <h1>Modas Paquita</h1>
+    <h1 style="font-size: 40px;">Modas Paquita</h1>
     <form action="#" method="post">
-        <fieldset>
+        <fieldset style="height: 800px;">
+            <legend style="font-size: 40px;"><strong>Formulario del pedido</strong></legend>
             <h2>Paso 1. Datos personales</h2>
-            <section style="width: 512px;">
-            <fieldset>
-                <legend>Datos del cliente</legend>
-                <table>
-                    <tr>
-                        <td><label for="correo">Correo electrónico:</label></td>
-                        <td><input type="email" name="correo" id="correo"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="pass">Contraseña:</label></td>
-                        <td><input type="password" name="pass" id="pass" minlength="6"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="longitud">(Longitud mínima de 6 carécteres)</label></td>
-                    </tr>
-                </table>
-            </fieldset>
+            <section style="width: 700px;">
+                <fieldset>
+                    <legend>Datos del cliente</legend>
+                    <table>
+                        <tr>
+                            <td><label for="correo">Correo electrónico:</label></td>
+                            <td><input type="email" name="correo" id="correo"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pass">Contraseña:</label></td>
+                            <td><input type="password" name="pass" id="pass" minlength="6"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="longitud">(Longitud mínima de 6 carécteres)</label></td>
+                        </tr>
+                    </table>
+                </fieldset>
             </section>
             <aside>
-            <fieldset style="width: 630px; float: right; position: relative; bottom: 100px;">
-                <legend><label for="tipo">Tipo de cliente</label></legend>
-                <input type="radio" id="tipo" name="tipo" checked="checked"><span>Particular</span><br>
-                <input type="radio" id="tipo" name="tipo"><span>Asociación</span><br>
-                <input type="radio" id="tipo" name="tipo"><span>Empresa</span><br>
-            </fieldset>
-        </aside>
+                <fieldset style="width: 450px; float: right; position: relative; bottom: 100px;">
+                    <legend><label for="tipo">Tipo de cliente</label></legend>
+                    <input type="radio" id="tipo" name="tipo" checked="checked"><span>Particular</span><br>
+                    <input type="radio" id="tipo" name="tipo"><span>Asociación</span><br>
+                    <input type="radio" id="tipo" name="tipo"><span>Empresa</span><br>
+                </fieldset>
+            </aside>
             <br>
             <h2>Paso 2. Pedido</h2>
             <section>
-            <fieldset style="width: 512px; height: 300px;">
-                <legend>Datos del producto</legend>
-                <table>
-                    <tr>
-                        <td><label for="producto">Producto</label><br>
-                        <select name="producto" id="producto">
-                            <optgroup label="Camisas">
-                                <option value="Manga larga" selected=selected>Manga larga</option>
-                                <option value="Manga corta">Manga corta</option>
-                            </optgroup>
-                            <optgroup label="Pantalones">
-                                <option value="Pantalón pitillo">Pantalón pitillo</option>
-                                <option value="Pantalón campana">Pantalón campana</option>
-                                <option value="Pantalón corto">Pantalón corto</option>
-                            </optgroup>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-        </section>
-        <aside>
-            <fieldset style="width: 630px; float: right; position: relative; bottom: 256px;">
-                <legend>Información de interés</legend>
-                <label for="comentarios">Comentarios:</label><br>
-                <textarea name="datos" id="" maxlength="60" placeholder="Escriba aquí sus comentarios..."
-                    style="resize: none; overflow: auto;" rows="6"></textarea><br>
-                <input type="checkbox" name="inf" id="comentarios" checked="checked"><span>Acepto recibir infomación
-                    publicitaria</span>
-            </fieldset>
-        </aside>
+                <fieldset style="width: 512px; height: 300px;">
+                    <legend>Datos del producto</legend>
+                    <table>
+                        <tr>
+                            <td><label for="producto">Producto</label><br>
+                                <select name="producto" id="producto">
+                                    <optgroup label="Camisas">
+                                        <option value="Manga larga" selected=selected>Manga larga</option>
+                                        <option value="Manga corta">Manga corta</option>
+                                    </optgroup>
+                                    <optgroup label="Pantalones">
+                                        <option value="Pantalón pitillo">Pantalón pitillo</option>
+                                        <option value="Pantalón campana">Pantalón campana</option>
+                                        <option value="Pantalón corto">Pantalón corto</option>
+                                    </optgroup>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </section>
+            <aside>
+                <fieldset style="width: 630px; float: right; position: relative; bottom: 256px;">
+                    <legend>Información de interés</legend>
+                    <label for="comentarios">Comentarios:</label><br>
+                    <textarea name="datos" id="" maxlength="60" placeholder="Escriba aquí sus comentarios..."
+                        style="resize: none; overflow: auto; width: 620px;" rows="6"></textarea><br>
+                    <input type="checkbox" name="inf" id="comentarios" checked="checked"><span>Acepto recibir infomación
+                        publicitaria</span>
+                </fieldset>
+            </aside>
             <br>
-            <fieldset>
-                <legend>Datos de envío</legend>
-                <tr>
-                    <td><label for="adress">Dirección</label></td>
-                    <td><input type="text" id="adress" name="adress"></td>
-                </tr>
-                <br>
-                <tr>
-                    <td><label for="city">Ciudad</label></td>
-                    <td><input type="text" name="city" id="city"></td>
-                </tr>
-                <br>
-                <tr>
-                    <td><label for="codpost">Código postal</label></td>
-                    <td><input type="text" name="codpost" id="codpost"></td>
-                </tr>
-            </fieldset>
-            <fieldset>
-                <legend>Datos bancarios</legend>
-                <tr>
-                    <td><label for="entidad">Nombre de la entidad</label></td>
-                    <td><input type="text" id="entidad" name="entidad"></td>
-                </tr>
-                <br>
-                <tr>
-                    <td><label for="cuenta">Nº cuenta</label></td>
-                    <td><input type="number" name="cuenta" id="cuenta"></td>
-                </tr>
-            </fieldset>
-            <input type="submit" value="Enviar pedido">
-            <input type="reset" value="Borrar el formulario">
+            <section>
+                <fieldset style="width: 512px">
+                    <legend>Datos de envío</legend>
+                    <tr>
+                        <td><label for="adress">Dirección</label></td>
+                        <td><input type="text" id="adress" name="adress"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><label for="city">Ciudad</label></td>
+                        <td><input type="text" name="city" id="city"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><label for="codpost">Código postal</label></td>
+                        <td><input type="text" name="codpost" id="codpost"></td>
+                    </tr>
+                </fieldset>
+            </section>
+            <aside>
+                <fieldset style="width: 630px; float: right; position: relative; bottom: 145px;">
+                    <legend>Datos bancarios</legend>
+                    <tr>
+                        <td><label for="entidad">Nombre de la entidad</label></td>
+                        <td><input type="text" id="entidad" name="entidad"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><label for="cuenta">Nº cuenta</label></td>
+                        <td><input type="512px" name="cuenta" id="cuenta"></td>
+                    </tr>
+                </fieldset>
+                <input type="submit" value="Enviar pedido">
+                <input type="reset" value="Borrar el formulario" style="position: relative; left: 453px;">
         </fieldset>
+        </aside>
     </form>
-
 </body>
 
 </html>
