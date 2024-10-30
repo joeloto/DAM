@@ -23,7 +23,7 @@ public class ejercicio3 {
     }
 
     public static void mostrarDato(String msg, double superficie1) {
-        System.out.printf("%.3f", msg, superficie1);
+        System.out.printf("%.3f", superficie1);
     }
 
     public static void main(String[] args) {
