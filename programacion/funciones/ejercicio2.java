@@ -46,7 +46,7 @@ public class ejercicio2 {
         Scanner sc = new Scanner(System.in);
 
         // Creación del documento
-        try {
+        
             PrintWriter f = new PrintWriter("ejercicio2.txt");
 
             // Escritura del archivo
@@ -64,8 +64,5 @@ public class ejercicio2 {
 
             // Cierre
             f.close();
-        } catch (Exception e) {
-            System.out.println("Ocurrió un error al escribir en el archivo");
-        }
     }
 }
