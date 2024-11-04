@@ -1,0 +1,19 @@
+1	SELECT * FROM 'jugadores'
+2	SELECT * FROM `jugadores` ORDER BY nombre
+3	SELECT nombre,puntos,valoracion FROM `jugadores`
+4	SELECT * FROM `jugadores` ORDER BY valoracion DESC
+5	SELECT * FROM `jugadores` ORDER BY valoracion DESC, nombre ASC
+6	SELECT * FROM `jugadores` WHERE minutos>35
+7	SELECT * FROM `jugadores` WHERE nombre='Kobe Bryant'
+8	SELECT nombre,puntos FROM `jugadores` WHERE valoracion>=3
+9	SELECT * FROM `jugadores` WHERE valoracion<5 AND puntos<20 ORDER BY Nombre
+10	SELECT * FROM `jugadores` WHERE Partidos<800 OR Valoracion=3 ORDER BY Puntos,Nombre
+11	SELECT * FROM `jugadores` WHERE Partidos>800 AND Partidos<1000
+12	SELECT * FROM `jugadores` WHERE tapones<=>NULL
+13	
+14	SELECT Nombre, Puntos, Partidos FROM `jugadores` WHERE Partidos>950 AND Valoracion=4
+15	SELECT * FROM `jugadores` WHERE Partidos NOT BETWEEN 900 AND 1000
+16	SELECT DISTINCT Valoracion FROM `jugadores` ORDER BY Valoracion DESC LIMIT 4
+17	SELECT * FROM `jugadores` ORDER BY Minutos DESC LIMIT 2
+18	SELECT * FROM `jugadores` ORDER BY Minutos ASC LIMIT 2
+19	SELECT * FROM jugadores ORDER BY Rebotes DESC LIMIT 1, 3
