@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodle</title>
+    <link rel="shortcut icon" href="birrete.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0%;
+        }
+        input:hover{
+            border-color: royalblue;
+        }
+        #caja{
+            box-shadow: 1px;
+            border: 1px;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            top: 288px;
+        }
+    </style>
+</head>
+<body style="background-color:lightgray; height: 100px;">
+    <header style="background-color:royalblue; height: 80px; width: 100%; padding: 0%;">
+    </header>
+    <hr>
+    <nav style="background-color: cornflowerblue; height: 80px; width: 100%;">
+        <img src="colegiovivas.png" alt="colegiovivas" width="200px" height="50px"
+            style="position: relative; float: left; top: 12px;">
+        <form action="#" method="post" style="position: relative; float: right; top: 30px; right: 2px;">
+            <select name="idioma" id="idioma">
+                <optgroup>
+                    <option value="Español" selected="selected">Español - Internacional (es)</option>
+                    <option value="Inglés">English (en)</option>
+                    <option value="Gallego">Galego (gl)</option>
+                </optgroup>
+            </select>
+        </form>
+        <form action="#" method="post" id="caja">
+            <label for=""><img src="vivasLogo.png" alt="vivaslogo" height="50px" width="200px"></label><br>
+            <input type="text" name="usuario" id="usuario" placeholder="Nombre del usuario"><br>
+            <input type="password" name="password" id="password" placeholder="Contraseña">
+        </form>
+    </nav>
+</body>
+
+</html>
