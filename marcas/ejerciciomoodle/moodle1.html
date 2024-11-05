@@ -10,42 +10,58 @@
         * {
             margin: 0%;
         }
-        input:hover{
-            border-color: royalblue;
+
+        header {
+            background-color: rgba(42, 82, 190, 0.884);
+            height: 70px;
+            width: 100%;
         }
-        #caja{
-            box-shadow: 1px;
-            border: 1px;
-            position: relative;
+
+        nav {
+            background-color: rgba(0, 89, 255, 0.849);
+            height: 100px;
+        }
+
+        .img1 {
             justify-content: center;
             align-items: center;
             display: flex;
-            top: 288px;
+            position: relative;
+            top: 14px;
+        }
+
+        .select1 {
+            float: right;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            margin: 2px;
+            background-color: transparent;
+            bottom: 22px;
+            width: 200px;
+        }
+        .opt1{
+            background-color: rgba(0, 89, 255, 0.849);
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 24px;
         }
     </style>
 </head>
-<body style="background-color:lightgray; height: 100px;">
-    <header style="background-color:royalblue; height: 80px; width: 100%; padding: 0%;">
-    </header>
-    <hr>
-    <nav style="background-color: cornflowerblue; height: 80px; width: 100%;">
-        <img src="colegiovivas.png" alt="colegiovivas" width="200px" height="50px"
-            style="position: relative; float: left; top: 12px;">
-        <form action="#" method="post" style="position: relative; float: right; top: 30px; right: 2px;">
-            <select name="idioma" id="idioma">
-                <optgroup>
-                    <option value="Español" selected="selected">Español - Internacional (es)</option>
-                    <option value="Inglés">English (en)</option>
-                    <option value="Gallego">Galego (gl)</option>
-                </optgroup>
-            </select>
-        </form>
-        <form action="#" method="post" id="caja">
-            <label for=""><img src="vivasLogo.png" alt="vivaslogo" height="50px" width="200px"></label><br>
-            <input type="text" name="usuario" id="usuario" placeholder="Nombre del usuario"><br>
-            <input type="password" name="password" id="password" placeholder="Contraseña">
-        </form>
-    </nav>
+<header></header>
+<hr>
+<nav>
+    <img src="colegiovivas.png" alt="colegiovivas" width="220px" height="60px" class="img1">
+    <select name="idioma" id="idioma" class="select1">
+        <optgroup class="opt1">
+            <option value="español" selected="selected">Español - Internacional (es)</option>
+            <option value="ingles">English (en)</option>
+            <option value="gallego">Galego (gl)</option>
+        </optgroup>
+    </select>
+</nav>
+
+<body>
 </body>
 
 </html>
