@@ -35,12 +35,14 @@ public class ejercicio6 {
         }
     }
 
-    public static double sumaPotencias(double x, int n) {
-        double resultado = 0;
-        for (int i = 0; i < n; i++) {
-            resultado = potencia(x, i) + n+i;
+
+    //TODO doc
+    public static double sumaPotencias(double x, int n) {//TODO revisar y hacer acumulación
+        double acu = 0;
+        for (int i = 0; i <= n; i++) {
+            acu = acu + potencia(x, i);
         }
-        return resultado;
+        return acu;
     }
 
     public static void main(String[] args) {

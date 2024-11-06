@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Bol2_Ejer16 {
-    public static void main(String[] args) { // TODO preguntar si se desea jugar de nuevo
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int n1;

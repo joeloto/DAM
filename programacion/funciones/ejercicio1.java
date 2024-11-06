@@ -6,35 +6,35 @@ public class ejercicio1 {
     Scanner sc = new Scanner(System.in);
 
     /**
-     * apartado a
+     *  
      * funcion que pone lineas en blanco
      * 
-     * @param n
+     * @param n Cantidad de líneas a dejar
      */
     public static void lineasblanco(int n) {
         for (int i = 0; i < n; i++) {
-            System.out.println("");
+            System.out.println();
         }
         System.out.println();
     }
 
     /**
-     * apartado b
-     * funcion que devuelve true si el numero es par y false si no lo es
+     *  Comprueba qsi un nº es par
+     *  
      * 
-     * @param n
-     * @return
+     * @param n Nº a comprobar
+     * @return true si el numero es par y false si no lo es
      */
     public static boolean par(int n) {
         return n % 2 == 0;
     }
 
     /**
-     * apartado c
+     *  
      * funcion para identificar numeros positivos
      * 
-     * @param n
-     * @return
+     * @param n Nº a comprobar
+     * @return 'P' si n es positivo o 0 y 'N' en caso de que sea negativo
      */
     public static char positivo(int n) {
         return (n >= 0) ? 'P' : 'N';// operador ternario--- si n es positivo devuelpe P sino, devuelve N

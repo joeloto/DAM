@@ -46,23 +46,23 @@ public class ejercicio2 {
         Scanner sc = new Scanner(System.in);
 
         // Creación del documento
-        
-            PrintWriter f = new PrintWriter("ejercicio2.txt");
 
-            // Escritura del archivo
-            System.out.println("Dime un nombre");
-            String nombre = sc.nextLine();
-            int n;
-            System.out.println("Dime un número y te diré si es negativo o positivo y si es par o impar");
-            n = sc.nextInt();
-            System.out.println(par(n));
-            System.out.println(positivo(n));
-            f.println(nombre);
-            f.println(n);
-            f.print("El numero es " + (par(n) == true ? "par" : "impar") + " y "
-                    + (positivo(n) == 'P' ? "positivo" : "negativo"));
+        PrintWriter f = new PrintWriter("ejercicio2.txt");
 
-            // Cierre
-            f.close();
+        // Escritura del archivo
+        System.out.println("Dime un nombre");
+        String nombre = sc.nextLine();
+        int n;
+        System.out.println("Dime un número y te diré si es negativo o positivo y si es par o impar");
+        n = sc.nextInt();
+        System.out.println(par(n));
+        System.out.println(positivo(n));
+        f.println(nombre);
+        f.println(n);
+        f.print("El numero es " + (par(n) == true ? "par" : "impar") + " y "
+                + (positivo(n) == 'P' ? "positivo" : "negativo"));
+
+        // Cierre
+        f.close();
     }
 }

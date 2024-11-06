@@ -26,6 +26,8 @@ public class ejercicio5 {
         }
         f.close();
 
+        //TODO lectura del archivo
+
     }
     
     

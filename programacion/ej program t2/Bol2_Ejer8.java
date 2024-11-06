@@ -17,7 +17,6 @@ public class Bol2_Ejer8 {
         System.out.println("Dame el valor del tercer numero");
         num3 = sc.nextDouble();
 
-        // TODO mostrar solo el nºmayor
         if (num1>=num2){
             max = num1;
         } else{

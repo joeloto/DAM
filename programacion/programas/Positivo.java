@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class positivo {
+public class Positivo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numero;
