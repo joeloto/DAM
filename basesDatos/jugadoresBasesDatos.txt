@@ -1,31 +1,84 @@
 1	SELECT * FROM 'jugadores'
+
 2	SELECT * FROM `jugadores` ORDER BY nombre
+
 3	SELECT nombre,puntos,valoracion FROM `jugadores`
+
 4	SELECT * FROM `jugadores` ORDER BY valoracion DESC
+
 5	SELECT * FROM `jugadores` ORDER BY valoracion DESC, nombre ASC
+
 6	SELECT * FROM `jugadores` WHERE minutos>35
+
 7	SELECT * FROM `jugadores` WHERE nombre='Kobe Bryant'
+
 8	SELECT nombre,puntos FROM `jugadores` WHERE valoracion>=3
+
 9	SELECT * FROM `jugadores` WHERE valoracion<5 AND puntos<20 ORDER BY Nombre
+
 10	SELECT * FROM `jugadores` WHERE Partidos<800 OR Valoracion=3 ORDER BY Puntos,Nombre
+
 11	SELECT * FROM `jugadores` WHERE Partidos>800 AND Partidos<1000
+
 12	SELECT * FROM `jugadores` WHERE tapones<=>NULL
+
 13	SELECT Nombre, Partidos as P.JugadosAsistencias as 'asistencias realizadas' from jugadores
-14	SELECT Nombre, Puntos, Partidos FROM `jugadores` WHERE Partidos>950 AND Valoracion=4
-15	SELECT * FROM `jugadores` WHERE Partidos NOT BETWEEN 900 AND 1000
-16	SELECT DISTINCT Valoracion FROM `jugadores` ORDER BY Valoracion DESC LIMIT 4
-17	SELECT * FROM `jugadores` ORDER BY Minutos DESC LIMIT 2
-18	SELECT * FROM `jugadores` ORDER BY Minutos ASC LIMIT 2
-19	SELECT * FROM jugadores ORDER BY Rebotes DESC LIMIT 1, 3
-20	SELECT * FROM `jugadores` WHERE Nombre LIKE "J%e%"
-21	SELECT * FROM `jugadores` WHERE Nombre LIKE "%L" AND Rebotes>5
-22	SELECT * FROM `jugadores` WHERE Nombre LIKE "_A%"
-23	SELECT DISTINCT Valoracion FROM `jugadores`
-24	SELECT Rebotes+Asistencias+Tapones FROM `jugadores`
-25	
-26	SELECT Nombre AS nom, Partidos AS par, Rebotes AS reb, Minutos as min, Tapones AS tap, Asistencias AS asi, Valoracion AS Val FROM `jugadores`
-27 	SET @jugon = 5;
-	SELECT * FROM `jugadores` WHERE Valoracion = @jugon
+
+14	SELECT Nombre, Puntos, Partidos FROM `jugadores` WHERE Partidos>950 AND Valoracion=4;
+
+15	SELECT * FROM `jugadores` WHERE Partidos NOT BETWEEN 900 AND 1000;
+
+16	SELECT DISTINCT Valoracion FROM `jugadores` ORDER BY Valoracion DESC LIMIT 4;
+
+17	SELECT * FROM `jugadores` ORDER BY Minutos DESC LIMIT 2;
+
+18	SELECT * FROM `jugadores` ORDER BY Minutos ASC LIMIT 2;
+
+19	SELECT * FROM jugadores ORDER BY Rebotes DESC LIMIT 1, 3;
+
+20	SELECT * FROM `jugadores` WHERE Nombre LIKE "J%e%";
+
+21	SELECT * FROM `jugadores` WHERE Nombre LIKE "%L" AND Rebotes>5;
+
+22	SELECT * FROM `jugadores` WHERE Nombre LIKE "_A%";
+
+23	SELECT DISTINCT Valoracion FROM `jugadores`;
+
+24	SELECT Rebotes+Asistencias+Tapones FROM `jugadores`;
+
+25	SELECT Nombre, Partidos*0.25) '25%' FROM 'jugadores';
+
+26	SELECT Nombre AS nom, Partidos AS par, Rebotes AS reb, Minutos as min, Tapones AS tap, Asistencias AS asi, Valoracion AS Val FROM `jugadores`;
+
+27 	SET @jugon = 5
+	SELECT * FROM `jugadores` WHERE Valoracion = @jugon;
+
 28	SELECT * FROM `jugadores` WHERE Tapones IS NULL
-	SELECT * FROM `jugadores` WHERE Tapones IS NOT NULL
+	SELECT * FROM `jugadores` WHERE Tapones IS NOT NULL;
+
 29	SELECT * FROM jugadores WHERE Partidos = 1093 OR Partidos = 926 OR Partidos = 687 OR Partidos = 697	
+	SELECT * FROM jugadores WHERE Partidos IN ('1093', '697' , '687', '926');
+
+30	SELECT * FROM jugadores WHERE Partidos != 1093 AND Partidos != 926 AND Partidos != 687 AND Partidos != 697	
+	SELECT * FROM jugadores WHERE Partidos NOT IN ('1093', '697' , '687', '926');
+
+31	SELECT * FROM `jugadores` WHERE Puntos BETWEEN 17 AND 24
+	SELECT * FROM `jugadores` WHERE Puntos >= 17 AND Puntos <=24;
+
+32	SELECT "El jugador", Nombre, "ha metido", Puntos, "puntos" FROM 'jugadores';
+
+33	SELECT Nombre, IF (Puntos>10 AND Rebotes>10, 'SI', 'NO') AS 'doble-doble' FROM 'jugadores'
+	SELECT Nobre CASE WHEN Puntos>10 AND Rebotes>10 THEN 'SI' ELSE 'NO' END AS 'doble-doble' FROM 'jugadores';
+
+34	SELECT Nombre, IFNULL (Puntos,0) + IFNULL(Rebotes,0) + IFNULL (Tapones,0) AS 'SUMA' FROM 'jugadores';
+
+35	SELECT Nombre, IFNULL (Puntos,0) + IFNULL(Rebotes,0) + IFNULL (Tapones,0) AS 'SUMA' IF (Puntos+Rebotes+Tapones IS NULL, "Es nulo", "") AS "Tiene Nulos FROM 'jugadores';
+
+36	SELECT IFNULL (Tapones,Nombre) AS Resultado FROM 'jugadores'
+	SELECT Tapones CASE WHEN Tapones IS NULL THEN Nombre ELSE Tapones END AS Tapones FROM 'jugadores';
+
+37	SELECT Nombre IF (Valoracion=1,"Paquete",IF(Valoracion=2,"Normal",IF(Valoracion=3,"Bueno",IF(Valoracion=4,"Normal","Jugon")))) AS Valoracion FROM `jugadores`
+
+38	SELECT Nombre, CASE Valoracion WHEN 1 THEN "Paquete" WHEN 2 THEN "Normal" WHEN 3 THEN "Bueno" WHEN 4 THEN "estrella" ELSE "jugon" END AS 'valoracion' FROM `jugadores`;
+
+	
