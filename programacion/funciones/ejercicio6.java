@@ -3,8 +3,10 @@ import java.util.Scanner;
 public class ejercicio6 {
 
     /**
+     * apartado a
      * calcula una potencia
-     * @param base recoge el valor de la base
+     * 
+     * @param base      recoge el valor de la base
      * @param exponente recoge el valor del exponente
      * @return devuelve el resultado de la potencia
      */
@@ -20,16 +22,25 @@ public class ejercicio6 {
         return potencia;
     }
 
-    public static double numPotencias(double a, int n){
-        Scanner sc  = new Scanner (System.in);
-        // System.out.println("Dame un valor para la base");
-        // double base = sc.nextDouble();
-        // System.out.println("Dame un valor para el exponente");
-        int exponente = sc.nextInt();
-        for (int i = 0; i == n; i++) {
-            potencia(a, exponente);
+    /**
+     * apartado b
+     * muestra n numero de potencias de la base a
+     * 
+     * @param a recoge la base
+     * @param n recoge el numero de potencias que se muestran
+     */
+    public static void numPotencias(double a, int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.println(potencia(a, i));
         }
-        return potencia(a, exponente);
+    }
+
+    public static double sumaPotencias(double x, int n) {
+        double resultado = 0;
+        for (int i = 0; i < n; i++) {
+            resultado = potencia(x, i) + n+i;
+        }
+        return resultado;
     }
 
     public static void main(String[] args) {
@@ -40,9 +51,10 @@ public class ejercicio6 {
         // int exponente = sc.nextInt();
         System.out.println("Dime un número");
         double a = sc.nextDouble();
-        System.out.println("Dime el número de potencias que quieres que se muestren");
+        System.out.println("Dime otro número");
         int n = sc.nextInt();
         // System.out.println(potencia(base, exponente));
-        System.out.println(numPotencias(a,n));
+        // numPotencias(a, n);
+        System.out.println(sumaPotencias(a, n));
     }
 }
