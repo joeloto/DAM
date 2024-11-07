@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ejercicio6 {
 
     /**
-     * apartado a
+     * 
      * calcula una potencia
      * 
      * @param base      recoge el valor de la base
@@ -23,7 +23,7 @@ public class ejercicio6 {
     }
 
     /**
-     * apartado b
+     *
      * muestra n numero de potencias de la base a
      * 
      * @param a recoge la base
