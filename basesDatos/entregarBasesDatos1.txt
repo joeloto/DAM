@@ -1,0 +1,14 @@
+2	SELECT * FROM `juegos` WHERE precioAlquiler<6 AND precioAlquiler>4;
+4	SELECT Nombre, precioVenta FROM `juegos` WHERE precioVenta<40;
+6	SELECT DISTINCT plataforma, precioAlquiler FROM `juegos` WHERE 1;
+8	SELECT id, nombre, precioVenta FROM `juegos` WHERE precioVenta NOT BETWEEN 20 AND 30 ORDER BY precioVenta ASC;
+10	SELECT * FROM `juegos` WHERE stockAlquiler<=>NULL;
+12	SELECT * FROM `juegos` WHERE precioAlquiler=3 OR precioAlquiler=5 OR precioAlquiler=8;	
+14	
+16	SELECT DISTINCT plataforma FROM `juegos` WHERE plataforma LIKE "%P%";
+18	SELECT nombre, plataforma FROM `juegos` WHERE stockAlquiler+stockVenta >10 AND nombre LIKE "L%";
+20	SELECT * FROM `juegos` WHERE stockVenta BETWEEN 1 AND 10 AND Nombre LIKE "%O%" AND precioVenta NOT BETWEEN 30 AND 40;
+22	SELECT * FROM `juegos` WHERE nombre NOT LIKE "_A%" AND nombre NOT LIKE "_E%" AND nombre NOT LIKE "_I%" AND nombre NOT LIKE "_O%" AND nombre NOT LIKE "_U%";
+24	SELECT nombre, precioAlquiler, (precioAlquiler*3) 'alquiler' FROM `juegos` WHERE 1;
+26	SELECT precioAlquiler, (precioAlquiler*166) 'pesetasAlquiler', precioVenta, (precioVenta*166) 'pesetasVenta' FROM `juegos` WHERE 1;
+28	

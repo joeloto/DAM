@@ -81,4 +81,6 @@
 
 38	SELECT Nombre, CASE Valoracion WHEN 1 THEN "Paquete" WHEN 2 THEN "Normal" WHEN 3 THEN "Bueno" WHEN 4 THEN "estrella" ELSE "jugon" END AS 'valoracion' FROM `jugadores`;
 
+39	SELECT Nombre, CASE WHEN Partidos>1000 THEN 'Carrera larga' WHEN Partidos>900 AND Partidos <=1000 THEN 'Carrera normal' ELSE 'Carrera corta' END AS 'Tiempo jugado' FROM `jugadores`
+
 	
