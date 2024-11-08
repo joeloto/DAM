@@ -21,8 +21,7 @@ public class ejercicio5 {
         //     }
         // }
         // f.close();
-
-        // TODO lectura del archivo
+ 
 
         int year;
         System.out.println("Dime un año");

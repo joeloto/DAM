@@ -1,19 +1,23 @@
 import java.util.Scanner;
 
-public class ejercicio3 {// TODO docs
-    
+public class ejercicio3 {
+
     /**
      * recoge el dato mientras sea positivo
+     * 
      * @param dato recoge dato
      * @return devuelve el dato una vez que es positivo
      */
     public static double pedirDato(String dato) {
         Scanner sc = new Scanner(System.in);
         double dato1;
-        do { // TODO quitar bucle infinito con break
+        do { 
             System.out.println("Dame el valor de " + dato);
             dato1 = sc.nextInt();
-            System.out.println("Dame un valor positivo");
+
+            if (dato1 < 0) {
+                System.out.println("Dame un valor positivo");
+            }
 
         } while (dato1 < 0);
         return dato1;
@@ -21,7 +25,8 @@ public class ejercicio3 {// TODO docs
 
     /**
      * calcula la superficie del cilindro
-     * @param radio recoge el valor del radio
+     * 
+     * @param radio  recoge el valor del radio
      * @param altura recoge el valor de la altura
      * @return devuelve la operación de la superficie
      */
@@ -31,7 +36,8 @@ public class ejercicio3 {// TODO docs
 
     /**
      * muestra el mensaje y el resultado de la superfice
-     * @param msg recoge el mensaje
+     * 
+     * @param msg         recoge el mensaje
      * @param superficie1 recoge el valor de la superficie
      */
     public static void mostrarDato(String msg, double superficie1) {

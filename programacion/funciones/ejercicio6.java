@@ -36,8 +36,13 @@ public class ejercicio6 {
     }
 
 
-    //TODO doc
-    public static double sumaPotencias(double x, int n) {//TODO revisar y hacer acumulación
+    /**
+     * suma de potencias
+     * @param x recoge el valor de la base
+     * @param n recoge el número de potencias que se quieren sumar
+     * @return devuelve la suma de las potencias
+     */
+    public static double sumaPotencias(double x, int n) {
         double acu = 0;
         for (int i = 0; i <= n; i++) {
             acu = acu + potencia(x, i);

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio4 {// TODO docs
+public class ejercicio4 {
 
     /**
      * comprueba si el año es bisiesto
