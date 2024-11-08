@@ -33,7 +33,6 @@ public class ejercicio5 {
 
         // Lectura de datos
         while (f.hasNext()) {
-          
             String a = f.nextLine();
             System.out.printf("%6s, ", a);
         }
