@@ -42,3 +42,24 @@ nav a:hover{
     position: relative;
     left: 121px;
 }
+section{
+    position: relative;
+    width: 50%;
+    margin-left: 100px;
+    background-color: rgba(229, 147, 249, 0.73);
+    margin-top: 40px;
+    height: 400px;
+    border-radius: 15px;
+
+}
+section h2{
+    color: white;
+    text-align: center;
+}
+form input,label{
+    margin-left: 50px;
+}
+form input{
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+}
