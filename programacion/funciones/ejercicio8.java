@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class ejercicio8 {
 
+    /**
+     * identifica si un número es primo o no
+     * @param num recoge el número
+     * @return devuelve true si es primo y false si no es primo
+     */
     public static boolean primo(int num) {
         if (num == 1) {
             return false;

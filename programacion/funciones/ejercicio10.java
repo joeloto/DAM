@@ -2,6 +2,13 @@ import java.util.Scanner;
 
 public class ejercicio10 {
 
+    /**
+     * calculo de la base de un rectángulo o de un triángulo
+     * @param flag recoge el tipo de área
+     * @param base recoge el valor de la base
+     * @param altura recoge el valor de la altura
+     * @return devuelve el cálculo del área
+     */
     public static double area(boolean flag, int base, int altura) {
         double area2 = 0;
         if (flag == true) {
@@ -69,7 +76,7 @@ public class ejercicio10 {
                             System.out.println("Dame valores positivos");
                         }
                     } while (lado < 0);
-                    System.out.printf("El área del cuadrado es %.2f", area(true, lado, lado));
+                    System.out.printf("El área del cuadrado es %.2f", Math.pow(lado, 2));
                     System.out.println();
                     break;
                 case 4:
