@@ -30,7 +30,7 @@
                     <tr>
                         <td>
                             <label for="name">Nombre</label>
-                            <label for="surname">Apellidos</label>
+                            <label for="surname" class="apellidos">Apellidos</label>
                         </td>
                     </tr>
                     <tr>
@@ -51,8 +51,8 @@
                     </tr>
                     <tr>
                         <td><label for="sexo">Sexo</label></td><br>
-                        <td><input type="radio" name="Hombre" id="Hombre"><span>Hombre</span></td>
-                        <td><input type="radio" name="Mujer" id="Mujer"><span>Mujer</span></td>
+                        <td><input type="radio" name="sexo" id="Hombre"><span>Hombre</span></td>
+                        <td><input type="radio" name="sexo" id="Mujer"><span>Mujer</span></td>
                     </tr>
                     <tr>
                         <td><button type="submit" class="submit">Enviar</button></td>
@@ -63,12 +63,29 @@
     </section>
     <div>
         <aside>
-            <img src="foto_navidad.png" alt="feliz navidad" height="50px" width="80px">
+            <img src="foto_navidad.png" alt="feliz navidad" height="200px" width="180px">
             <p>
                 feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz
                 navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz
                 navidad feliz navidad
             </p>
+            <fieldset>
+                <legend>Newsletter</legend>
+                <select name="notif" id="notif">
+                    <form action="#" method="post">
+                        <optgroup>
+                            <option value="Diariamente" selected="selected">Diariamente</option>
+                            <option value="Nunca">Nunca</option>
+                        </optgroup>
+                </select>
+                <br>
+                <br>
+                <input type="checkbox" checked="checked"><span>Acepto recibir newsletters</span>
+                <br>
+                <br>
+                <button type="submit">Solicitar</button>
+                </form>
+            </fieldset>
         </aside>
     </div>
     <footer>

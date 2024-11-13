@@ -39,7 +39,7 @@ nav a:hover{
 }
 .apellidos{
     position: relative;
-    left: 72px;
+    left: 119px;
 }
 .apellidos2{
     position: relative;
@@ -67,6 +67,18 @@ aside{
     height: 200px;
     position: relative;
     float: right;
+    margin-right: 50px;
+    bottom: 357px;
+}
+aside fieldset{
+    position: relative;
+    top: 50px;
+}
+aside button{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 article h2{
     color: white;
@@ -82,11 +94,10 @@ form input{
 .submit{
     border-radius: 8px; 
     width: 200px;
-    display: flex;
-    justify-content: center;
     position: relative;
     top: 100px;
-    align-items: center;
+    justify-content: center;
+    left: 170px;
 }
 footer{
     height: 50px;
