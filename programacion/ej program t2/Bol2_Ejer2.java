@@ -6,7 +6,6 @@ public class Bol2_Ejer2 {
 
         int n1;
         int n2;
-
         System.out.println("Dime el valor del primer numero:");
         n1 = sc.nextInt();
         System.out.println("Dime el valor del segundo numero:");
