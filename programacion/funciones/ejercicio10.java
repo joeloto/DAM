@@ -20,6 +20,11 @@ public class ejercicio10 {
         return area2;
     }
 
+    /**
+     * función calcula el área de un círculo
+     * @param radio recoge el valor del radio
+     * @return devuelve el cálculo del área
+     */
     public static double circulo(double radio){
         return Math.PI * (Math.pow(radio, 2));
     }
@@ -40,6 +45,8 @@ public class ejercicio10 {
             System.out.println("Pulsa 3 para calcular la base de un cuadrado");
             System.out.println("-----------------------------------------------");
             System.out.println("Pulsa 4 para calcular la base de un círculo");
+            System.out.println("-----------------------------------------------");
+            System.out.println("Pulsa 5 para salir del programa");
             System.out.println("-----------------------------------------------");
             opc = sc.nextInt();
             switch (opc) {
@@ -95,12 +102,15 @@ public class ejercicio10 {
                     System.out.printf("El área del círculo es %.2f", circulo(radio));
                     System.out.println();
                     break;
+                    case 5:
+                    System.out.println("Has salido del programa correctamente. ¡Hasta otra!");
+                    break;
                 default:
                     System.out.println("Escoge una opción de las indicadas");
                     System.out.println();
                     break;
             }
-        } while (opc != 4);
+        } while (opc != 5);
 
     }
 
