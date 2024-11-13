@@ -20,6 +20,10 @@ public class ejercicio10 {
         return area2;
     }
 
+    public static double circulo(double radio){
+        return Math.PI * (Math.pow(radio, 2));
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int base;
@@ -76,7 +80,7 @@ public class ejercicio10 {
                             System.out.println("Dame valores positivos");
                         }
                     } while (lado < 0);
-                    System.out.printf("El área del cuadrado es %.2f", Math.pow(lado, 2));
+                    System.out.printf("El área del cuadrado es %.2f", area(true, lado, lado));
                     System.out.println();
                     break;
                 case 4:
@@ -88,7 +92,7 @@ public class ejercicio10 {
                             System.out.println("Dame un valor positivo");
                         }
                     } while (radio < 0);
-                    System.out.printf("El área del círculo es %.2f", Math.PI * (Math.pow(radio, 2)));
+                    System.out.printf("El área del círculo es %.2f", circulo(radio));
                     System.out.println();
                     break;
                 default:

@@ -18,8 +18,10 @@ public class ejercicio7 {
         return a;
     }
 
-    public static void appendFile(String name, String text){
-        File f = (new File (name));
+    public static void appendFile(String name, String text) throws FileNotFoundException{
+        loadFile(name);
+        
+
     }
 
     public static void main(String[] args) throws FileNotFoundException {
