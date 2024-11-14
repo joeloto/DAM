@@ -23,7 +23,7 @@ public class ejercicio10 {
 
     /**
      * calculo de la base de un rectángulo o de un triángulo
-     * @param flag recoge el tipo de área
+     * @param flag recoge el tipo de área: true rec, false tri
      * @param base recoge el valor de la base
      * @param altura recoge el valor de la altura
      * @return devuelve el cálculo del área

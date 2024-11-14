@@ -44,7 +44,7 @@ public class ejercicio7 {
     public static void appendFile(String name, String text) throws Exception {
         String b = loadFile(name);
         PrintWriter f = new PrintWriter("ejercicio2.txt");
-        System.out.println();
+       // System.out.println();
         f.write(b+text);
         f.close();
     }
@@ -56,8 +56,8 @@ public class ejercicio7 {
      * @throws Exception
      */
     public static void appendFile2(String name, String text) throws Exception{
-        loadFile(name);
-        PrintWriter f = new PrintWriter(new FileWriter(name));
+       
+        PrintWriter f = new PrintWriter(new FileWriter(name,true));//TODO revisar apéndice apuntes
         f.println(text);
         f.close();
     }

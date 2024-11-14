@@ -14,8 +14,8 @@
 		"description": "Writes a scanner"
 	},
 	"Print to console": {
-		"scope": "javascript,typescript",
-		"prefix": "scn",
+	 
+		"prefix": "msg",
 		"body": [
 			"System.out.println($1);",
 			"var1 = sc.nextInt;"
