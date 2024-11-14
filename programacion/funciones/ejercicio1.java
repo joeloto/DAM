@@ -1,3 +1,20 @@
+// En el mismo archivo haz las siguientes funciones:
+// a) Codifica un método que deje en pantalla n líneas en blanco ( es un parámetro).
+// No devuelve nada.
+
+// b) Escribe una función denominada par con un único parámetro entero. Devuelve
+// true si el parámetro es número par y false si no lo es. No muestra nada.
+
+// c) Escribir una función que tenga un argumento (otra forma de llamar a un
+// parámetro) de tipo entero y que devuelva la letra ‘P’ (devuelve char) si el número
+// es positivo o cero y la letra ‘N’ si es negativo. Intenta hacerlo con el operador
+// ternario (ver Apéndice I del Tema 2); si no te sale hazlo con if.
+
+// d) En el programa principal primero pides el nombre del usuario. A continuación
+// dejas deja 10 líneas en blanco mediante la 1ª función. Luego pides un número
+// entero al usuario e indicas si es par y positivo o negativo.
+
+
 
 import java.util.Scanner;
 

@@ -1,3 +1,7 @@
+//Amplia el programa anterior (directamente el main) para que guarde en un
+//archivo los siguientes datos: el nombre en una línea, el número en la siguiente y si
+//es par/impar y positivo/negativo.
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;

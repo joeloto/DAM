@@ -34,7 +34,6 @@
 
 36	SELECT nombre, plataforma, CASE WHEN plataforma = 'PC' THEN 'Varios' WHEN plataforma = 'PSP' THEN 'Sony' WHEN plataforma = 'Playstation' THEN 'Sony' WHEN plataforma = 'XBOX' THEN 'Microsoft' END AS Fabricante FROM `juegos`;
 
-38	
+38	SELECT nombre AS Nombre, (IFNULL(stockAlquiler, 0) * IFNULL(precioAlquiler, 0)) + (IFNULL(stockVenta, 0) * IFNULL(precioVenta, 0)) AS Beneficio, CASE WHEN (IFNULL(stockAlquiler, 0) * IFNULL(precioAlquiler, 0)) + (IFNULL(stockVenta, 0) * IFNULL(precioVenta, 0)) > 300 THEN 'Rentable' WHEN (IFNULL(stockAlquiler, 0) * IFNULL(precioAlquiler, 0)) + (IFNULL(stockVenta, 0) * IFNULL(precioVenta, 0)) BETWEEN 100 AND 300 THEN 'Rentabilidad Media' ELSE 'Rentabilidad Baja' END AS Estimación FROM juegos;
 
 
-SELECT nombre, (precioAlquiler*stockAlquiler) + (precioVenta*stockVenta) AS beneficios, CASE WHEN (precioAlquiler*stockAlquiler) + (precioVenta*stockVenta)>'300' THEN 'rentable' WHEN (precioAlquiler*stockAlquiler) + (precioVenta*stockVenta) BETWEEN 100 AND 300 THEN 'rentabilidad media' WHEN (precioAlquiler*stockAlquiler) + (precioVenta*stockVenta) <=100 THEN 'rentabilidad baja' END AS estimacion FROM `juegos` WHERE 1;
