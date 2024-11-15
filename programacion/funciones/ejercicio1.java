@@ -92,6 +92,9 @@ public class ejercicio1 {
         n = sc.nextInt();
         System.out.println(par(n));
         System.out.println(positivo(n));
+
+        int opcion;
+       
     }
 
 }
