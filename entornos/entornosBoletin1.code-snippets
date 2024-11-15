@@ -13,7 +13,7 @@
 		],
 		"description": "Writes a scanner"
 	},
-	"Print to console": {
+	"Variables": {
 	 
 		"prefix": "msg",
 		"body": [

@@ -1,96 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Examen recuperacion 1ª evaluacion:David Bao Garcia</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="300">
+        <meta name="description" content="Esta es una página de comercio navideño">
+        <meta name="keywords" content="navidad,compras,ventas,diversion,arbol">
+        <link rel="icon" type="image/png" href="Imagenes/abeto.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="navidad.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+            <h1><i>Feliz Navidad</i></h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Comercios</a></li>
+                <li><a href="#">Promociones</a></li>
+                <li><a href="#">Fechas de apertura</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <section>
+                <article>
+                        <div id="contenido">
+                            <h4>Formulario de inscripción</h4>
+                            <form method="post" action="mailto:david@colegiovivas.com">
+                                <table>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navidad</title>
-    <link rel="stylesheet" href="navidad.css">
-    <meta http-equiv="refresh" content="300">
-    <meta name="description" content="Christmas Web">
-    <meta name="keywords" content="xmas,web,exercise,html,css">
-    <link rel="shortcut icon" href="abeto.png" type="image/x-png">
-</head>
-
-<body>
-    <header>
-        <h1><i>Feliz Navidad</i></h1>
-    </header>
-    <nav>
-        <li><a href="https://colegiovivas.com">Comercios</a></li>
-        <li><a href="https://colegiovivas.com">Promociones</a></li>
-        <li><a href="https://colegiovivas.com">Fechas de apertura</a></li>
-        <li><a href="https://colegiovivas.com">Contacto</a></li>
-    </nav>
-    <section>
-        <article>
-            <form action="#" method="post">
-                <table>
-                    <h2>Formulario de inscripción</h2>
-                    <tr>
-                        <td>
-                            <label for="name">Nombre</label>
-                            <label for="surname" class="apellidos">Apellidos</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="name" name="name" placeholder="Añadir nombre"></td>
-                        <td><input type="text" id="surname" name="surname" placeholder="Añadir apellidos"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="adress">Dirección</label></td><br>
-                        <td><input type="text" name="adress" id="adress" placeholder="Añadir dirección"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="correo">Correo</label></td><br>
-                        <td><input type="email" placeholder="Añadir correo"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="phone">Teléfono</label></td><br>
-                        <td><input type="number" name="phone" id="phone" placeholder="Añadir teléfono"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="sexo">Sexo</label></td><br>
-                        <td><input type="radio" name="sexo" id="Hombre"><span>Hombre</span></td>
-                        <td><input type="radio" name="sexo" id="Mujer"><span>Mujer</span></td>
-                    </tr>
-                    <tr>
-                        <td><button type="submit" class="submit">Enviar</button></td>
-                    </tr>
-                </table>
-            </form>
-        </article>
-    </section>
-    <div>
+                                    <tr>
+                                        <td>
+                                            Nombre <br>
+                                            <input type="text" placeholder="Añadir nombre" name="nombre">
+                                        </td>
+                                        <td>
+                                            Apellidos <br>
+                                            <input type="text" placeholder="Añadir apellidos" name="apellidos">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            Dirección<br>
+                                            <input type="text" placeholder="Añadir direccion"  name="empresa" size="30">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            Correo<br>
+                                            <input type="email" placeholder="Añadir correo"  name="linea1" size="30" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            Teléfono<br>
+                                            <input type="tel" placeholder="Añadir teléfono" name="linea2" size="30">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sexo <br>
+                                            <input type="radio" name="sexo" value="H">Hombre
+                                            <input type="radio" name="sexo" value="M">Mujer</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <input type="submit" value="Enviar" id="boton">
+                            </form>
+                        </div>
+                </article>
+        </section>
         <aside>
-            <img src="foto_navidad.png" alt="feliz navidad" height="200px" width="180px">
-            <p>
-                feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz
-                navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz navidad feliz
-                navidad feliz navidad
+            <img src="foto_navidad.png"/>
+            <p id="texto">
+                Accede a todas nuestras ofertas y promociones registrandote
+                de forma gratuita en nuestra página web.
+                Recibirás al instante todas las novedades de nuestro catálogo de 
+                productos.
             </p>
-            <fieldset>
-                <legend>Newsletter</legend>
-                <select name="notif" id="notif">
-                    <form action="#" method="post">
-                        <optgroup>
-                            <option value="Diariamente" selected="selected">Diariamente</option>
-                            <option value="Nunca">Nunca</option>
-                        </optgroup>
+            <div id="newletter">
+                <fieldset>
+                    <legend>Newsletter</legend>
+            <form method="post" action="mailto:david@colegiovivas.com">
+                <select name="periodicidad" id="tiempo">
+                    <option>Diariamente</option>
+                    <option>Semanal</option>
+                    <option>Mensual</option>
+                    <option>Anual</option>
                 </select>
-                <br>
-                <br>
-                <input type="checkbox" checked="checked"><span>Acepto recibir newsletters</span>
-                <br>
-                <br>
-                <button type="submit">Solicitar</button>
-                </form>
+                <p><input type="checkbox" checked/>Acepto recibir newsletters</p>
+                <input type="submit" value="solicitar" id="pedir"/>
+            </form>
             </fieldset>
+            </div>
         </aside>
-    </div>
-    <footer>
-        <h3>Copyright Colegio Vivas</h3>
-    </footer>
-</body>
-
+        <footer>
+            <h5>Copyright Colegio Vivas</h5>
+        </footer>
+    </body>
 </html>
