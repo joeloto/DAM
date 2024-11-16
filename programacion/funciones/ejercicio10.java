@@ -94,7 +94,7 @@ public class ejercicio10 {
                             System.out.println("Dame valores positivos");
                         }
                     } while (base < 0 || altura < 0);
-                    System.out.printf("El área del rectángulo es %.2f", area(false, base, altura));
+                    System.out.printf("El área del triángulo es %.2f", area(false, base, altura));
                     System.out.println();
                     break;
                 case 3:
