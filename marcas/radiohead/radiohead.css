@@ -21,7 +21,7 @@ header{
 }
 hr{
     width: 100%;
-    color: red;
+    border-color:red;
     position: relative;
     top: 5px;
 }
@@ -37,8 +37,12 @@ nav a:hover{
 }
 section{
     width: 100%;
-    height: 600px;
-}#caja1 {
+    height: 550px;
+}
+article{
+    box-shadow: 0 0 7px 1px black;
+}
+#caja1 {
     background-color: red;
     width: 45%;
     height: 550px;
@@ -50,7 +54,7 @@ section{
     top: 7px;
 }
 #caja1 p{
-    margin-left: 8px;
+    margin-left: 12px;
     margin-right: 9px;
     font-size: 20px;
     color: white;
@@ -86,3 +90,128 @@ section{
     position: relative;
     bottom: 20px;
 }
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    font-style: italic;
+}
+.honey:hover{
+    color: rgb(255, 213, 0);
+}
+.bends:hover{
+    color: rgb(151, 51, 51);
+}
+.computer:hover{
+    color: rgb(76, 176, 216);
+}
+.kida:hover{
+    color: rgb(43, 43, 180);
+}
+.amnesiac:hover{
+    color: black;
+}
+.hail:hover{
+    color: rgb(255, 68, 0);
+}
+.rainbows:hover{
+    color: purple;
+}
+.limbs:hover{
+    color: greenyellow;
+}
+.moon:hover{
+    color: rgb(78, 75, 75);
+}
+#caja3{
+    float: right;
+    height: 290px;
+    width: 52%;
+    border-radius: 50px;
+    background-color: red;
+    position: relative;
+    bottom: 290px;
+    left: 350px;
+}
+#caja3 h2{
+    text-align: center;
+    color: white;
+    position: relative;
+    top: -16px;
+}
+#caja3 p{
+    font-size: 20px;
+    margin-top: 3px;
+    margin-left: 20px;
+    margin-right: 10px;
+    color: white;
+    position: relative;
+    bottom: 16px;
+}
+
+#caja4{
+    width: 26%;
+    height: 240px;
+    float: right;
+    background-color: red;
+    position: relative;
+    top: -841px;
+    border-radius: 45px;
+}
+#caja4 h2{
+    color: white;
+    text-align: center;
+    position: relative;
+    top: -16px;
+}
+#caja4 p{
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
+    bottom: 20px;
+    margin-top: 3px;
+}
+.telex:hover{
+    color: black;
+}
+select{
+    width:50%;
+    height:50px;
+    border-style: none;
+    font-size: 1em;
+    position: relative;
+    top: -6px;
+    left: 30px;
+    border-radius: 10px;
+}
+fieldset{
+    width: 290px;
+    height: 100px;
+    position: relative;
+    left: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    bottom: 30px;
+}
+fieldset h5{
+    float: left;
+    position: relative;
+    top: -4px;
+    color: white;
+}
+button{
+    position: relative;
+    top: 45px;
+    right: 120px;
+    border-radius: 15px;
+}
+fieldset select,h5{
+    position: relative;
+    bottom: 20px;
+}
+
