@@ -1,23 +1,25 @@
 html{
-    height: 600px;
+    height: 500px;
 }
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
 }
 header{
     width: 100%;
-    height: 30px;
+    height: 70px;
 }
 .oso{
     position: relative;
     float: left;
     margin-left: 10px;
-    bottom: 2px;
+    top: 4px;
 }
 .largo{
     position: relative;
     float: right;
     margin-right: 10px;
+    top: 10px;
 }
 hr{
     width: 100%;
@@ -31,6 +33,7 @@ nav a{
     position: relative;
     top: 10px;
     padding-right: 40px;
+    margin-left: 10px;
 }
 nav a:hover{
     color: rgb(0, 217, 255);
@@ -38,6 +41,7 @@ nav a:hover{
 section{
     width: 100%;
     height: 550px;
+    margin-left: 5px;
 }
 article{
     box-shadow: 0 0 7px 1px black;
@@ -47,7 +51,9 @@ article{
     width: 45%;
     height: 550px;
     border-radius: 10%;
-}#caja1 h2{
+    margin-left: 5px;
+}
+#caja1 h2{
     color:white;
     text-align: center;
     position: relative;
@@ -67,19 +73,20 @@ article{
     width: 300px;
     height: 200px;
     position: relative;
-    left: 170px;
+    left: 130px;
     border-radius: 10%;
 }
 #caja2{
     float: right;
     background-color: red;
     height: 240px;
-    width: 23%;
+    width: 320px;
     color: white;
     border-radius: 16%;
     position: relative;
     top: -550px;
-    right: 440px;
+    right: 364px;
+    
 }
 #caja2 h2{
     text-align: center;
@@ -132,7 +139,7 @@ a:hover{
     background-color: red;
     position: relative;
     bottom: 290px;
-    left: 350px;
+    left: 302px;
 }
 #caja3 h2{
     text-align: center;
@@ -141,13 +148,13 @@ a:hover{
     top: -16px;
 }
 #caja3 p{
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 3px;
     margin-left: 20px;
-    margin-right: 10px;
+    margin-right: 9px;
     color: white;
     position: relative;
-    bottom: 16px;
+    bottom: 20px;
 }
 
 #caja4{
@@ -158,6 +165,7 @@ a:hover{
     position: relative;
     top: -841px;
     border-radius: 45px;
+    margin-right: 15px;
 }
 #caja4 h2{
     color: white;
@@ -189,14 +197,14 @@ select{
 }
 fieldset{
     width: 290px;
-    height: 100px;
+    height: 90px;
     position: relative;
-    left: 38px;
+    left: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
-    bottom: 30px;
+    border-radius: 40px;
+    bottom: 34px;
 }
 fieldset h5{
     float: left;
@@ -206,9 +214,11 @@ fieldset h5{
 }
 button{
     position: relative;
-    top: 45px;
+    top: 40px;
     right: 120px;
     border-radius: 15px;
+    background-color: white;
+    color: black;
 }
 fieldset select,h5{
     position: relative;
