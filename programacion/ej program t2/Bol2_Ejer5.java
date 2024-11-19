@@ -33,7 +33,7 @@ public class Bol2_Ejer5 {
                 default:
                     System.out.println("Opción no válida.");
                     break;
-            }
+            }                 
         } while (opc != 3);
 
     }
