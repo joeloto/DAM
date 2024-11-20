@@ -57,7 +57,7 @@ public class ejercicio7 {
      */
     public static void appendFile2(String name, String text) throws Exception{
        
-        PrintWriter f = new PrintWriter(new FileWriter(name,true));//TODO revisar apéndice apuntes
+        PrintWriter f = new PrintWriter(new FileWriter(name,true));
         f.println(text);
         f.close();
     }
