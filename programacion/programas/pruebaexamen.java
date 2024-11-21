@@ -27,10 +27,10 @@ public class pruebaexamen {
      */
     public static int calculos(int num1, int num2) {
         int resultado = 1;
-        int acu = 0;
+        int acu = 1;
         if (num2 > 0) {
             for (int i = 0; i < num2; i++){
-                
+                resultado *= num1;
             }
         }
         if (num2 < 0) {
@@ -105,7 +105,9 @@ public class pruebaexamen {
                     break;
                 case 3:
                     System.out.println("Función sumaOcalculos seleccionda");
-                    System.out.println(mediasOsumas(3, true));
+                    System.out.println("¿Cuántos números quieres poner?");
+                    int numeros = sc.nextInt();
+                    System.out.println(mediasOsumas(numeros, true));
                     break;
                 case 4:
                     System.out.println("Función pirámide seleccionada");
