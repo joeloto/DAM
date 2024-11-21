@@ -14,7 +14,7 @@ public class ejercicio2 {
      * apartado a
      * funcion que pone lineas en blanco
      * 
-     * @param n
+     * @param n numero de lineas
      */
     public static void lineasblanco(int n) {
         for (int i = 0; i < n; i++) {
@@ -27,8 +27,8 @@ public class ejercicio2 {
      * apartado b
      * funcion que devuelve true si el numero es par y false si no lo es
      * 
-     * @param n
-     * @return
+     * @param n valor del numero
+     * @return devuelve true si el numero es par y false si no lo es
      */
     public static boolean par(int n) {
         return n % 2 == 0;
@@ -38,8 +38,8 @@ public class ejercicio2 {
      * apartado c
      * funcion para identificar numeros positivos
      * 
-     * @param n
-     * @return
+     * @param n valor del numero
+     * @return si n es positivo devuelpe P sino, devuelve N
      */
     public static char positivo(int n) {
         return (n >= 0) ? 'P' : 'N';// operador ternario--- si n es positivo devuelpe P sino, devuelve N

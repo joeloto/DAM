@@ -46,8 +46,10 @@ public class basicos {
         }
     }
 
-    /*
-     * ejercicio6
+    /** ejercicio6
+     * escribe la palabra que quieras las veces que quieras
+     * @param msg recoge el texto
+     * @param n recoge el numero de veces que la quieres poner
      */
     public static void pintaVariosMensajes(String msg, int n) {
         for (int i = 0; i < n; i++) {
@@ -56,8 +58,9 @@ public class basicos {
         System.out.println();
     }
 
-    /*
-     * ejercicio7
+    /** ejercicio7
+     * suma los numeros del 1 al 20
+     * @return devuelve la suma (acumulador)
      */
     public static int suma20(){
         int acu = 0;
@@ -67,8 +70,10 @@ public class basicos {
         return acu;
     }
 
-    /*
-     * ejercicio8
+    /**
+     * suma los numeros desde el 0 hasta el que le pongas
+     * @param n recoge hasta que numero quieres sumar
+     * @return devuelve la suma (acumulador)
      */
     public static int sumaN(int n){
         int acu = 0;
@@ -78,8 +83,10 @@ public class basicos {
         return acu;
     }
 
-    /*
-     * ejercicio9
+    /**
+     * recoge el mensaje y una pedida de un valor
+     * @param msg recoge el mensaje
+     * @return devuelve el numero
      */
     public static int pideNumero(String msg){
         Scanner sc = new Scanner(System.in);

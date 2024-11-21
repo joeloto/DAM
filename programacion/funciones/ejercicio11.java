@@ -25,7 +25,7 @@ import java.util.Scanner;
 public class ejercicio11 {
     
     /**
-     * funció que hace el factorial de un número
+     * función que hace el factorial de un número
      * @param num recoge el valor del número el cual se quiee hacer el factorial 
      * @return devuelve el factorial
      */
@@ -47,8 +47,7 @@ public class ejercicio11 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Dime un número:");
         int num = sc.nextInt();
-        System.out.println("El factorial de " + num + " es:");
-        System.out.println(factorial(num));
+        System.out.println("El factorial de " + num + " es " + factorial(num));
 
         //Coseno:
         System.out.println("Dime un número para hacer su coseno");

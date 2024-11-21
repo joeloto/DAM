@@ -1,4 +1,5 @@
 // Haz un programa que realice las siguientes tareas:
+
 // Pide un año al usuario y guarda en un archivo dicho año en la primera línea
 // indicando si es o no bisiesto y a continuación todos los bisiestos desde ese año
 // hasta el año actual (cada uno en una línea).
