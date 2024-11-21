@@ -45,6 +45,12 @@ public class pruebaexamen {
         return resultado;
     }
 
+    /**
+     * 
+     * @param numeros recoge el numero de numeros con el que se quiere operar
+     * @param operacion recoge el tipo de operacion: media (true) / suma (false)
+     * @return devuelve los resultados
+     */
     public static double mediasOsumas(int numeros, boolean operacion) {
         Scanner sc = new Scanner(System.in);
         double num = 0;
@@ -79,6 +85,7 @@ public class pruebaexamen {
         Scanner sc = new Scanner(System.in);
         int opcion;
         do {
+            System.out.println();
             System.out.println("Menú de opciones");
             System.out.println("----------------");
             System.out.println("1.-Función bucles");
@@ -92,7 +99,6 @@ public class pruebaexamen {
                 case 1:
                     System.out.println("Función bucles seleccionada");
                     bucles();
-                    System.out.println();
                     break;
                 case 2:
                     System.out.println("Función cálculos seleccionada");
@@ -101,7 +107,6 @@ public class pruebaexamen {
                     System.out.println("Dime otro número");
                     int num2 = sc.nextInt();
                     System.out.println(calculos(num1, num2));
-                    System.out.println();
                     break;
                 case 3:
                     System.out.println("Función sumaOcalculos seleccionda");
@@ -112,7 +117,6 @@ public class pruebaexamen {
                 case 4:
                     System.out.println("Función pirámide seleccionada");
                     piramide();
-                    System.out.println();
                     break;
                 case 5:
                     System.out.println("Hasta otra!");
