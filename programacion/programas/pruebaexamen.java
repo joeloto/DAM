@@ -27,19 +27,40 @@ public class pruebaexamen {
      */
     public static int calculos(int num1, int num2) {
         int resultado = 1;
+        int acu = 0;
         if (num2 > 0) {
-            for (int i = 0; i < num2; i++) {
-                resultado *= num1;
+            for (int i = 0; i < num2; i++){
+                
             }
         }
         if (num2 < 0) {
-            resultado = num1 % (+num2);
+            resultado = num1 % (+(num2));
         }
         if (num2 == 0) {
             resultado = 10 + (int) (Math.random() * (num1 - 10));
             if (num1 < 10) {
                 resultado = 10 + (int) (Math.random() * (20 - 10));
             }
+        }
+        return resultado;
+    }
+
+    public static double mediasOsumas(int numeros, boolean operacion) {
+        Scanner sc = new Scanner(System.in);
+        double num = 0;
+        double resultado = 0;
+        double acu = 0;
+        for (int i = 0; i < numeros; i++) {
+            System.out.println("Dime un número");
+            num = sc.nextDouble();
+            acu = acu + num;
+        }
+
+        if (operacion == true) {
+            resultado = acu  / numeros;
+        }
+        if (operacion == false) {
+            resultado = acu;
         }
         return resultado;
     }
@@ -53,24 +74,6 @@ public class pruebaexamen {
         }
     }
 
-    public static double mediasOsumas(int numeros, boolean operacion) {
-        Scanner sc = new Scanner(System.in);
-        double num = 0;
-        double resultado = 0;
-        for (int i = 0; i < numeros; i++) {
-            System.out.println("Dime un número");
-            num = sc.nextDouble();
-            acu = acu +num
-        }
-
-        if (operacion == true) {
-            resultado = (acu  / numeros;
-        }
-        if (operacion == false) {
-            resultado = acu
-        }
-        return resultado;
-    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -102,7 +105,7 @@ public class pruebaexamen {
                     break;
                 case 3:
                     System.out.println("Función sumaOcalculos seleccionda");
-                    System.out.println(mediasOsumas(3, false));
+                    System.out.println(mediasOsumas(3, true));
                     break;
                 case 4:
                     System.out.println("Función pirámide seleccionada");
