@@ -44,7 +44,7 @@ public class pruebaexamen {
             }
         }
         if (num2 < 0) { //si num2 es negativo
-            resultado = num1 % (+(num2)); // hace la division del num1 entre el valor absoluto del num2
+            resultado = num1 % ((+num2)); // hace la division del num1 entre el valor absoluto del num2
         }
         if (num2 == 0) { //si num2 es igual a 0
             resultado = 10 + (int) (Math.random() * (num1 - 10)); // numero aleatorio entre 10 y el num1 si el num2 es
