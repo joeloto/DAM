@@ -83,8 +83,7 @@ public class ejercicio9 {
                         int n = Integer.parseInt(a);
                         if (primo(n) == true) {
                             System.out.printf("%d es primo; ", n);
-                        }
-                        if (primo(n) == false) {
+                        } else {
                             System.out.printf("%d no es primo; ", n);
                         }
                     }
@@ -103,7 +102,7 @@ public class ejercicio9 {
                     for (int i = 2; i <= num2; i++) {
                         if (primo(i) == true) {
                             if (i != num2) {
-                                e.write(i);
+                                e.print(i+";");
                             }
                         }
                     }

@@ -32,10 +32,10 @@ public class ejercicio11 {
             // System.out.println(i);
             acu *= i;
         }
-        if (num == 0) {
-            System.out.println("El factorial es: ");
-            return 1;
-        }
+        // if (num == 0) {
+        //    // System.out.println("El factorial es: ");
+        //     return 1;
+        // }
         return acu;
     }
 
@@ -45,9 +45,10 @@ public class ejercicio11 {
      * @param num de que número se quiere hacer el coseno
      * @return devuelve el resultado del coseno
      */
-    public static double coseno(int num) {
+    public static double coseno(double num) {
         double resultado = 1 - (ejercicio6.potencia(num, 2) / factorial(2))
-                + (ejercicio6.potencia(num, 4) / factorial(4)) + (ejercicio6.potencia(num, 6) / factorial(6));
+                + (ejercicio6.potencia(num, 4) / factorial(4)) 
+                - (ejercicio6.potencia(num, 6) / factorial(6));
         return resultado;
     }
 
@@ -58,10 +59,16 @@ public class ejercicio11 {
         // System.out.println("El factorial de " + num + " es " + factorial(num));
 
         // Coseno:
-        System.out.println("Coseno:\n");
-        System.out.println("Dime un número para hacer su coseno");
-        int x = sc.nextInt();
-        System.out.println();
-        System.out.println("El coseno es " + coseno(x) + "\n");
+        // System.out.println("Coseno:\n");
+        // System.out.println("Dime un número para hacer su coseno");
+        // int x = sc.nextInt();
+        // System.out.println();
+        // System.out.println("El coseno es " + coseno(x) + "\n");
+
+        double error = 0;
+        for (double angulo = 0.1; angulo < 1; angulo += 0.1) {
+            error = coseno(angulo)-Math.cos(angulo);
+        }
+        System.out.printf("El error absoluto es %8.5f", error);
     }
 }
