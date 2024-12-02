@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox exercises</title>
+    <style>
+        .container{
+            width: 100%;
+            height: 400px;
+            background-color: blue;
+            display: flex;
+            /* flex-direction: column-reverse; /*por defecto es row */
+            /*flex-wrap: wrap; /*por defecto es nowrap*/
+            /*align-content: space-around; /*necesito tener la propiedad wrap aplicada para utilizar align-content*/
+        }
+        .item{
+            width: 220px;
+            height: 70px;
+            background-color: aquamarine;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center; /*centra con respecto al eje principal */
+            align-items: center; /*centra con respecto al eje secundario*/
+            margin: 15px;
+        }
+        .tamanho{
+            font-size: 5em;
+            height: 100px;
+        }
+        /*caracteristicas flex para los items*/
+        .uno{
+            order:1;
+            flex-grow: 1;
+        }
+        .dos{
+            order: 2;
+        }
+        .tres{
+            flex: 0 0;
+        }
+        .reducir{
+            flex-shrink: 3;
+        }
+        .posicionar{
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item posicionar">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item reducir">Item 5</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 7</div>
+        <div class="item">Item 8</div>
+        <!--<div class="item">Item 9</div>
+        <div class="item">Item 10</div>
+        <div class="item">Item 11</div>
+        <div class="item">Item 12</div>
+        <div class="item">Item 13</div>
+        <div class="item">Item 14</div>
+        <div class="item">Item 15</div>
+        <div class="item">Item 16</div>
+        <div class="item">Item 17</div>
+        <div class="item">Item 18</div>
+        <div class="item">Item 19</div>
+        <div class="item">Item 20</div> -->
+    </div>
+</body>
+</html>
