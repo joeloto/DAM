@@ -34,9 +34,22 @@
         /* Add your flexbox CSS below here */
         section{
             display: flex;
-            flex-direction: column;
-            
         }
+        /* .uno{
+            flex-shrink: 3;
+        }
+        .dos{
+            flex-shrink: 3;
+        }
+        .tres{
+            flex-grow: 3;
+        } */
+         article{
+            flex:1 150px;
+         }
+         article::nth-type(3){
+            flex:3 150px;
+         }
     </style>
 </head>
 
@@ -45,7 +58,7 @@
         <h1>Sample flexbox example</h1>
     </header>
     <section>
-        <article class="uno">
+        <article>
             <h2>First article</h2>
             <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones
                 retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork
@@ -53,7 +66,8 @@
                 PBR&B tattooed trust fund twee, leggings salvia
                 iPhone photo booth health goth gastropub hammock.</p>
         </article>
-        <article class="dos">
+        <article>
+            <h2>First article</h2>
             <h2>Second article</h2>
             <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones
                 retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork
@@ -61,7 +75,8 @@
                 PBR&B tattooed trust fund twee, leggings salvia
                 iPhone photo booth health goth gastropub hammock.</p>
         </article>
-        <article class="tres">
+        <article>
+            <h2>First article</h2>
             <h2>Third article</h2>
             <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones
                 retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork
