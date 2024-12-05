@@ -1,0 +1,13 @@
+1	SELECT CEIL(Puntos) AS 'entero superior' FROM `jugadores`;
+2	SELECT FLOOR(Minutos) AS 'entero inferior' FROM `jugadores`;
+3	SELECT COUNT(DISTINCT(Valoracion)) AS 'nº de valoraciones distintas' FROM `jugadores`;
+4	SELECT RAND() * (1 - 0) + 0 AS 'aleatorio uno', RAND() * (1 - 0) + 0 AS 'aleatorio dos', RAND() * (1 - 0) + 0 AS 'aleatorio tres' FROM `jugadores` LIMIT 1;
+5	SELECT ROUND(Minutos,2) AS 'redondeo' FROM `jugadores`;
+6	SELECT TRUNCATE(RAND(0,3)) AS 'nun truncado' FROM `jugadores` WHERE 1
+7	SELECT Nombre, Minutos, CEIL(Minutos) AS 'entero superior' FROM `jugadores`;
+8	SELECT GREATEST(33, 32, 44, 22, 24, 42, 34, 4, 25, 19) AS 'dorsal más alto', LEAST(33, 32, 44, 22, 24, 42, 34, 4, 25, 9) AS 'dorsal más bajo' FROM `jugadores`;
+9	SELECT Nombre, Rebotes, FLOOR(Rebotes) AS 'forma 1', TRUNCATE (Rebotes,0) AS 'formal' FROM `jugadores` WHERE FLOOR(Rebotes) = 5;
+10 	SELECT COALESCE(NULL,NULL,Puntos) AS 'valor no nulo' FROM `jugadores` LIMIT 1;
+11	SELECT AVG(Partidos) AS 'valor medio', COUNT(Nombre) AS 'num jugadores' FROM `jugadores`;
+12
+13	
