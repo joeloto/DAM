@@ -19,7 +19,7 @@ public class Geometria {
     }
 
     public double getBase() {
-        return altura;
+        return base;
     }
 
     public void setBase(double base) {
@@ -40,13 +40,18 @@ public class Geometria {
 
     public Geometria(double base, double altura, boolean figura){
         this.figura = figura;
-        figura = true;
+     //   figura = true;
         this.altura = altura;
         this.base = base;
     }
 
     public double area() {
-        double area2 = (getAltura() * getBase()) / 2;
+        double area2 = 0;
+        if (figura == false) {
+            area2 = (getAltura() * getBase()) / 2;
+        }else {
+            area2 = getAltura() * getBase();
+        }
         return area2;
     }
 
@@ -56,7 +61,7 @@ public class Geometria {
             perimetro = getAltura() + getBase() + diagonal();
             return perimetro;
         } else {
-            perimetro = getBase() * 4;
+            perimetro = (getBase() * 2) + (getAltura() * 2);
         }
         return perimetro;
     }
@@ -68,10 +73,9 @@ public class Geometria {
     public String tipo(){
         String figura2 = "";
         if (figura == true){
-            figura2 = "Rectangulo";
-        }
-        if (figura == false){
-            figura2 = "Triangulo";
+            figura2 = "rectángulo";
+        }else{
+            figura2 = "triángulo";
         }
         return figura2;
     }

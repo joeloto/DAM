@@ -35,4 +35,26 @@ public class Fecha {
     public void setYear(int year){
         this.year = year;
     }
+
+    public Fecha(){
+        setDia(17);
+        setMes(12);
+        setYear(2003);
+    }
+
+    public Fecha(int mes, int dia, int year){
+        this.dia = dia;
+        this.mes = mes;
+        this.year = year;
+    }
+
+    public String fechaFormateada(boolean cadena){
+        String cadena2 = "";
+        if (cadena == true) {
+            cadena2 = dia + "/" + "/" + year;
+        } else{
+            
+        }
+        return cadena2;
+    }
 }
