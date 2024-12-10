@@ -1,0 +1,13 @@
+ Indica los pasos que sigues para realizar las siguientes acciones.
+
+- Crear una carpeta denominada C:\TEMP.
+	1.Ir al explorador de archivos.
+	2.Acceder a disco local.
+	3.Crear una carpeta dentro de disco local
+- Crear nuevo usuario y darle control de acceso sólo de lectura a dicha carpeta.
+	1. net user usu1 123456 /add
+	2. icacls C:\TEMP /grant usu1:R
+- A ese nuevo usuario se le debe además denegar la escritura en su carpeta "Escritorio".
+	1. Acceder al escritorio dentro de la carpeta del usuario, editar los permisos y denegar la escritura.
+- Finalmente se debe de evitar que pueda ejecutar el Paint o un programa similar.
+- Entrar con la cuenta del usuario modificado y probar los cambios realizados.

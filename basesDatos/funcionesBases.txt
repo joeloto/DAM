@@ -15,7 +15,14 @@
 15	SELECT BIN(CHAR_LENGTH(Nombre)) AS 'nombre en binario' FROM `jugadores`;
 16	SELECT CONCAT('El jugador ',Nombre,' jugó en los lakers') AS 'unido' FROM `jugadores`;
 17	SELECT REPLACE(REPLACE(nombre, 'a', '1'), ' ', '_') AS 'unido' FROM `jugadores`;
-18	SELECT Nombre, SUBSTRING(Nombre,2,1), SUBSTRING(Nombre, -2,1) FROM `jugadores` WHERE SUBSTRING(Nombre,2,1)=SUBSTRING(Nombre, -2,1)
-19	SELECT CURRENT_TIMESTAMP AS 'fecha más hora', CURRENT_DATE AS 'fecha', CURRENT_TIME AS 'hora';
+18	SELECT Nombre, SUBSTRING(Nombre,2,1), SUBSTRING(Nombre, -2,1) FROM `jugadores` WHERE SUBSTRING(Nombre,2,1)=SUBSTRING(Nombre, -2,1);
+19	SELECT NOW() AS 'fecha más hora', CURRENT_DATE AS 'fecha', CURRENT_TIME AS 'hora';
 20	SELECT DAYNAME(NOW()) AS 'nombre dia actual', MONTH(NOW()) AS 'mes', YEAR(NOW()) AS 'año actual';
 21	SELECT HOUR(NOW()) AS 'horas', MINUTE(NOW()) AS 'minutos', SECOND(NOW()) AS 'segundos' FROM `jugadores` LIMIT 1;	
+22	SELECT NOW() AS 'ahora', DATE_ADD(NOW(), INTERVAL 1 DAY) AS 'ahora + 1 dia';
+23	SELECT CONCAT('Hoy es el dia ', DAY(NOW()), ' del mes ',MONTH(NOW()), ' del año ', YEAR(NOW())) AS 'fecha';
+	SELECT DATE_FORMAT(CURRENTE_DATE() "Hoy es el dia %D del mes %M del año %Y");
+24	SELECT CONCAT('La hora es ', HOUR(NOW()), ' y los minutos ',MINUTE(NOW())) AS 'horas y minutos';
+	SELECT TIME_FORMAT(CURRENT_TIME(), 'Es la hora %H y los minutos %i') AS 'hora y minutos';
+25	SELECT BINARY "abcdef" = "abcDEF" AS 'sensible', "abcdef" = "abcDEF" AS 'no sensible';
+	SELECT STRCMP("abcdef","abcDEF") AS 'sensible', "abcdef" = "abcDEF" AS 'no sensible';
