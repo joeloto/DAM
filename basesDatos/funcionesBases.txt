@@ -3,11 +3,19 @@
 3	SELECT COUNT(DISTINCT(Valoracion)) AS 'nº de valoraciones distintas' FROM `jugadores`;
 4	SELECT RAND() * (1 - 0) + 0 AS 'aleatorio uno', RAND() * (1 - 0) + 0 AS 'aleatorio dos', RAND() * (1 - 0) + 0 AS 'aleatorio tres' FROM `jugadores` LIMIT 1;
 5	SELECT ROUND(Minutos,2) AS 'redondeo' FROM `jugadores`;
-6	SELECT TRUNCATE(RAND(0,3)) AS 'nun truncado' FROM `jugadores` WHERE 1
+6	SELECT TRUNCATE(RAND(0,3)) AS 'nun truncado' FROM `jugadores`;
 7	SELECT Nombre, Minutos, CEIL(Minutos) AS 'entero superior' FROM `jugadores`;
 8	SELECT GREATEST(33, 32, 44, 22, 24, 42, 34, 4, 25, 19) AS 'dorsal más alto', LEAST(33, 32, 44, 22, 24, 42, 34, 4, 25, 9) AS 'dorsal más bajo' FROM `jugadores`;
 9	SELECT Nombre, Rebotes, FLOOR(Rebotes) AS 'forma 1', TRUNCATE (Rebotes,0) AS 'formal' FROM `jugadores` WHERE FLOOR(Rebotes) = 5;
 10 	SELECT COALESCE(NULL,NULL,Puntos) AS 'valor no nulo' FROM `jugadores` LIMIT 1;
 11	SELECT AVG(Partidos) AS 'valor medio', COUNT(Nombre) AS 'num jugadores' FROM `jugadores`;
-12
-13	
+12	SELECT SUM(Partidos) AS 'suma', MAX(Partidos) AS 'máximo', MIN(Partidos) AS 'mínimo' FROM `jugadores`;
+13	SELECT ROUND(GREATEST(puntos / 5, rebotes / 2, asistencias), 2) AS 'mayor' FROM `jugadores`;
+14	SELECT UPPER(Nombre) AS 'mayúsculas', CHAR_LENGTH(Nombre) AS 'long', SUBSTRING(Nombre,1,5) AS 'primeros cinco caracteres' FROM `jugadores`;
+15	SELECT BIN(CHAR_LENGTH(Nombre)) AS 'nombre en binario' FROM `jugadores`;
+16	SELECT CONCAT('El jugador ',Nombre,' jugó en los lakers') AS 'unido' FROM `jugadores`;
+17	SELECT REPLACE(REPLACE(nombre, 'a', '1'), ' ', '_') AS 'unido' FROM `jugadores`;
+18	SELECT Nombre, SUBSTRING(Nombre,2,1), SUBSTRING(Nombre, -2,1) FROM `jugadores` WHERE SUBSTRING(Nombre,2,1)=SUBSTRING(Nombre, -2,1)
+19	SELECT CURRENT_TIMESTAMP AS 'fecha más hora', CURRENT_DATE AS 'fecha', CURRENT_TIME AS 'hora';
+20	SELECT DAYNAME(NOW()) AS 'nombre dia actual', MONTH(NOW()) AS 'mes', YEAR(NOW()) AS 'año actual';
+21	SELECT HOUR(NOW()) AS 'horas', MINUTE(NOW()) AS 'minutos', SECOND(NOW()) AS 'segundos' FROM `jugadores` LIMIT 1;	
