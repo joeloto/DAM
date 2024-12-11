@@ -10,22 +10,22 @@ public class Fecha {
         return dia;
     }
 
-    public int setDia(int dia) {
+    public void setDia(int dia) {
         if (dia < 1 || dia > 31) {
-            return 1;
+            dia = 1;
         }
-        return dia;
+        this.dia = dia;
     }
 
-    public int getMes(int dia) {
+    public int getMes() {
         return mes;
     }
 
-    public int setMes(int mes) {
+    public void setMes(int mes) {
         if (mes < 1 || mes > 12) {
             mes = 1;
         }
-        return mes;
+        this.mes = mes;
     }
 
     public int getYear() {
@@ -97,6 +97,7 @@ public class Fecha {
     }
 
     public static int DifYear(Fecha fecha1, Fecha fecha2){
-        
+        int resta = fecha1.getYear() - fecha2.getYear();
+        return resta;
     }
 }
