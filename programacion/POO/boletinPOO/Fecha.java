@@ -1,60 +1,102 @@
 package programacion.POO.boletinPOO;
 
 public class Fecha {
-    
+
     private int dia;
     private int mes;
     private int year;
 
-    public int getDia(){
+    public int getDia() {
         return dia;
     }
 
-    public int setDia(int dia){
+    public int setDia(int dia) {
         if (dia < 1 || dia > 31) {
             return 1;
         }
         return dia;
     }
 
-    public int getMes(int dia){
+    public int getMes(int dia) {
         return mes;
     }
 
-    public int setMes(int mes){
+    public int setMes(int mes) {
         if (mes < 1 || mes > 12) {
             mes = 1;
         }
         return mes;
     }
 
-    public int getYear(){
+    public int getYear() {
         return year;
     }
 
-    public void setYear(int year){
+    public void setYear(int year) {
         this.year = year;
     }
 
-    public Fecha(){
+    public Fecha() {
         setDia(17);
         setMes(12);
         setYear(2003);
     }
 
-    public Fecha(int mes, int dia, int year){
+    public Fecha(int mes, int dia, int year) {
         this.dia = dia;
         this.mes = mes;
         this.year = year;
     }
 
-    public String fechaFormateada(boolean cadena){
+    public String fechaFormateada(boolean cadena) {
         String cadena2 = "";
         if (cadena == true) {
-            cadena2 = dia + "/" + "/" + year;
-        } else{
-            
+            cadena2 = dia + "/" + mes + "/" + year;
+        } else {
+            switch (mes) {
+                case 1:
+                    cadena2 = "enero";
+                    break;
+                case 2:
+                    cadena2 = "febrero";
+                    break;
+                case 3:
+                    cadena2 = "marzo";
+                    break;
+                case 4:
+                    cadena2 = "abril";
+                    break;
+                case 5:
+                    cadena2 = "mayo";
+                    break;
+                case 6:
+                    cadena2 = "junio";
+                    break;
+                case 7:
+                    cadena2 = "julio";
+                    break;
+                case 8:
+                    cadena2 = "agosto";
+                    break;
+                case 9:
+                    cadena2 = "septiembre";
+                    break;
+                case 10:
+                    cadena2 = "octubre";
+                    break;
+                case 11:
+                    cadena2 = "noviembre";
+                    break;
+                case 12:
+                    cadena2 = "diciembre";
+                    break;
+            }
+            cadena2 = dia + " de " + cadena2 + " de " + year;
         }
         return cadena2;
+    }
+
+    public static int DifYear(Fecha fecha1, Fecha fecha2){
+        
     }
 }
