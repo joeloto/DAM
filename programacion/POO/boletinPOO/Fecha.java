@@ -42,10 +42,10 @@ public class Fecha {
         setYear(2003);
     }
 
-    public Fecha(int mes, int dia, int year) {
-        this.dia = dia;
-        this.mes = mes;
-        this.year = year;
+    public Fecha(int mes, int dia, int year) {//TODO pueden entrar valores erróneos
+        setDia(dia);
+        setMes(mes);
+        setYear(year);
     }
 
     public String fechaFormateada(boolean cadena) {
@@ -97,7 +97,7 @@ public class Fecha {
     }
 
     public static int DifYear(Fecha fecha1, Fecha fecha2){
-        int resta = fecha1.getYear() - fecha2.getYear();
+        int resta = Math.abs(fecha1.getYear()-fecha2.getYear());//TODO valor abs
         return resta;
     }
 }

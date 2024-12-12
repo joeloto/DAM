@@ -26,3 +26,9 @@
 	SELECT TIME_FORMAT(CURRENT_TIME(), 'Es la hora %H y los minutos %i') AS 'hora y minutos';
 25	SELECT BINARY "abcdef" = "abcDEF" AS 'sensible', "abcdef" = "abcDEF" AS 'no sensible';
 	SELECT STRCMP("abcdef","abcDEF") AS 'sensible', "abcdef" = "abcDEF" AS 'no sensible';
+26	Que tardó casi 8 segundos en ejecutar la sentencia 100000000 veces.
+27	SELECT CONNECTION_ID() AS 'id', CURRENT_USER() AS 'usuario', FOUND_ROWS() AS 'filas obtenidas';
+28	SELECT Nombre, AES_ENCRYPT('Nombre',123456) AS 'nombre cifrado' FROM `jugadores`;
+29	SELECT Nombre, AES_ENCRYPT(Nombre,123456) AS 'nombre cifrado', AES_DECRYPT(AES_ENCRYPT(Nombre,123456),123456) AS 'nombre descifrado' FROM `jugadores`;
+30	Se obtiene NULL
+31	SELECT FORMAT(45345234.435, 4) AS 'numero con formato'; 

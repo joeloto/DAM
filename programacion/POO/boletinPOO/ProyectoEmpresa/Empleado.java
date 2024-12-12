@@ -75,7 +75,15 @@ public class Empleado {
     }
 
     public double atracoHacienda(){
-        
+        double dineroAtraco = 0;
+        if (salario < 6000) {
+           dineroAtraco =  salario * 0.075;
+        } else if (salario >= 6000 && salario < 30000) {
+            dineroAtraco =  salario * 0.15;
+        } else{
+            dineroAtraco =  salario * 0.2;
+        }
+        return dineroAtraco;
     }
     
 }
