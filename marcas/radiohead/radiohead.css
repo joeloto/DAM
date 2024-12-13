@@ -100,12 +100,12 @@ article {
 #caja2 {
     float: right;
     background-color: red;
-    height: 240px;
+    height: 290px;
     width: 320px;
     color: white;
     border-radius: 16%;
     position: relative;
-    top: -550px;
+    top: -700px;
     right: 360px;
 
 }
@@ -117,8 +117,9 @@ article {
 }
 
 #caja2 li {
+    font-size: 20px;
     position: relative;
-    bottom: 20px;
+    bottom: 25px;
 }
 
 a {
@@ -168,12 +169,12 @@ a:hover {
 
 #caja3 {
     float: right;
-    height: 290px;
+    height: 390px;
     width: 52%;
     border-radius: 50px;
     background-color: red;
     position: relative;
-    bottom: 290px;
+    bottom: 390px;
     left: 305px;
 }
 
@@ -185,7 +186,7 @@ a:hover {
 }
 
 #caja3 p {
-    font-size: 18px;
+    font-size: 23px;
     margin-top: 3px;
     margin-left: 20px;
     margin-right: 9px;
@@ -199,20 +200,13 @@ a:hover {
     height: 240px;
     float: right;
     position: relative;
-    top: -841px;
+    bottom: 1090px;
     left: -8px;
 }
 
 .rainbowsimg img {
     border-radius: 45px;
     box-shadow: 0 0 7px 1px black;
-    ;
     width: 98%;
-    height: 242px;
+    height: 292px;
 }
-
-/* .zigzag{
-    position: relative;
-    bottom: 479px;
-    padding: 1px;
-} */
