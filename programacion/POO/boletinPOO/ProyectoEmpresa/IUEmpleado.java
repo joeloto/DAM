@@ -13,12 +13,12 @@ public class IUEmpleado {
 
     // mostra
     public void mostrar() {
-        System.out.println(empleado.getNombre());
-        System.out.println(empleado.getApellidos());
-        System.out.println(empleado.getEdad());
-        System.out.println(empleado.getDni());
-        System.out.println(empleado.getSalario());
-        System.out.println(empleado.getIrpf());
+        System.out.println("Nombre: " + empleado.getNombre());
+        System.out.println("Apellidos: " + empleado.getApellidos());
+        System.out.println("Edad: " + empleado.getEdad());
+        System.out.println("DNI: " + empleado.getDni());
+        System.out.println("Salario: " + empleado.getSalario());
+        System.out.println("IRPF: " + empleado.getIrpf());
     }
 
     public void pedir() {
@@ -28,6 +28,7 @@ public class IUEmpleado {
         String apellidos = sc.nextLine();
         System.out.println("Dime una edad");
         int edad = sc.nextInt();
+        sc.nextLine();
         System.out.println("Dime un dni");
         String dni = sc.nextLine();
         System.out.println("Dime un salario");
@@ -52,9 +53,10 @@ public class IUEmpleado {
                 System.out.println("DNI: " + empleado.getDni());
                 break;
             case 4:
-                System.out.println("Salario e IRPF: " + empleado.getSalario() + empleado.getIrpf());
+                System.out.printf("El salario es %.0f y el IRPF es del %.0f porciento" , empleado.getSalario() , empleado.getIrpf());
+                break;
             case 5:
-                System.out.println("Hacienda se lleva: " + empleado.atracoHacienda());
+                System.out.println("Hacienda se lleva: " + empleado.parteHacienda());
             default:
                 break;
         }
