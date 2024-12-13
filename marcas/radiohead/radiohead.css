@@ -1,34 +1,40 @@
-html{
+html {
     height: 500px;
-    width: 1260px;
+    width: 100%;
 }
-body{
+
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
+    width: 100%;
 }
-header{
+
+header {
     width: 100%;
     height: 70px;
 }
-.oso{
+
+.oso {
     position: relative;
     float: left;
     margin-left: 10px;
     top: 4px;
 }
-.largo{
+
+.largo {
     position: relative;
     float: right;
     margin-right: 10px;
     top: 10px;
 }
-hr{
-    width: 100%;
-    border-color:red;
+
+hr {
+    border-color: red;
     position: relative;
     top: 5px;
 }
-nav a{
+
+nav a {
     color: red;
     text-decoration: none;
     position: relative;
@@ -36,51 +42,62 @@ nav a{
     padding-right: 40px;
     margin-left: 10px;
 }
-nav a:hover{
+
+nav a:hover {
     color: rgb(0, 217, 255);
 }
-section{
+
+section {
     width: 100%;
     height: 550px;
     margin-left: 5px;
     position: relative;
     top: 30px;
 }
-article{
+
+article {
     box-shadow: 0 0 7px 1px black;
 }
+
 #caja1 {
     background-color: red;
     width: 45%;
-    height: 550px;
+    height: 700px;
     border-radius: 10%;
     margin-left: 5px;
 }
-#caja1 h2{
-    color:white;
+
+#caja1 h2 {
+    color: white;
     text-align: center;
     position: relative;
     top: 7px;
 }
-#caja1 p{
+
+#caja1 p {
     margin-left: 12px;
     margin-right: 9px;
-    font-size: 20px;
+    font-size: 27px;
     color: white;
-}#caja1 li{
+}
+
+#caja1 li {
     color: white;
     position: relative;
     padding-top: 2px;
-    bottom: 8px ;
-}#caja1 img{
+    bottom: 8px;
+}
+
+#caja1 img {
     width: 300px;
     height: 200px;
     position: relative;
     left: 130px;
     border-radius: 40px;
-    bottom: 15px;
+    bottom: 3px;
 }
-#caja2{
+
+#caja2 {
     float: right;
     background-color: red;
     height: 240px;
@@ -89,53 +106,67 @@ article{
     border-radius: 16%;
     position: relative;
     top: -550px;
-    right: 340px;
-    
+    right: 360px;
+
 }
-#caja2 h2{
+
+#caja2 h2 {
     text-align: center;
     position: relative;
     top: -16px;
 }
-#caja2 li{
+
+#caja2 li {
     position: relative;
     bottom: 20px;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
-a:hover{
+
+a:hover {
     font-style: italic;
 }
-.honey:hover{
+
+.honey:hover {
     color: rgb(255, 213, 0);
 }
-.bends:hover{
+
+.bends:hover {
     color: rgb(151, 51, 51);
 }
-.computer:hover{
+
+.computer:hover {
     color: rgb(76, 176, 216);
 }
-.kida:hover{
+
+.kida:hover {
     color: rgb(43, 43, 180);
 }
-.amnesiac:hover{
+
+.amnesiac:hover {
     color: black;
 }
-.hail:hover{
+
+.hail:hover {
     color: rgb(255, 153, 0);
 }
-.rainbows:hover{
+
+.rainbows:hover {
     color: purple;
 }
-.limbs:hover{
+
+.limbs:hover {
     color: greenyellow;
 }
-.moon:hover{
+
+.moon:hover {
     color: rgb(78, 75, 75);
 }
-#caja3{
+
+#caja3 {
     float: right;
     height: 290px;
     width: 52%;
@@ -143,95 +174,45 @@ a:hover{
     background-color: red;
     position: relative;
     bottom: 290px;
-    left: 314px;
+    left: 305px;
 }
-#caja3 h2{
+
+#caja3 h2 {
     text-align: center;
     color: white;
     position: relative;
     top: -16px;
 }
-#caja3 p{
+
+#caja3 p {
     font-size: 18px;
     margin-top: 3px;
     margin-left: 20px;
     margin-right: 9px;
     color: white;
     position: relative;
-    bottom: 20px;
+    bottom: 7%;
 }
 
-#caja4{
+.rainbowsimg {
     width: 26%;
     height: 240px;
     float: right;
-    background-color: red;
     position: relative;
     top: -841px;
-    border-radius: 45px;
-    margin-right: 15px;
-}
-#caja4 h2{
-    color: white;
-    text-align: center;
-    position: relative;
-    top: -16px;
-}
-#caja4 p{
-    color: white;
-    font-size: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
-    position: relative;
-    bottom: 20px;
-    margin-top: 3px;
-}
-.telex:hover{
-    color: black;
-}
-select{
-    width:50%;
-    height:50px;
-    border-style: none;
-    font-size: 1em;
-    position: relative;
-    top: -6px;
-    left: 30px;
-    border-radius: 10px;
-}
-fieldset{
-    width: 290px;
-    height: 90px;
-    position: relative;
-    left: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 35px;
-    bottom: 34px;
-}
-fieldset h5{
-    float: left;
-    position: relative;
-    top: -4px;
-    color: white;
-}
-button{
-    position: relative;
-    top: 40px;
-    right: 120px;
-    border-radius: 15px;
-    background-color: white;
-    color: black;
-}
-fieldset select,h5{
-    position: relative;
-    bottom: 20px;
-}
-footer{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    left: -8px;
 }
 
+.rainbowsimg img {
+    border-radius: 45px;
+    box-shadow: 0 0 7px 1px black;
+    ;
+    width: 98%;
+    height: 242px;
+}
+
+/* .zigzag{
+    position: relative;
+    bottom: 479px;
+    padding: 1px;
+} */
