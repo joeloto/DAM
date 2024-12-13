@@ -62,7 +62,7 @@ public class Empleado {
         this.apellidos = " ";
         this.dni = " ";
         this.salario = 0;
-        this.irpf = 0;
+        this.irpf = 7.5;
         this.edad = 0;
     }
 
