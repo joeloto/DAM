@@ -1,5 +1,4 @@
 html {
-    height: 500px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -99,7 +98,7 @@ article {
     position: relative;
     left: 130px;
     border-radius: 40px;
-    bottom: 3px;
+    bottom: 15px;
 }
 
 #caja2 {
@@ -111,7 +110,7 @@ article {
     border-radius: 16%;
     position: relative;
     top: -700px;
-    right: 360px;
+    right: 350px;
 
 }
 
@@ -214,4 +213,36 @@ a:hover {
     box-shadow: 0 0 7px 1px black;
     width: 98%;
     height: 292px;
+}
+
+.greenwood{
+    margin-left: 5px;
+}
+.greenwood img{
+    border-radius: 50px;
+    position: relative;
+    bottom: 370px;
+    box-shadow: 0 0 7px 1px black;
+}
+.caja4{
+    width: 70%;
+    height: 500px;
+    background-color: red;
+    float: right;
+    border-radius: 50px;
+    position: relative;
+    bottom: 875px;
+    margin-right: 12px;
+    box-shadow: 0 0 7px 1px black;
+    color: white;
+}
+.caja4 h2{
+    text-align: center;
+    position: relative;
+    top: -16px;
+}
+.caja4 li{
+    font-size: 35px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
