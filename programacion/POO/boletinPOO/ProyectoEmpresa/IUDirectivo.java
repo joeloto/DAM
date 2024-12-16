@@ -10,8 +10,7 @@ public class IUDirectivo {
     public IUDirectivo(Directivo directivo) {
         this.directivo = directivo;
     }
-
-    // mostra
+    
     public void mostrar() {
         System.out.println("Nombre: " + directivo.getNombre());
         System.out.println("Apellidos: " + directivo.getApellidos());

@@ -53,7 +53,7 @@ public class IUEmpleado {
                 System.out.println("DNI: " + empleado.getDni());
                 break;
             case 4:
-                System.out.printf("El salario es %.0f y el IRPF es del %.0f porciento" , empleado.getSalario() , empleado.getIrpf());
+                System.out.printf("El salario es %.0f y el IRPF es del %.2f %%\n" , empleado.getSalario() , empleado.getIrpf());
                 break;
             case 5:
                 System.out.println("Hacienda se lleva: " + empleado.parteHacienda());

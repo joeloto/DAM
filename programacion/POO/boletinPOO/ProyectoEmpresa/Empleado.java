@@ -1,6 +1,6 @@
 package programacion.POO.boletinPOO.ProyectoEmpresa;
 
-import java.util.Set;
+ 
 
 public class Empleado {
     private String nombre;
@@ -63,7 +63,7 @@ public class Empleado {
     }
 
     public Empleado() {
-        this.nombre = " ";
+        this.nombre = "";
         this.apellidos = " ";
         this.dni = " ";
         this.salario = 0;

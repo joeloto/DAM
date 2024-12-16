@@ -81,6 +81,7 @@ public class Directivo {
     }
 
     public double beneficioTotal(double beneficioEmpresa){
+        beneficioEmpresa = 200000;
         if (beneficioEmpresa < 0) {
             return 0;
         }
