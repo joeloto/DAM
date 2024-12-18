@@ -5,7 +5,7 @@ public class PrincipalFecha {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Fecha fecha = new Fecha();
-        Fecha f = new Fecha();//TODO pedir datos a usuri
+        Fecha f = new Fecha();
 
         System.out.println("Primera fecha:");
         System.out.println("Día:");

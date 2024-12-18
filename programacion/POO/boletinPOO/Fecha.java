@@ -42,7 +42,7 @@ public class Fecha {
         setYear(2003);
     }
 
-    public Fecha(int mes, int dia, int year) {//TODO pueden entrar valores erróneos
+    public Fecha(int mes, int dia, int year) {
         setDia(dia);
         setMes(mes);
         setYear(year);
@@ -97,7 +97,7 @@ public class Fecha {
     }
 
     public static int DifYear(Fecha fecha1, Fecha fecha2){
-        int resta = Math.abs(fecha1.getYear()-fecha2.getYear());//TODO valor abs
+        int resta = Math.abs(fecha1.getYear()-fecha2.getYear());
         return resta;
     }
 }
