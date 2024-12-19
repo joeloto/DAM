@@ -1,4 +1,4 @@
-package programacion.POO.boletinPOO;
+package programacion.POO.boletinPOO.ZORK;
 
 public class Enemigo {
     

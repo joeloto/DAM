@@ -1,4 +1,4 @@
-package programacion.POO.boletinPOO;
+package programacion.POO.boletinPOO.ZORK;
 
 public class Protagonista {
     
@@ -53,14 +53,24 @@ public class Protagonista {
         setVidas(vidas);
     }
 
-    public String atacar(int arma){
+    public String atacar(){
         String combate = "";
-        if (getArma() >= 50) {
+        if (arma >= 50) {
             combate = "Has derrotado al enemigo";
         } else {
             combate = "Has sido derrotado por el enemigo";
         }
         return combate;
+    }
+
+    public String vida(){
+        String vivir = "";
+        if (vidas == 0) {
+            vivir ="HAS MUERTO";
+        } else{
+            vivir = "Sigues vivo!";
+        }
+        return vivir;
     }
 
     
