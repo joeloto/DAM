@@ -37,3 +37,8 @@
 37  SELECT APELLIDO, AES_ENCRYPT(APELLIDO,OFICIO) AS 'clave', AES_DECRYPT(AES_ENCRYPT(APELLIDO,OFICIO),OFICIO) AS 'usuario' FROM `empleados`;
 38  SELECT CURRENT_TIME() AS 'hora', CURRENT_USER() AS 'usuario', DATABASE() AS 'base de datos' FROM `empleados`;
 39  SELECT REPLACE('hola mundo','ola','ello') AS 'reemplazado';
+40  SELECT MAX(FECHA_ALT) AS 'fecha mas alta' FROM `empleados`;
+41  SELECT LEFT(APELLIDO,4) AS '4 carac' FROM `empleados`;
+42      
+43  SELECT LOWER(APELLIDO) AS 'minusculas' FROM `empleados` 
+44  
