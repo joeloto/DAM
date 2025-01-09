@@ -2,7 +2,7 @@ package programacion.arrays;
 
 import java.util.*;
 
-public class calculos {
+public class act1apuntes {
 
     public static double media(double[] vector) {
         double acu = 0;
