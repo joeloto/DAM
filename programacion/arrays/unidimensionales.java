@@ -1,6 +1,6 @@
 package programacion.arrays;
 
-public class unidimensionales {
+public class Unidimensionales {
 
     public static void main(String[] args) {
         double[] temperaturas = new double[4];

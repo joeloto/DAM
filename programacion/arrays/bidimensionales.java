@@ -1,6 +1,6 @@
 package programacion.arrays;
 
-public class bidimensionales {
+public class Bidimensionales {
     public static void main(String[] args) {
         int[][] temp = new int[7][4];
 
