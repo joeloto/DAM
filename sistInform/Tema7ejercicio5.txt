@@ -1,0 +1,14 @@
+Indica los pasos para:
+
+-Evitar que salvo el administrador nadie cambie la hora en el ordenador.
+    1. Acceder a las directivas a través de la consola escribiendo gpedit.msc
+    2. Desplegar directivas locales y acceder a "Asignación de derechos de usuario".
+    3. Buscar la opción de cambiar hora del sistema, doble click en ella.
+    4. Quitar todos los grupos menos los administradores.
+
+-Obligar a iniciar sesión para poder apagar el ordenador.
+    1. Acceder a las directivas a través de la consola escribiendo gpedit.msc
+    2. Desplegar directivas locales y acceder a "Opciones de seguridad".
+    3. Buscar la opción de apado sin iniciar sesión, doble click en ella y marcar deshabilitada.
+
+-Forzar un fondo de pantalla para todos los usuarios.
