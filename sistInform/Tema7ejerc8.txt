@@ -1,0 +1,14 @@
+Desde el CMD
+- Crear un nuevo tipo de archivo denominado archivoSO que ejecute el Notepad (está en el directorio
+apuntado por la variable de entorno SystemRoot) con un parámetro.
+Después asociad las extensiones .SO a ese tipo.
+    1. ftype archivoOS="%SystemRoot%\system32\notepad.exe" "%1"
+    2. Asociación: assoc .SO=archivoOS
+
+- Finalmente borra la asociación.
+    1.assoc .SO=
+
+- Realiza un archivo por lotes al cual se le pase un tipo de archivo, una extensión y una ruta completa con un
+programa ejecutable y realice la asociación pertinente.
+
+- Averigua el nombre en inglés de las opciones vistas en el apartado Otros elementos del panel de control

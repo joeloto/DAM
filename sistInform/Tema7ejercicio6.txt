@@ -1,0 +1,19 @@
+ Dentro de Directivas locales:
+
+- Coger 2 opciones de seguridad (que no se hayan visto en clase o ejercicios anteriores) y explicarlas
+con vuestra palabras buscando información sobre las mismas en la ayuda y en Internet.
+
+    1.  No mostrar el nombre de usuario al iniciar sesión: dicha configuración sirve para si se desea que 
+        aparezca el nombre de usuario al iniciar sesión.
+    2.  Miembro de dominio: duración máxima de contraseña de cuenta de equipo: define cada cuanto tiempo
+        puede cambiar un usuario la contraseña.
+
+- Realizar lo mismo pero con 2 opciones de Asignación de derechos de usuario
+
+    1.  Cambiar la zona horaria: aquí se asigna quién puede cambiar la zona horaria del sistema.
+    2.  Depurar programas: en este apartado se designa que tiene el poder de poder depurar programas.
+
+- Lo mismo con alguna configuración particular de gpedit.msc.
+
+    1.  Especificar una ruta alternativa para la instalación de archivos.
+    2.  Opción para evitar que los usuarios hagan cambios en los escritorios.

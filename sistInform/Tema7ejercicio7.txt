@@ -1,0 +1,17 @@
+ Seleccionar 3 servicios e indica con tus palabras cuál es la utilidad de dicho servicio. Puedes buscar
+información en internet. Debes informar también de los siguientes aspectos para cada uno:
+- ¿Depende de otros servicios para poder ejecutarse?¿Cuáles?
+- ¿Está funcionando en estos momentos?
+- ¿Con que cuenta se ha ejecutado? Si todos los que has visto se ejecutan con la misma cuenta, busca
+otro que se ejecute con otra cuenta y describe su utilidad.
+
+    1. Actualizador de la zona horaria automática: establece la zona horaria de manera automática,
+       en este momento no está en ejecución, no tiene ninguna dependencia.
+
+    2. Firewall de Windows Defender: impide que usuarios no autorizados accedan al sistema de 
+       manera fraudulenta, en este momento se encuentra en ejecución, se inició sesión a través del 
+       servicio local y depende del Motor Filtrado de Base y del Windows Defender Firewall Authorization Driver.
+    
+    3. Programador de tareas: esto permite al usuario programar y elaborar tareas, se está ejecutando, se
+       inició sesión con el sistema local y depende del Agente de Eventos del Sistema y la Llamada a 
+       procedimiento remoto (RPC).
