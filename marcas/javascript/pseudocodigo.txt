@@ -1,0 +1,18 @@
+Pedir al usuario que introduzca el dni completo (numeros y letra mayuscula)
+crear una variable que almacene el num
+crear variable que almacene letra (dni[9])
+crear array que almacena las letras que se asignan al dni
+sacar mensaje de si se corresponde la letra con el numero o si no se corresponde
+
+
+PSEUCODIGO:
+
+1. pedir el dni a través de una funcion, con el prompt, almacenado en un let
+2. 
+3. crear una variable que almacene la letra del dni
+4. crear una array que contenga toda la lista de letras, cada letra correspondienre a su resto, del 0 al 22
+5. crear una variable que almacene el resto de la division
+6. a través del operador lógico IF comprobar si la letra que sale de la división es igual
+   a la del dni introducido dni[9] 
+7. sacar el mensaje por pantalla de si la letra es correcta o no
+
