@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNI</title>
+    <script>
+        function dni(){
+            //definicion del conjunto de letras permitidas
+            var letras_dni = "TRWAGMYFPDXBNJZSQVHLCKE";
+            //me devuelve un string
+            var dni = prompt("Write your DNI with the letter in uppercase please:");
+            var letra = dni[dni.length - 1];
+            var num_string = dni.substring(0,8);//un string con el numero del dni
+            var numero = parseInt(num_string);//un integer con el numero del dni  
+            /*var indice = numero % 23;
+            var letra_dni = letras_dni[indice];*/
+            var letra_dni = letras_dni.charAt(numero % 23);
+            if(letra == letra_dni){
+                window.alert("The letter is correct for this DNI");
+            } else{
+                window.alert("The letter is not correct for this DNI")
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>dni()</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+Cambia de forma permanente el prompt para que tenga una forma similar al linux:
+
+set prompt= "%USERNAME%@%COMPUTERNAME%:$G"

@@ -12,7 +12,7 @@
     <button>Change the text</button>
     <script>
         var boton = document.getElementsByTagName("button");
-        boton[0].onclick = cambiar;
+        boton[0].onclick = cambiar;//forma semantica de gestionar eventos (sin paréntesis al llamar la funcion)
         function cambiar(){
             var encabezado = document.getElementById("encabezado");
             var encabezado2 = document.getElementById("encabezado2");

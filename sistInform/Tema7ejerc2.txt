@@ -1,0 +1,6 @@
+Como se comentó en teoría, el path es la variable de entorno que indica los lugares donde Windows
+debe buscar programas para ejecutarlos. ¿Cómo modificarías el path desde consola para que
+incluyera el directorio almacen creado de forma que los programas que se encuentren ahí puedan ser
+ejecutados desde cualquier parte?
+
+set PATH "%PATH%;C:\Almacen"
