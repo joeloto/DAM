@@ -1,0 +1,6 @@
+Busca tres programas de Inicio del MSCONFIG que se puedan desactivar sin causar perjuicio en el
+sistema.
+
+1. Skype
+2. Drive
+3. Enlace móvil
