@@ -6,9 +6,29 @@ Después asociad las extensiones .SO a ese tipo.
     2. Asociación: assoc .SO=archivoOS
 
 - Finalmente borra la asociación.
-    1.assoc .SO=
+    1. assoc .SO=
 
 - Realiza un archivo por lotes al cual se le pase un tipo de archivo, una extensión y una ruta completa con un
 programa ejecutable y realice la asociación pertinente.
 
+    @echo off
+
+    set "tipo_archivo=archivoSO"
+    set "extension=.SO" 
+    set "ejecutable=%SystemRoot%\system32\notepad.exe"
+
+    assoc %extension%=%tipo_archivo%
+
+    ftype %tipo_archivo%="%ejecutable%" "%%1"
+
+
 - Averigua el nombre en inglés de las opciones vistas en el apartado Otros elementos del panel de control
+
+1. System and security
+2. Network and internet
+3. Hardware and sound
+4. Programs
+5. User accounts 
+6. Appearance and personalisation
+7. Clock and region
+8. Ease access

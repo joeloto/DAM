@@ -1,0 +1,6 @@
+@echo off
+cls
+
+md %homepath%\ejercicio1
+echo %OS%
+echo %PROCESSOR_ARCHITECTURE%
