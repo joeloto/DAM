@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test number 2</title>
+    <script>
+        function cambiar() {
+            //me creo un elemento confirm
+            var confirmacion = confirm("Do you really want to change the text?")
+            if (confirmacion) {
+                //creo una constante
+                const texto = "The text has been changed"
+                //localizo los nodos que quiero modificar
+                var encabezado1 = document.getElementsByTagName("h1")
+                var encabezado2 = document.getElementsByTagName("h3")
+                //modifico el contenido de los encabezados
+                encabezado1[0].innerHTML = texto;
+                encabezado2[0].innerHTML = texto;
+                //modificar el aspecto de mis nodos
+                encabezado1[0].style.color = "blue";
+                encabezado1[0].style.fontSize = "60px";
+                encabezado1[0].style.fontFamily = "comic sans";
+                encabezado2[0].style.color = "green";
+                console.log("The texts have been changed")
+            } else{
+                console.log("The texts have not been changed")
+            }
+        }
+        window.onload = function () {
+            //localizo el nodo o nodos que me lanzan los eventos
+            var boton = document.getElementsByTagName("button");
+            boton[0].onclick = cambiar;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>First text</h1>
+    <h3>Second text</h3>
+    <button>Change</button>
+</body>
+
+</html>
