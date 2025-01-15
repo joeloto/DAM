@@ -1,6 +1,7 @@
 package programacion.arrays;
 
 import java.lang.reflect.Array;
+import java.util.*;
 
 public class act3apuntes {
     public static void main(String[] args) {
@@ -34,6 +35,7 @@ public class act3apuntes {
 
         //array de cadena separada por puntos y comas
         frase = "Jar-Jar is the Big Boss";
-        System.out.println("Cadena con separadores: " + frase.split("\\ ,"));
+
+        //
     }
 }
