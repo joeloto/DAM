@@ -1,7 +1,27 @@
 1   CREATE DATABASE BD2 CHARACTER SET = latin1;
 2   CREATE DATABASE BD3 CHARACTER SET = UTF8;
 3   CREATE TABLE juegos(
-    IDJuego TINYINT PRIMARY KEY AUTO_INCREMENT,
-    Nombre VARCHAR(40) NOT NULL UNIQUE,
-    Plataforma SET('PSP','Wii','PlayStation','Xbox','Nintendo DS','PC') COMMENT 'Plataformas soportadas por el juego',
-    PrecioVenta 
+        IDJuego SMALLINT PRIMARY KEY AUTO_INCREMENT,
+        Nombre VARCHAR(40) NOT NULL UNIQUE,
+        Plataforma SET('PSP','Wii','PlayStation','Xbox','Nintendo DS','PC') COMMENT 'Plataformas soportadas por el juego',
+        PrecioVenta FLOAT(5,2) NULL,
+        PrecioAlquiler FLOAT(4,2),
+        StockVenta BIGINT(10) NOT NULL,
+        StockAlquiler TINYINT ZEROFILL,
+        INDEX(PrecioVenta)
+    );
+4   CREATE TABLE juegosNuevos(
+        IDJuego SMALLINT PRIMARY KEY AUTO_INCREMENT,
+        Nombre VARCHAR(40) NOT NULL UNIQUE,
+        Plataforma SET('PSP','Wii','PlayStation','Xbox','Nintendo DS','PC') COMMENT 'Plataformas soportadas por el 			juego',
+        PrecioVenta FLOAT(5,2) NULL,
+        PrecioAlquiler FLOAT(4,2),
+        StockVenta BIGINT(10) NOT NULL,
+        StockAlquiler TINYINT ZEROFILL,
+        INDEX(PrecioVenta)
+    );
+5   RENAME TABLE juegosnuevos TO xogosnovos
+6   RENAME TABLE juegosnuevos TO xogosnovos
+7   RENAME TABLE bd2.xogosnovos TO b3.xogosnovos
+8   DROP DATABASE BD3
+9   
