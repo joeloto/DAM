@@ -1,11 +1,11 @@
 package programacion.arrays.boletin;
 
-public class ejercicio1 {
+public class ejercicio2 {
 
-    public static int[] crear(int n) {
-        int[] vector = new int[n];
+    public static int[][] crear(int n, int m) {
+        int[][] vector = new int[n][m];
         for (int i = 0; i < n; i++) {
-            vector[i]= (int)(Math.random() * 4001 + 1000);
+            int numChar = (int) (Math.random()*91+65);
         }
         return vector;
     }
@@ -36,11 +36,11 @@ public class ejercicio1 {
         return minimo;
     }
 
-    public static boolean intercambio(int[] vector, int indice1, int indice2){
+    public static boolean intercambio(int[] vector, int indice1, int indice2) {
         boolean posiciones;
         if (vector.length < indice1 || vector.length < indice2) {
             posiciones = false;
-        } else{
+        } else {
             int intercambiar = vector[indice1];
             vector[indice1] = vector[indice2];
             vector[indice2] = intercambiar;

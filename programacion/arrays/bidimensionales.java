@@ -15,10 +15,10 @@ public class Bidimensionales {
 
         for (int[] fila : temp) {
             for (int valor : fila) {
-            System.out.printf("%3d", valor);
+                System.out.printf("%3d", valor);
             }
             System.out.println();
-            }
+        }
 
     }
 }
