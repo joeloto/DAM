@@ -39,7 +39,6 @@ public class act3apuntes {
         // array de cadena separada por espacios y guiones
         frase = "Jar-Jar is the Big Boss";
         System.out.println("Cadena separada por espacios y guiones: (debajo)");
-        frase.split(" - ");
         for (String frase2 : frase.split("-")){
             System.out.println(frase2);
         }
