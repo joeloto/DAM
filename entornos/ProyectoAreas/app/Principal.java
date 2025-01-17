@@ -3,6 +3,8 @@ package entornos.ProyectoAreas.app;
 import entornos.ProyectoAreas.milibreria.InterfazUsuario;
 import entornos.ProyectoAreas.milibreria.Areas;
 
+//import entornos.*;
+
 public class Principal {
     public static void main(String[] args) {
         InterfazUsuario iu = new InterfazUsuario();
