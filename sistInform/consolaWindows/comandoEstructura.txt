@@ -1,0 +1,3 @@
+estructura comando cmd:
+
+nombre_comando parametro/s /modificadores

@@ -1,0 +1,41 @@
+Cambiar la fecha y la hora del sistema.
+>date 
+>time
+
+Visualiza la versión del sistema
+>ver
+
+Borrar la pantalla
+>cls
+
+Crear un prompt que muestre tu nombre, la versión del windows, y dos puntos.
+>prompt joel$v:$g
+
+Volver al prompt estándar
+>prompt $p%g
+
+Pon como color de fondo el azul y de texto el amarillo
+>color 16
+
+Observa los módulos que usa el bloc de notas ¿Da algún servicio?
+(con en notepad abierto)
+Modúlos:
+>tasklist /m
+ntdll.dll, KERNEL32.DLL, KERNELBASE.dll,
+GDI32.dll, win32u.dll, gdi32full.dll,
+msvcp_win.dll, ucrtbase.dll, USER32.dll,
+combase.dll, RPCRT4.dll, shcore.dll,
+msvcrt.dll, COMCTL32.dll, IMM32.DLL,
+bcryptPrimitives.dll, ADVAPI32.dll,
+sechost.dll, bcrypt.dll, kernel.appcore.dll,
+uxtheme.dll, clbcatq.dll, MrmCoreR.dll,
+SHELL32.dll, windows.storage.dll, Wldp.dll,
+OLEAUT32.dll, shlwapi.dll, MSCTF.dll,
+TextShaping.dll, efswrt.dll, wintypes.dll,
+MPR.dll, twinapi.appcore.dll, oleacc.dll,
+textinputframework.dll,
+CoreUIComponents.dll, CoreMessaging.dll,
+WS2_32.dll, ntmarta.dll
+
+Servicios:
+> No tiene servicios
