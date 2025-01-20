@@ -9,7 +9,7 @@
         StockVenta BIGINT(10) NOT NULL,
         StockAlquiler TINYINT ZEROFILL,
         INDEX(PrecioVenta)
-    );
+    )ENGINE=INNODB;
 4   CREATE TABLE juegosNuevos(
         IDJuego SMALLINT PRIMARY KEY AUTO_INCREMENT,
         Nombre VARCHAR(40) NOT NULL UNIQUE,
@@ -19,7 +19,7 @@
         StockVenta BIGINT(10) NOT NULL,
         StockAlquiler TINYINT ZEROFILL,
         INDEX(PrecioVenta)
-    );
+    )ENGINE=INNODB;
 5   RENAME TABLE juegosnuevos TO xogosnovos
 6   RENAME TABLE bd2.xogosnovos TO b3.xogosnovos 
 7   DROP DATABASE BD3
@@ -32,7 +32,7 @@
         País CHAR(9) NULL, Sexo ENUM('H','M'), 
         Observaciones LONGTEXT, 
         INDEX(Apellidos) 
-    );
+    )ENGINE=INNODB;
 10  
 11  
 12  CREATE TABLE alquileres( 
@@ -46,15 +46,22 @@
 13  
 14  
 15  CREATE TABLE ventas (
-    IDventa INT AUTO_INCREMENT PRIMARY KEY,
-    NumeroSocio INT NOT NULL COMMENT 'Hace referencia a los socios de la tabla socios',
-    Juego SMALLINT NOT NULL COMMENT 'Código del juego',
-    FechaVenta TIMESTAMP DEFAULT CURRENT_TIMESTAMP NULL,
-    Precio DECIMAL(10,2),
-    FOREIGN KEY (NumeroSocio) REFERENCES socios(NumeroSocio)
-        ON UPDATE CASCADE
-        ON DELETE SET NULL,
-    FOREIGN KEY (Juego) REFERENCES juegos(IDJuego)
-        ON UPDATE CASCADE
-        ON DELETE NO ACTION
-) ENGINE=InnoDB;
+        IDventa INT AUTO_INCREMENT PRIMARY KEY,
+        NumeroSocio INT COMMENT 'Hace referencia a los socios de la tabla socios',
+        Juego SMALLINT NOT NULL COMMENT 'Código del juego',
+        FechaVenta TIMESTAMP DEFAULT CURRENT_TIMESTAMP NULL,
+        Precio DECIMAL(10,2),
+        FOREIGN KEY (NumeroSocio) REFERENCES socios(NumeroSocio)
+            ON UPDATE CASCADE
+            ON DELETE SET NULL,
+        FOREIGN KEY (Juego) REFERENCES juegos(IDJuego)
+            ON UPDATE CASCADE
+            ON DELETE NO ACTION
+    ) ENGINE=InnoDB;
+16
+17  SHOW INDEX FROM socios;
+18  DESCRIBE socios;
+19  SHOW CREATE TABLE socios;
+20  ALTER TABLE ventas ADD nueva INT DEFAULT 0 NULL AFTER Juego;
+21  ALTER TABLE ventas ADD (nueva2 INT, nueva3 INT);
+22  
