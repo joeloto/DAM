@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program in javascript for using loops</title>
+    <style>
+        table,td{
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function bucle() {
+            //defino una matriz de 3x6
+            //var matriz = new Array(Array[1,2,3,4,5,6],Array[7,8,9,10,11,12],Array[13,14,15,16,17,18])
+            var matriz = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 8]];
+            for (var i = 0; i < matriz.length; i++) {
+                document.write("<tr>");
+                for (var j = 0; j < matriz[i].length; j++) {
+                    document.write("<td>");
+                    document.write(matriz[i][j]);
+                    document.write("</td>");
+                }
+                document.write("</tr>");
+            }
+
+            //bucle while
+            var valor = 1;
+            while (valor <= 10){
+                document.write(valor);
+                document.write("<br>");
+                valor++;
+            }
+
+            //bucle do while
+            var valor = 1;
+            do{
+                document.write(valor);
+                document.write("<br>");
+                valor++;
+            } while (valor <=10);
+
+            //bucle for in
+            var elementos = new Array("uno","dos","tres");
+            for (elemento in elementos){
+                document.write(elemento + ": " + elementos[elemento]);
+                document.write("<br>");
+            }
+
+            //bucle for of
+            var elementos2 = new Array("Muriel","Agallas","Eustaquio");
+            for (elemento2 in elementos2){
+                document.write(elemento2);
+                document.write("<br>");
+            }
+
+            //bucle for each
+            var elementos3 = new Array("Frodo","Sam","Gollum");
+            elementos3.forEach(function(elemento){
+                document.write(elemento);
+                document.write("<br>");
+            })
+
+            //if...else if
+            var mascota = "camaleon";
+            if (mascota == "camaleon"){
+                document.write("El camaleón se camufla");
+            } else if (mascota = "gato"){
+                document.write("El gato maulla");
+            } else{
+                document.write("Tu mascota no es ni un camaleón ni un gato")
+            }
+
+            //estructura de un switch
+            var mascota2 = "babuino";
+            switch(mascota2){
+                case "perro":
+                    document.write("El perro ladra");
+                    break;
+                case "gato":
+                    document.write("El gato maulla");
+                    break;
+                default:
+                    document.write("Tu mascota no es ni un perro ni un gato")
+            }
+
+            document.write("<br>")
+            //crear un objeto, array asociativo (se identifica un elemento de un array a traves de una clave)
+            const persona = {
+                nombre: " Joel",
+                edad: 18,
+                profesion: " farero"
+            }
+            document.write(persona["nombre"]);
+            document.write("<br>")
+            for (clave in persona){
+                document.write(`${clave}:${persona[clave]}`);
+                document.write("<br>")
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <script>bucle();</script>
+    </table>
+</body>
+</html>
