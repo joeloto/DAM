@@ -12,7 +12,7 @@ public class act3apuntes {
 
         // primer y último caracter
         System.out.println("Primer carácter de la cadena: " + frase.charAt(0));
-        System.out.println("Último carácter de la cadena: " + frase.charAt(22));
+        System.out.println("Último carácter de la cadena: " + frase.charAt(frase.length()-1)); 
         // System.out.println("Último carácter: " + frase.charAt(100)); No se puede
         // acceder al 100 porque está fuera de rango
 
@@ -30,7 +30,7 @@ public class act3apuntes {
                 + frase.indexOf("Jar") + " y " + frase.lastIndexOf("Jar") + " respectivamente.");
 
         // crear una cadena a través de una posición de inicio y otra de final
-        frase = frase.substring(7, 14);
+        frase = frase.substring(7, 15);
         System.out.println("Cadena resultante: " + frase);
 
         // quitar los espacios de la cadena anterior
@@ -39,12 +39,17 @@ public class act3apuntes {
         // array de cadena separada por espacios y guiones
         frase = "Jar-Jar is the Big Boss";
         System.out.println("Cadena separada por espacios y guiones: (debajo)");
-        for (String frase2 : frase.split("-")){
+        for (String frase2 : frase.split("[ -]")){
             System.out.println(frase2);
         }
 
         //cada palabra 3 caracteres
-        System.out.println("Cada palabra ocupa tres caracteres: " + frase.format(frase, "%.3s"));
-        
+        String recortar = "";
+        String[] frase2 = {"Jar-Jar", "is", "the", "Big", "Boss"};
+        for (String palabra : frase2) {
+            recortar = String.format("%.3s", palabra);
+            
+            System.out.println("Cada palabra ocupa tres caracteres: " + recortar);
+        }
     }
 }

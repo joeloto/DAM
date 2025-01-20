@@ -16,8 +16,8 @@ public class ejercicio1 {
         }
     }
 
-    public static int maximo(int[] vector) {
-        int mayor = 0;
+    public static int maximo(int[] vector) { 
+        int mayor = vector[0];
         for (int i = 0; i < vector.length; i++) {
             if (mayor < vector[i]) {
                 mayor = vector[i];
@@ -27,10 +27,10 @@ public class ejercicio1 {
     }
 
     public static int minimo(int[] vector) {
-        int minimo = 5001;
-        for (int i = 0; i < vector.length; i++) {
-            if (minimo > vector[i]) {
-                minimo = vector[i];
+        int minimo = vector[0];
+        for (int numero : vector) {
+            if (minimo > numero){
+                minimo = numero;
             }
         }
         return minimo;
@@ -38,7 +38,7 @@ public class ejercicio1 {
 
     public static boolean intercambio(int[] vector, int indice1, int indice2){
         boolean posiciones;
-        if (vector.length < indice1 || vector.length < indice2) {
+        if (vector.length <= indice1 || vector.length <= indice2 || indice1 < 0 || indice2 < 0) { 
             posiciones = false;
         } else{
             int intercambiar = vector[indice1];
@@ -55,6 +55,6 @@ public class ejercicio1 {
         System.out.println();
         System.out.println("Valor máximo: " + maximo(vector));
         System.out.println("Valor mínimo: " + minimo(vector));
-        System.out.println("¿Se pueden intercambiar los valores? " + intercambio(vector, 2, 5));
+        System.out.println("¿Se pueden intercambiar los valores? " + intercambio(vector, -2, 10));
     }
 }

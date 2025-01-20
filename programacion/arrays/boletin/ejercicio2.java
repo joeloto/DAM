@@ -6,7 +6,7 @@ public class ejercicio2 {
         char[][] vector = new char[filas][columnas];
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                vector[i][j] = (char) (Math.random()*91+65);
+                vector[i][j] = (char) (Math.random()*26+65);
             }
         }
         return vector;
@@ -15,13 +15,13 @@ public class ejercicio2 {
     public static void mostrar(char[][] vector) {
         System.out.println("   ");
         for (int i = 0; i < vector[0].length; i++) {
-            System.out.printf("%8d", i);  
+            System.out.printf(" %7d", i);  
         }
 
         System.out.println();
         int contFilas = 0;
         for (char[] filas : vector) {
-            System.out.printf("%3d", contFilas);
+            System.out.printf("%2d", contFilas);
             contFilas++;
             for (char letra : filas) {
                 System.out.printf("%7s", letra);
@@ -31,7 +31,7 @@ public class ejercicio2 {
     }
 
     public static int maximo(char[][] vector) {
-        int mayor = 0;
+        int mayor = vector[0][0];
         for (int i = 0; i < vector.length; i++) {
             for (int j = 0; j < vector[0].length; j++) {
                 if (mayor < vector[i][j]) {
@@ -43,11 +43,11 @@ public class ejercicio2 {
     }
 
     public static int minimo(char[][] vector) {
-        int minimo = 5001;
-        for (int i = 0; i < vector.length; i++) {
-            for (int j = 0; j < vector[0].length; j++) {
-                if (minimo > vector[i][j]) {
-                    minimo = vector[i][j];
+        int minimo = vector[0][0];
+        for (char[] filas : vector) {
+            for (char columnas : vector[0]) {
+                if (minimo > columnas) {
+                    minimo = columnas;
                 }
             }
         }
@@ -56,7 +56,7 @@ public class ejercicio2 {
 
     public static boolean intercambio(char[][] vector, int indice1, int indice2, int indice3, int indice4) {
         boolean posiciones;
-        if (vector.length < indice1 || vector.length < indice2 || vector.length < indice3 || vector.length < indice4) {
+        if (vector.length <= indice1 || vector.length <= indice2 || vector.length <= indice3 || vector.length <= indice4 || indice1 < 0 || indice2 < 0 || indice3 < 0 || indice4 < 0) {
             posiciones = false;
         } else {
             char intercambiar = vector[indice1][indice2];
