@@ -1,0 +1,47 @@
+ En el directorio de usuario crea otro directorio denominad TRABAJO
+    >md TRABAJO
+
+ Crea 3 directorios que cuelguen de TRABAJO con los nombres: PRINCIP, DATOS, CC.
+    >md PRINCIP
+    >md DATOS
+    >md CC
+
+ Crea desde el directorio TRABAJO dos directorio dentro del subdirectorio CC
+denominados PROGRAMA y EJERC.
+    >md PROGRAMA
+    >md EJERC
+
+ También desde TRABAJO crea dos directorio dentro de EJERC denominados CAP1 y CAP2.
+    >md CAP1
+    >md CAP2
+
+ Sitúate en EJERC y crea usando posiciones relativas un directorio en CC denominado
+RESUL1
+    
+
+ Ahora te sitúas en CAP2 y creas otro directorio en CC denominado RESUL2 usando
+también posiciones relativas.
+
+
+ Sitúate en CC y renombra EJER como EJ
+
+
+ ahora mueve el directorio CAP2 al directorio PRINCIP
+
+
+ Visualiza toda la estructura arbórea resultante que te queda
+
+
+ Borra CC
+
+
+ Visualiza toda la estructura arbórea resultante que te queda
+
+
+ Borra el resto de los subdirectorios creados.
+
+
+ Crea un directorio denominado DOCUMENTOS en otra unidad sin cambiarte.
+
+
+ Pásate a dicho directorio de dicha unidad
