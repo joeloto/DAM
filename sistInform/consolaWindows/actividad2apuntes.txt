@@ -1,0 +1,24 @@
+Actividad: Colócate en el directorio C:\WINDOWS\SYSTEM32 (CD \WINDOWS\SYSTEM32) y realiza las
+siguientes tareas sin moverte de dicho directorio.
+
+ lista el contenido de WINDOWS pero sin escribir la trayectoria completa.
+    >dir ..\
+
+ Indaga mediante el parámetro /? cómo harías para mostrar el directorio C:\Program
+Files\ con nomenclatura estándar de DOS es decir, 8 caracteres por nombre y 3 por
+extensión.
+    >dir "\program files\" /x
+
+ Busca la forma de listar los archivos del directorio actual ordenados por extensión.
+    >dir *.* /oe
+
+ Busca la forma de listar los archivos del directorio raíz que sean de solo lectura.
+    >dir \*.* \s/ar
+
+ Muestra todos los archivos de extensión DLL del directorio actual.
+    >dir *.dll
+
+ Muestra todos los archivos que tengan una extensión de un único carácter en el
+directorio WINDOWS y sucesivos. Haz que pare después de cada pantalla. ¿sabrías cómo
+hacer para que solo mostrara los archivos y no los directorios?
+    >dir ..\*.? /s/p/a:-d
