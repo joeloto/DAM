@@ -9,7 +9,7 @@
         StockVenta BIGINT(10) NOT NULL,
         StockAlquiler TINYINT ZEROFILL,
         INDEX(PrecioVenta)
-    )ENGINE=INNODB;
+    );
 4   CREATE TABLE juegosNuevos(
         IDJuego SMALLINT PRIMARY KEY AUTO_INCREMENT,
         Nombre VARCHAR(40) NOT NULL UNIQUE,
@@ -19,7 +19,7 @@
         StockVenta BIGINT(10) NOT NULL,
         StockAlquiler TINYINT ZEROFILL,
         INDEX(PrecioVenta)
-    )ENGINE=INNODB;
+    );
 5   RENAME TABLE juegosnuevos TO xogosnovos
 6   RENAME TABLE bd2.xogosnovos TO b3.xogosnovos 
 7   DROP DATABASE BD3
@@ -32,7 +32,7 @@
         País CHAR(9) NULL, Sexo ENUM('H','M'), 
         Observaciones LONGTEXT, 
         INDEX(Apellidos) 
-    )ENGINE=INNODB;
+    );
 10  
 11  
 12  CREATE TABLE alquileres( 
@@ -42,7 +42,7 @@
         FechaDevolucion DATETIME, 
         NumeroSocio MEDIUMINT NOT NULL COMMENT 'hace referencia a los socios de la tabla socios' REFERENCES socios(NumeroSocio) ON DELETE RESTRICT ON UPDATE CASCADE, 
         FOREIGN KEY(Juego) REFERENCES juegos(IDJuego) ON DELETE RESTRICT ON UPDATE CASCADE 
-    ) ENGINE=INNODB;
+    );
 13  
 14  
 15  CREATE TABLE ventas (
@@ -57,11 +57,27 @@
         FOREIGN KEY (Juego) REFERENCES juegos(IDJuego)
             ON UPDATE CASCADE
             ON DELETE NO ACTION
-    ) ENGINE=InnoDB;
+    );
 16
 17  SHOW INDEX FROM socios;
 18  DESCRIBE socios;
 19  SHOW CREATE TABLE socios;
 20  ALTER TABLE ventas ADD nueva INT DEFAULT 0 NULL AFTER Juego;
 21  ALTER TABLE ventas ADD (nueva2 INT, nueva3 INT);
-22  
+22  ALTER TABLE ventas CHANGE nueva2 nova2 VARCHAR(20);
+    ALTER TABLE ventas CHANGE nueva3 nova3 VARCHAR(20);
+23  ALTER TABLE ventas MODIFY nova2 INT;
+24  ALTER TABLE ventas DROP nova3;
+25  ALTER TABLE socios DROP INDEX DNI;
+26  ALTER TABLE socios DROP INDEX Apellidos;
+27  No pasa nada porque pasaría de un entero a otro entero
+28  Hay un conflicto relacionado con el auto_increment, se puede solucionar quitándolo
+29  ALTER TABLE alquileres ADD PRIMARY KEY (IDalquiler);
+30  ALTER TABLE socios ADD INDEX (Apellidos);
+31  CREATE INDEX indiceSocio ON socios(Nombre);
+32  ALTER TABLE socios DROP INDEX indiceSocio;
+33  CREATE INDEX nombreCompleto ON socios(nombre,apellidos);
+34  ALTER TABLE socios DROP INDEX nombreCompleto;
+35  ALTER TABLE ventas DROP PRIMARY KEY
+36  ALTER TABLE ventas ADD PRIMARY KEY (IDventa);
+37  ALTER TABLE ventas ENGINE = MYISAM
