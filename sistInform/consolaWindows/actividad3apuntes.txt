@@ -17,31 +17,34 @@ denominados PROGRAMA y EJERC.
 
  Sitúate en EJERC y crea usando posiciones relativas un directorio en CC denominado
 RESUL1
-    
+    >md ..\resul1
 
  Ahora te sitúas en CAP2 y creas otro directorio en CC denominado RESUL2 usando
 también posiciones relativas.
-
+    >md ..\..\resul2
 
  Sitúate en CC y renombra EJER como EJ
-
+    >ren EJERC EJ
 
  ahora mueve el directorio CAP2 al directorio PRINCIP
-
+    >cd EJ
+    >move cap2 ..\..\princip
 
  Visualiza toda la estructura arbórea resultante que te queda
-
+    >tree /f
 
  Borra CC
-
+    >rd cc /s
 
  Visualiza toda la estructura arbórea resultante que te queda
-
+    >tree /f
 
  Borra el resto de los subdirectorios creados.
-
+    >rd princip
+    >rd datos
 
  Crea un directorio denominado DOCUMENTOS en otra unidad sin cambiarte.
-
+    >md g:\DOCUMENTOS (con un pendrive)
 
  Pásate a dicho directorio de dicha unidad
+    >cd g:\DOCUMENTOS
