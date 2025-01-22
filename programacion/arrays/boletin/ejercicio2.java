@@ -45,7 +45,7 @@ public class ejercicio2 {
     public static int minimo(char[][] vector) {
         int minimo = vector[0][0];
         for (char[] filas : vector) {
-            for (char columnas : vector[0]) {
+            for (char columnas : filas) {
                 if (minimo > columnas) {
                     minimo = columnas;
                 }
@@ -77,7 +77,7 @@ public class ejercicio2 {
 
         System.out.println();
         char[][] vector2 = crear(4,3);
-        mostrar(vector);
+        mostrar(vector2);
         System.out.println();
         System.out.println("Valor máximo: " + maximo(vector2));
         System.out.println("Valor mínimo: " + minimo(vector2));
