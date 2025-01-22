@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7</title>
+    <script>
+        function age(){
+            var age = prompt("Write your age");
+            if (age <= 8 || age >= 66){
+                document.write("The prize of the ticket is free");
+            }
+            else if (age >= 9 && age <= 16){
+                document.write("The prize of the ticket is 5€")
+            }
+            else if (age >= 17 && age <= 25){
+                document.write("The prize of the ticket is 8€")
+            }
+            else if (age >= 26 && age <= 55){
+                document.write("The prize of the ticket is 10€")
+            }
+            else if (age >= 56 && age <= 65){
+                document.write("The prize of the ticket is 5€")
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>age();</script>
+</body>
+</html>

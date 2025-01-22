@@ -6,7 +6,7 @@
     <title>Exercise 5</title>
     <script>
         function imprimir(){
-            var aleatorio = (Math.random() * 5 + 1);
+            var aleatorio = Math.floor((Math.random() * 5) + 1);
             if (aleatorio == 1){
                 document.write("uno");
             }
@@ -19,7 +19,7 @@
             if (aleatorio == 4){
                 document.write("cuatro");
             }
-            else{
+            if (aleatorio == 5){
                 document.write("cinco");
             }
         }

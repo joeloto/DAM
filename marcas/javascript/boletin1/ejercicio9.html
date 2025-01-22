@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9</title>
+    <script>
+        function bingo(){
+            var edad = Math.floor((Math.random() * 6) + 75);
+            var premio = edad * 0.05;
+            premio = premio.toFixed(2)
+            document.write("El premio es de " + premio + "€");
+        }
+    </script>
+</head>
+<body>
+    <script>bingo();</script>
+</body>
+</html>
