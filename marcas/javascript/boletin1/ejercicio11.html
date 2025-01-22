@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 11</title>
+    <script>
+        function acumulador(){
+            var acumular = 0;
+            var contador = prompt("Cuántos números quieres poner?");
+            for (var i = 0; i < contador; i++){
+                var numero = prompt("Dime un número");
+                acumular += numero;
+            }
+            document.write("La suma de los numeros introducidos es " + acumular);
+        }
+    </script>
+</head>
+<body>
+    <script>acumulador();</script>
+</body>
+</html>

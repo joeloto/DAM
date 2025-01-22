@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 10</title>
+    <script>
+        function factorial(){
+            var numero = prompt("Dime un número para calcular su factorial");
+            var acumulador = 1;
+            do {
+                for (var i = 1; i <= numero; i++){
+                    acumulador *= i;
+                }
+            } while (i == numero);
+            document.write("El factorial de " + numero + " es " + acumulador);
+        }
+    </script>
+</head>
+<body>
+    <script>factorial();</script>
+</body>
+</html>
