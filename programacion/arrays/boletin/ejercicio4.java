@@ -10,7 +10,7 @@ public class ejercicio4 {
 
     public static String subCadena(String cadena, int posicionInicio, int numCaracteres){
         String cadenaDefinitiva = "";
-        for (int i = posicionInicio; i <= numCaracteres; i++) {
+        for (int i = posicionInicio; i < posicionInicio + numCaracteres; i++) {
             cadenaDefinitiva += cadena.charAt(i);
         }
         if (cadena == null || numCaracteres > cadena.length()) {
