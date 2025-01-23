@@ -23,7 +23,15 @@
 5   RENAME TABLE juegosnuevos TO xogosnovos
 6   RENAME TABLE bd2.xogosnovos TO b3.xogosnovos 
 7   DROP DATABASE BD3
-8   
+8   INSERT INTO juegos (Nombre,Plataforma,PrecioVenta,PrecioAlquiler,StockVenta,StockAlquiler) 
+    VALUES ('Maniac Mansion', "Nintendo DS,PC", 40.30, 5, 10, 5), 
+    ('Indiana Jones and the Last Crusade',"PlayStation, Xbox, PC",50,NULL ,53,NULL ), 
+    ('Loom',"Wii, PC",NULL ,5,13,6), 
+    ('Monkey Island II: LeChuck´s Revenge',"Wii,PSP, PC",20,NULL , 4, 2),
+    ('Day of the Tentacle'," XBOX, PC", 50.50, 4,NULL , 1), 
+    ('Sam & Max Hit the Road', "PSP, Wii, PC, Playstation", 37.30, 5.2, 2, 4),
+    ('Full Throttle'," PSP, Wii, Playstation, XBOX, PC, Nintendo DS", 42.00, 3.50, 4,NULL ), 
+    ('The Dig', 'PC', 50.2,NULL , 4, 5), ('La abadía del crimen', 'PC', 25, 5, 4, 3);
 9   CREATE TABLE socios(
         NumeroSocio INT PRIMARY KEY AUTO_INCREMENT, 
         Nombre VARCHAR(15) NOT NULL, 
