@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 12</title>
+    <script>
+        function listaPaises() {
+            var pais;
+            var lista = new Array();
+            do {
+                pais = prompt("Introduce un país que quieras visitar, cuando no quieras seguir escribiendo pulsa el intro sin haber escrito nada")
+                lista.push(pais);
+            } while (pais != "");
+            for (pais of lista) {
+               document.write(pais);
+               document.write("<br>")
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>listaPaises();</script>
+</body>
+</html>
