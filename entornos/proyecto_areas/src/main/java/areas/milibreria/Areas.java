@@ -1,4 +1,4 @@
-package entornos.ProyectoAreas.milibreria;
+package areas.milibreria;
 
 public class Areas {
     private Areas() {

@@ -1,7 +1,7 @@
-package entornos.ProyectoAreas.app;
+package areas.app;
 
-import entornos.ProyectoAreas.milibreria.InterfazUsuario;
-import entornos.ProyectoAreas.milibreria.Areas;
+import areas.milibreria.Areas;
+import areas.milibreria.InterfazUsuario;
 
 //import entornos.*;
 
