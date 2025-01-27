@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 15</title>
+    <script>
+        function serieFibonacci(){
+            var numero1 = 1;
+            var numero2 = 2;
+            var fin = 10000;
+            var serie = [numero1, numero2];
+            var suma;
+            while (suma <= fin){
+                suma = numero1 + numero2;
+                serie.push(suma);
+                numero1 = numero2;
+                numero2 = suma;
+            }
+            document.write(serie);
+        }
+    </script>
+</head>
+<body>
+  <script>serieFibonacci();</script>  
+</body>
+</html>
