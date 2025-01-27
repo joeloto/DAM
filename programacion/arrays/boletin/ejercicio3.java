@@ -7,7 +7,7 @@ public class ejercicio3 {
     public static ArrayList<Integer> crear(int filas){
         ArrayList<Integer> vector = new ArrayList();
         for (int i = 0; i < filas; i++) {
-            vector.add((int) (Math.random()*26 + 65));
+            vector.add((int) (Math.random()*4001 + 1000));
         }
         return vector;
     }
@@ -18,7 +18,6 @@ public class ejercicio3 {
     }
 
     public static int maximo(ArrayList<Integer> vector) { 
-        
         int mayor = vector.get(0);
         for (int i = 0; i < vector.size(); i++) {
             if (mayor < vector.get(i)) {
@@ -43,14 +42,20 @@ public class ejercicio3 {
         if (vector.size() <= indice1 || vector.size() <= indice2 || indice1 < 0 || indice2 < 0) { 
             posiciones = false;
         } else{
-            int intercambiar = indice1;
-            int intercambiar2 = indice2;
+            int intercambiar = vector.get(indice1);
+            vector.set(indice1, vector.get(indice2));
             vector.set(indice2, intercambiar);
-            vector.set(indice1, intercambiar2);
-            
             posiciones = true;
         }
         return posiciones;
+    }
+
+    public static void eliminar(int numero, ArrayList<Integer> vector){
+        for (int i = vector.size() - 1; i >= 0; i--) {
+            if (numero < vector.get(i)){
+                vector.remove(i);
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -60,6 +65,10 @@ public class ejercicio3 {
         System.out.println("Valor máximo: " + maximo(vector));
         System.out.println("Valor mínimo: " + minimo(vector));
         System.out.println("¿Se pueden intercambiar los valores? " + intercambio(vector, 2, 5));
+        mostrar(vector);
+        eliminar(2500, vector);
+        System.out.println();
+        mostrar(vector);
     }
 }
 

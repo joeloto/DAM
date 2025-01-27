@@ -41,13 +41,12 @@ public class ejercicio4 {
         return reves;
     }
 
-    public static String pasoAMayusculas(int numeroCadenas) {
+    public static String pasoAMayusculas(int... numeroCadenas) {
         Scanner sc = new Scanner(System.in);
         String cadena = "";
         String cadenaFinal = "";
-        for (int i = 0; i <= numeroCadenas; i++) {
-            System.out.println("Escribe una cadena:");
-            cadena = sc.nextLine();
+        for (int i = 0; i < numeroCadenas.length; i++) {
+            numeroCadenas
         }
 
     }
