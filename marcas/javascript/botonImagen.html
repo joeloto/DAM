@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise button and image</title>
+    <script>
+        function cambioImagen(foto){
+            if (foto.innerHTML == "Imagen 1"){
+                foto.setAttribute("button","arthurjohn.jpg");
+            } else if (foto.innerHTML == "Imagen 2"){
+                foto.setAttribute("button", "bigdaddy.jpg")
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="cambioImagen(this)">Imagen 1</button>
+    <button onclick="cambioImagen(this)">Imagen 2</button>
+</body>
+</html>
