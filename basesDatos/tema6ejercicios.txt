@@ -37,12 +37,22 @@
         Nombre VARCHAR(15) NOT NULL, 
         Apellidos CHAR(35) NOT NULL, 
         DNI CHAR(9) UNIQUE COMMENT 'el dni del socio', 
-        País CHAR(9) NULL, Sexo ENUM('H','M'), 
+        País CHAR(9) NULL, 
+        Sexo ENUM('H','M'), 
         Observaciones LONGTEXT, 
         INDEX(Apellidos) 
     );
-10  
-11  
+10  INSERT INTO socios (Nombre,Apellidos,DNI,País,Sexo,Observaciones) 
+    VALUES ('Paco', 'Menéndez', 1111, 'España', 'H', 'Querido Adso, ¿no confundirás el amor con la lujuria?'), 
+    ('Ron', 'Gilbert', 2222, 'EEUU', 'H', 'Miren ¡Un mono de tres cabezas!'), 
+    ('John','Carmack', 3333 ,'EEUU','H', 'El padre del shooter'), 
+    ('Shigeru', 'Miyamoto', 4444, 'Japón', 'H', 'Zeruda no Densetsu'),
+    ('Alekséi', 'Pázhitnov', 5555, 'Rusia', 'H', 'Demasiadas piezas'), 
+    ('Nolan', 'Bushnell', 6666, 'EEUU, 'H', 'Dos raquetas y una pelota'),
+    ('John', 'Tobias', 7777, 'EEUU', 'H', 'Test your might'), 
+    ('Peter', 'Molyneux', 8888, 'UK', 'H', 'Juega a ser Dios');
+11  INSERT INTO socios (Nombre,Apellidos,DNI,País,Sexo,Observaciones) VALUES ('Sid','Meier', 9999, 'Canadá', 'V', 'Evoluciona tu civilización');
+    Da un aviso de dato truncado en el Sexo, se cambiaría por H.
 12  CREATE TABLE alquileres( 
         IDalquiler INT PRIMARY KEY AUTO_INCREMENT, 
         Juego SMALLINT NOT NULL COMMENT 'código del juego', 
@@ -51,8 +61,19 @@
         NumeroSocio MEDIUMINT NOT NULL COMMENT 'hace referencia a los socios de la tabla socios' REFERENCES socios(NumeroSocio) ON DELETE RESTRICT ON UPDATE CASCADE, 
         FOREIGN KEY(Juego) REFERENCES juegos(IDJuego) ON DELETE RESTRICT ON UPDATE CASCADE 
     );
-13  
-14  
+13  INSERT INTO alquileres (Juego,FechaAlquiler,FechaDevolucion,NumeroSocio) VALUES 
+    (1,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 5 DAY),1),
+    (2,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 3 DAY),2),
+    (5,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 12 HOUR),3),
+    (1,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 1 MONTH),6),
+    (4,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 1 WEEK),4),
+    (7,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 5 DAY),2),
+    (5,DEFAULT,NULL,5),
+    (3,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 1 YEAR),7)
+14  INSERT INTO alquileres (Juego,FechaAlquiler,FechaDevolucion,NumeroSocio) VALUES 
+    (1,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 5 DAY),11),
+    (22,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 3 DAY),9),
+    (8,DEFAULT,DATE_ADD(FechaAlquiler,INTERVAL 12 HOUR),4)
 15  CREATE TABLE ventas (
         IDventa INT AUTO_INCREMENT PRIMARY KEY,
         NumeroSocio INT COMMENT 'Hace referencia a los socios de la tabla socios',
@@ -66,7 +87,7 @@
             ON UPDATE CASCADE
             ON DELETE NO ACTION
     );
-16
+16  INSERT INTO ventas (NumeroSocio,Juego,FechaVenta) VALUES (1,2,DEFAULT), (4,5,DEFAULT), (2,7,DATE_ADD(NOW(), INTERVAL 1 WEEK)), (4,1,DEFAULT), (5,2,DEFAULT), (2,7,DEFAULT)
 17  SHOW INDEX FROM socios;
 18  DESCRIBE socios;
 19  SHOW CREATE TABLE socios;
