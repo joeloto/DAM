@@ -41,23 +41,23 @@ public class ejercicio4 {
         return reves;
     }
 
-    public static String pasoAMayusculas(int... numeroCadenas) {
-        Scanner sc = new Scanner(System.in);
-        String cadena = "";
-        String cadenaFinal = "";
+    public static String pasoAMayusculas(String... numeroCadenas) {
+        String cadenas = "";
         for (int i = 0; i < numeroCadenas.length; i++) {
-            numeroCadenas
+            cadenas += numeroCadenas[i];
         }
-
+        return cadenas;
     }
 
     public static void main(String[] args) {
         String a = "jinetes de rohan";
+        String b = pasoAMayusculas("sierte", "dsufhsof");
         // muestraEnLinea(a);
         // System.out.println(subCadena(a, 2, 4));
         // muestraCentrado(a);
         // System.out.println(cadenaAVector(a));
-        System.out.println(alReves(a));
+        //System.out.println(alReves(a));
+        System.out.println(b);
 
     }
 }
