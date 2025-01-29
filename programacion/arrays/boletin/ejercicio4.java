@@ -22,7 +22,12 @@ public class ejercicio4 {
     }
 
     public static void muestraCentrado(String cadena) {
-        System.out.printf("%s", cadena);
+        int consola = 80;
+        int espacios = (consola - cadena.length())/2;
+        for (int i = 0; i < espacios; i++) {
+            System.out.print(" ");
+        }
+        System.out.print(cadena);
     }
 
     public static char[] cadenaAVector(String cadena) {
@@ -43,21 +48,33 @@ public class ejercicio4 {
 
     public static String pasoAMayusculas(String... numeroCadenas) {
         String cadenas = "";
+        String cadena2 = "";
         for (int i = 0; i < numeroCadenas.length; i++) {
             cadenas += numeroCadenas[i];
+            for (int j = 0; j < cadenas.length(); j++) {
+                if (cadenas.charAt(j) >= 'a' && cadenas.charAt(j) <= 'z') {
+                    cadena2 += (char) (cadenas.charAt(j) - 32);
+                }
+                if (cadenas.charAt(j) == '_') {
+                    cadena2 += " ";
+                }
+            }
         }
-        return cadenas;
+        return cadena2;
     }
 
     public static void main(String[] args) {
         String a = "jinetes de rohan";
-        String b = pasoAMayusculas("sierte", "dsufhsof");
+
+        // System.out.println( (char)(a.charAt(0)+10) );
+
+        String b = pasoAMayusculas("bla_de", "runner");
         // muestraEnLinea(a);
         // System.out.println(subCadena(a, 2, 4));
-        // muestraCentrado(a);
+        muestraCentrado(a);
         // System.out.println(cadenaAVector(a));
-        //System.out.println(alReves(a));
-        System.out.println(b);
+        // System.out.println(alReves(a));
+        // System.out.println(b);
 
     }
 }
