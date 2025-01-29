@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise button and image</title>
     <script>
-        function cambioImagen(foto){
-            if (foto.innerHTML == "Imagen 1"){
-                foto.setAttribute("button","arthurjohn.jpg");
-            } else if (foto.innerHTML == "Imagen 2"){
-                foto.setAttribute("button", "bigdaddy.jpg")
+        function cambioImagen() {
+            var imagen = document.getElementsByTagName("img");
+            if (this.innerHTML == "Imagen 1") {
+                imagen[0].src = "arthurjohn.jpg";
+            } else if(this.innerHTML == "Imagen 2"){
+                imagen[0].src = "bigdaddy.jpg";
+            }
+        }
+        window.onload = function () {
+            var botones = document.getElementsByTagName("button");
+            for (i in botones) {
+                //botones[i].onclick=cambioImagen; //forma semántica
+                botones[i].addEventListener("click", cambioImagen, false);
             }
         }
     </script>
 </head>
+
 <body>
-    <button onclick="cambioImagen(this)">Imagen 1</button>
-    <button onclick="cambioImagen(this)">Imagen 2</button>
+    <button>Imagen 1</button>
+    <button>Imagen 2</button>
+    <img src="" alt="arthurjohn">
 </body>
+
 </html>
