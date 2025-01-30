@@ -9,4 +9,16 @@
 8   UPDATE empleados SET IDDEPART=50 WHERE IDDEPART=20;
 9   UPDATE empleados SET IDDEPART=20 WHERE IDDEPART=50 AND OFICIO!='Presidente';
 10  DELETE FROM empleados WHERE Apellido='Iglesias';
-11  ARREGLAR TABLA EMPLEADOS************
+11  DELETE FROM empleados WHERE IDDEPART=20 AND SALARIO > 2000;
+12  DELETE FROM empleados
+    TRUNCATE TABLE empleados 
+    La diferencia es que delete hace un borrado de la tabla fila a fila mientras que
+    truncate borra la tabla y la vuelve a crear vacía, lo que es mucho más eficiente.
+13  -
+14  UPDATE empleados2 SET CODEMP=CODEMP+1000;
+15  INSERT INTO empleados2 SELECT * FROM empleados WHERE CODEMP>8 AND OFICO='Empleado';
+16  INSERT INTO depart (IDDEPART,NOMBRE,LOC) VALUES (60,'Publicidad','Ourense'), (70,'Costes','Lugo');
+17  
+18  DELETE FROM empleados2 WHERE SALARIO >2000 AND SALARIO <3000;
+
+***VOLVER A EMPEZAR***
