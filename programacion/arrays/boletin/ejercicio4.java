@@ -2,7 +2,7 @@ package programacion.arrays.boletin;
 
 import java.util.*;
 
-public class ejercicio4 {//TODO comentarios
+public class ejercicio4 { 
 
     /**
      * muestra cada letra de una cadena en una linea distinta
@@ -23,7 +23,7 @@ public class ejercicio4 {//TODO comentarios
      */
     public static String subCadena(String cadena, int posicionInicio, int numCaracteres) {
         String cadenaDefinitiva = "";
-        if (cadena == null || numCaracteres > cadena.length() || posicionInicio > cadena.length()) {//TODO apliar compro
+        if (cadena == null || numCaracteres > cadena.length() - posicionInicio || posicionInicio > cadena.length() || numCaracteres >= 0 || posicionInicio < 0) {//TODO revisr compro
             return "";
         }
         for (int i = posicionInicio; i < posicionInicio + numCaracteres; i++) {
@@ -82,14 +82,14 @@ public class ejercicio4 {//TODO comentarios
         String cadena2 = "";
         for (int i = 0; i < numeroCadenas.length; i++) {
             cadenas = numeroCadenas[i];
-            for (int j = 0; j < cadenas.length(); j++) {//TODO completar
+            for (int j = 0; j < cadenas.length(); j++) {
                 if (cadenas.charAt(j) >= 'a' && cadenas.charAt(j) <= 'z') {
                     cadena2 += (char) (cadenas.charAt(j) - 32);
                 }
-                if (cadenas.charAt(j) == '_') {
+                else if (cadenas.charAt(j) == '_') {
                     cadena2 += " ";
-                } else{
-                    cadena2 += cadenas;
+                } else {
+                    cadena2 += cadenas.charAt(j);
                 }
             }
         }
@@ -104,7 +104,7 @@ public class ejercicio4 {//TODO comentarios
         String b = pasoAMayusculas("bla_de", "runner", "ABCabc","1234/()");
         System.out.println(b);
         // muestraEnLinea(a);
-        //System.out.println(subCadena(a, 2, 49));
+        //System.out.println(subCadena(a, 2, 4));
         //muestraCentrado(a);
         //System.out.println(cadenaAVector(a));
         // System.out.println(alReves(a));

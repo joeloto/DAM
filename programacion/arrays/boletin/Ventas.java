@@ -3,7 +3,7 @@ package programacion.arrays.boletin;
 import java.time.LocalDate;
 
 public class Ventas {
-    public int[] vector = new int[12];
+    public int[] vector = new int[13];
     private int year;
     LocalDate fechaActual = LocalDate.now();
 
@@ -29,7 +29,7 @@ public class Ventas {
     public Ventas(int year, int[] vector) {
         setYear(year);
         this.year = year;
-        if (vector.length != 12) {
+        if (vector.length != 13) {
             int[] vector2 = new int[12];
             for (int i = 0; i < vector2.length; i++) {
                 vector2[i] = (int) (Math.random() * 1000);
@@ -38,6 +38,10 @@ public class Ventas {
         }
     }
 
+    /**
+     * funcion que calcula la media de los valores de un vector
+     * @return devuelve el resultado de la media
+     */
     public double media() {
         int acumulador = 0;
         int cont;
@@ -49,6 +53,17 @@ public class Ventas {
     }
 
     public void grafica(){
-
+        for (int i = 1; i < vector.length; i++) {
+            if (vector[i] < 100) {
+                System.out.printf("Mes %2d %s(%d): ", i," ", vector[i]);
+            }
+            if (vector[i] > 100) {
+                System.out.printf("Mes %2d (%d): ", i, vector[i]);
+            }
+            for (int j = 0; j < vector[i]; j+=100) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
     }
 }
