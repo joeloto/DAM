@@ -6,7 +6,7 @@
 6   INSERT INTO depart (IDDEPART,NOMBRE,LOC) VALUES (50,'Calidad','Noia');
 7   INSERT INTO empleados (APELLIDO,OFICIO,JEFE,FECHA_ALT,SALARIO,COMISION,IDDEPART) VALUES 
     ('Iglesias','Presidente',DEFAULT,CURRENT_DATE(),6000, NULL, 50);
-8   UPDATE empleados SET IDDEPART=50 WHERE IDDEPART=20;
+8   UPDATE empleados SET IDDEPART=50 WHERE IDDEPART=20 AND OFICIO;
 9   UPDATE empleados SET IDDEPART=20 WHERE IDDEPART=50 AND OFICIO!='Presidente';
 10  DELETE FROM empleados WHERE Apellido='Iglesias';
 11  DELETE FROM empleados WHERE IDDEPART=20 AND SALARIO > 2000;
@@ -16,9 +16,15 @@
     truncate borra la tabla y la vuelve a crear vacía, lo que es mucho más eficiente.
 13  -
 14  UPDATE empleados2 SET CODEMP=CODEMP+1000;
-15  INSERT INTO empleados2 SELECT * FROM empleados WHERE CODEMP>8 AND OFICO='Empleado';
+15  INSERT INTO empleados2 SELECT * FROM empleados WHERE CODEMP>8;
 16  INSERT INTO depart (IDDEPART,NOMBRE,LOC) VALUES (60,'Publicidad','Ourense'), (70,'Costes','Lugo');
 17  
 18  DELETE FROM empleados2 WHERE SALARIO >2000 AND SALARIO <3000;
-
-***VOLVER A EMPEZAR***
+19  UPDATE empleados2 SET JEFE=5;
+20  DELETE FROM empleados2 WHERE COMISION>0;
+21  INSERT INTO depart (Nombre, LOC) VALUES ('Robótica', 'Ferrol');
+    UPDATE empleados,empleados2 SET empleados.APELLIDO = 'Calvin', empleados.IDDEPART = 80, empleados2.APELLIDO = 'Calvin', 
+    empleados2.IDDEPART = 80 WHERE empleados.OFICIO = 'Presidente' AND empleados2.OFICIO = 'Presidente';
+22  UPDATE depart SET NOMBRE=LOWER(NOMBRE), LOC=LOWER(LOC) WHERE IDDEPART=40;
+23  UPDATE depart SET NOMBRE=LOWER(NOMBRE), LOC=LOWER(LOC) LIMIT 2;
+24  
