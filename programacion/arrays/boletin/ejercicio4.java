@@ -23,7 +23,7 @@ public class ejercicio4 {
      */
     public static String subCadena(String cadena, int posicionInicio, int numCaracteres) {
         String cadenaDefinitiva = "";
-        if (cadena == null || numCaracteres > cadena.length() - posicionInicio || posicionInicio > cadena.length() || numCaracteres >= 0 || posicionInicio < 0) {//TODO revisr compro
+        if (cadena == null || numCaracteres > cadena.length() - posicionInicio || posicionInicio > cadena.length() || numCaracteres >= 0 || posicionInicio < 0) {
             return "";
         }
         for (int i = posicionInicio; i < posicionInicio + numCaracteres; i++) {

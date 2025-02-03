@@ -3,7 +3,7 @@ package programacion.arrays.boletin;
 import java.time.LocalDate;
 
 public class Ventas {
-    public int[] vector = new int[13];
+    public int[] vector = new int[12];
     private int year;
     LocalDate fechaActual = LocalDate.now();
 
@@ -29,7 +29,8 @@ public class Ventas {
     public Ventas(int year, int[] vector) {
         setYear(year);
         this.year = year;
-        if (vector.length != 13) {
+        this.vector = vector;
+        if (vector.length != 12) {
             int[] vector2 = new int[12];
             for (int i = 0; i < vector2.length; i++) {
                 vector2[i] = (int) (Math.random() * 1000);
@@ -52,13 +53,18 @@ public class Ventas {
         return media;
     }
 
+    
     public void grafica(){
-        for (int i = 1; i < vector.length; i++) {
-            if (vector[i] < 100) {
+        System.out.println("Año " + year + ":");
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i] < 100 && vector[i] >= 10) {
                 System.out.printf("Mes %2d %s(%d): ", i," ", vector[i]);
             }
             if (vector[i] > 100) {
                 System.out.printf("Mes %2d (%d): ", i, vector[i]);
+            }
+            if (vector[i] < 10) {
+                System.out.printf("Mes %2d %s%s(%d): ",i," "," ", vector[i]);
             }
             for (int j = 0; j < vector[i]; j+=100) {
                 System.out.print("#");
