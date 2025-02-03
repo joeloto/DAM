@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*html:*/
+        //<p><a>Ocultar parrafo</a> al hacer click en el enlace--><a>Mostrar parrafo</a> y ocultar parrafo.
+        // Si hago click cuando el enlace tiene el texto mostrar parrafo lo que tiene que hacer es 
+        // mostrarme el parrafo. y cambiar el texto del enlace a ocultar parrafo</p>
+        // <p><a></a></p> idem
+        // <p><a></a></p> idem
+        function ocultar(enlace){
+            if (this.getElementById == "enlace1"){
+                
+            }
+        }
+        window.onload = function(){
+            var enlaces = document.getElementsByTagName("a");
+            enlaces[0] = addEventListener("click",ocultar,false);
+            enlaces[1] = addEventListener("click",ocultar,false);
+            enlaces[2] = addEventListener("click",ocultar,false);
+        }
+    </script>
+</head>
+<body>
+    <p id="parrafo1">Si hago click cuando el enlace tiene el texto mostrar parrafo lo que tiene que hacer es 
+        mostrarme el parrafo. y cambiar el texto del enlace a ocultar parrafo</p>
+    <a href="" id="enlace1" onclick="ocultar(this)">Ocultar parrafo</a>
+    <p id="parrafo2">Si hago click cuando el enlace tiene el texto mostrar parrafo lo que tiene que hacer es 
+        mostrarme el parrafo. y cambiar el texto del enlace a ocultar parrafo</p>
+    <a href="" id="enlace2" onclick="ocultar(this)">Ocultar parrafo</a>
+    <p id="parrafo3">Si hago click cuando el enlace tiene el texto mostrar parrafo lo que tiene que hacer es 
+        mostrarme el parrafo. y cambiar el texto del enlace a ocultar parrafo</p>
+    <a href="" id="enlace3" onclick="ocultar(this)">Ocultar parrafo</a>
+</body>
+</html>

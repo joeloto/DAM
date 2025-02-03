@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create elements usign API DOM</title>
+    <script>
+        function engadir() {
+            //si no tengo plural en la funcion get me devuelve un unico nodo
+            var lista = document.getElementById("lista");
+            var producto = prompt("Add a product to the list please");
+            //me creo un nodo para almacenar el string de texto
+            var texto = document.createTextNode(producto);
+            //me creo un nodo de la etiqueta li
+            var elemento = document.createElement("li");
+            elemento.appendChild(texto);
+            lista.appendChild(elemento);
+        }
+        function borrar() {
+            var listaElementos = document.getElementsByTagName("li");
+            var producto = prompt("What product do you want to delete");
+            for (var i = 0; i < listaElementos.length; i++){
+                if (listaElementos[i].innerHTML == producto){
+                    //listaElementos[i].parentNode.removeChild(listaElementos[i]);
+                    listaElementos[i].style.textDecoration="line-through";
+                    listaElementos[i].style.color="red";
+
+                }
+            }
+        }
+        window.onload = function () {
+            //gestiono los eventos y las llamadas a las funciones
+            var botones = document.getElementsByTagName("button");
+            //gestion de eventos semántico
+            botones[0].onclick = engadir;
+            //gestion de eventos usando addEventListener
+            botones[1].addEventListener("dblclick", borrar, false);
+        }
+    </script>
+</head>
+<body>
+    <h1>Shopping list</h1>
+    <ol id="lista"></ol>
+    <button>Add product</button>
+    <button>Delete product</button>
+</body>
+</html>
