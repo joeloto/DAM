@@ -12,28 +12,35 @@
         // mostrarme el parrafo. y cambiar el texto del enlace a ocultar parrafo</p>
         // <p><a></a></p> idem
         // <p><a></a></p> idem
-        function ocultar(enlace){
-            if (this.getElementById == "enlace1"){
-                
+        function transformar(){
+            var idEnlace = this.id;
+            var numero = idEnlace[idEnlace.length - 1];
+            var parrafo = document.getElementById("parrafo" + numero);
+            if (this.innerHTML == "Ocultar parrafo"){
+                parrafo.style.display = "none";
+                this.innerHTML = "Mostrar parrafo";
+            } else if (this.innerHTML == "Mostrar parrafo"){
+                parrafo.style.display = "block";
+                this.innerHTML = "Ocultar parrafo"
             }
         }
         window.onload = function(){
             var enlaces = document.getElementsByTagName("a");
-            enlaces[0] = addEventListener("click",ocultar,false);
-            enlaces[1] = addEventListener("click",ocultar,false);
-            enlaces[2] = addEventListener("click",ocultar,false);
+            for (i in enlaces){
+                enlaces[i].onclick = transformar;
+            }
         }
     </script>
 </head>
 <body>
     <p id="parrafo1">Si hago click cuando el enlace tiene el texto mostrar parrafo lo que tiene que hacer es 
         mostrarme el parrafo. y cambiar el texto del enlace a ocultar parrafo</p>
-    <a href="" id="enlace1" onclick="ocultar(this)">Ocultar parrafo</a>
+    <a href="#" id="enlace1">Ocultar parrafo</a>
     <p id="parrafo2">Si hago click cuando el enlace tiene el texto mostrar parrafo lo que tiene que hacer es 
         mostrarme el parrafo. y cambiar el texto del enlace a ocultar parrafo</p>
-    <a href="" id="enlace2" onclick="ocultar(this)">Ocultar parrafo</a>
+    <a href="#" id="enlace2">Ocultar parrafo</a>
     <p id="parrafo3">Si hago click cuando el enlace tiene el texto mostrar parrafo lo que tiene que hacer es 
         mostrarme el parrafo. y cambiar el texto del enlace a ocultar parrafo</p>
-    <a href="" id="enlace3" onclick="ocultar(this)">Ocultar parrafo</a>
+    <a href="#" id="enlace3">Ocultar parrafo</a>
 </body>
 </html>
