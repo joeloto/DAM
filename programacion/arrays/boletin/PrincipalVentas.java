@@ -8,13 +8,17 @@ import java.util.Scanner;
 
 public class PrincipalVentas {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("ventas.txt");
-
-        Scanner f = new Scanner(new File("ventas.txt"));
+        File file = new File(""); 
 
         int[] vector = new int[12];
-
+        
+        if (args.length == 0){
+            file = new File("ventas.txt");
+        } else{
+            file = new File(args[0]);
+        }
         if (file.exists()){
+            Scanner f = new Scanner(file);
             String a;
             while (f.hasNext()) {
                 a = f.nextLine();
@@ -30,14 +34,11 @@ public class PrincipalVentas {
             System.out.print("Gráfico de ventas: ");
             ventas.grafica();
             System.out.printf("La media de los datos es: %.2f", ventas.media());
-            PrintWriter e = new PrintWriter("ventas"+ventas.getYear()+".txt");
+            PrintWriter e = new PrintWriter("ventas"+ ventas.getYear() + ".txt");
             e.println(ventas.getYear());
             for (int i = 0; i < vector.length; i++) {
-                e.printf("%d;",vector[i]);
+                e.printf("%d; ",vector[i]);
             }
         }
-
-
-        
     }
 }
