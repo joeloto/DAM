@@ -2,12 +2,12 @@ package programacion.arrays.boletin;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class PrincipalVentas {
     public static void main(String[] args) throws FileNotFoundException {
-
         File file = new File("ventas.txt");
 
         Scanner f = new Scanner(new File("ventas.txt"));
@@ -30,7 +30,13 @@ public class PrincipalVentas {
             System.out.print("Gráfico de ventas: ");
             ventas.grafica();
             System.out.printf("La media de los datos es: %.2f", ventas.media());
+            PrintWriter e = new PrintWriter("ventas"+ventas.getYear()+".txt");
+            e.println(ventas.getYear());
+            for (int i = 0; i < vector.length; i++) {
+                e.printf("%d;",vector[i]);
+            }
         }
+
 
         
     }
