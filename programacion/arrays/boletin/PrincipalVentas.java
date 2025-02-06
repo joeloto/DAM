@@ -19,26 +19,27 @@ public class PrincipalVentas {
         }
         if (file.exists()){
             Scanner f = new Scanner(file);
-            String a;
-            while (f.hasNext()) {
-                a = f.nextLine();
-                int n = Integer.parseInt(a);
-                Ventas v = new Ventas(2003, vector);
-                for (int i = 0; i < vector.length; i++) {
-                    vector[i] = n;
-                }
-            }
+            String linea1;
+            String linea2;
+            linea1 = f.nextLine();
+            int year = Integer.parseInt(linea1);
+            linea2 = f.nextLine();
+            String[] datos = linea2.split(";");
+            int[] lista = new int[datos.length];
+            Ventas v = new Ventas(year, lista);
+            f.close();
         } else{
             LocalDate fechaActual = LocalDate.now(); 
             Ventas ventas = new Ventas(fechaActual.getYear() -1);
             System.out.print("Gráfico de ventas: ");
-            ventas.grafica();
+            ventas.grafica2();
             System.out.printf("La media de los datos es: %.2f", ventas.media());
             PrintWriter e = new PrintWriter("ventas"+ ventas.getYear() + ".txt");
             e.println(ventas.getYear());
             for (int i = 0; i < vector.length; i++) {
                 e.printf("%d; ",vector[i]);
             }
+            e.close();
         }
     }
 }

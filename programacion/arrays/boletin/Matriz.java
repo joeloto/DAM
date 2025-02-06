@@ -14,19 +14,20 @@ public class Matriz {
     }
 
     public static void mostrar(int[][] matriz){
-        
-        System.out.println("   ");
+        System.out.print("  ");
         for (int i = 0; i < matriz[0].length; i++) {
-            System.out.printf("%7d", i);
+            System.out.printf("%4d", i);
         }
+
         System.out.println();
         int contFilas = 0;
         for (int[] fila : matriz) {
-            System.out.printf("%3d", contFilas);
+            System.out.printf("%2d", contFilas);
             contFilas++;
             for (int num : fila) {
-                System.out.printf("%7d", num);
+                System.out.printf("%4d", num);
             }
+            System.out.println();
         }
     }
 

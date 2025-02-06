@@ -21,7 +21,7 @@ public class Ventas {
 
     public Ventas(int year) {
         for (int i = 0; i < this.vector.length; i++) {
-            this.vector[i] = (int) (Math.random() * 1000);
+            this.vector[i] = (int) (Math.random() * 200);
         }
         setYear(year);
     }
@@ -44,13 +44,13 @@ public class Ventas {
      * @return devuelve el resultado de la media
      */
     public double media() {
-        int acumulador = 0;
+        double acumulador = 0;
         int cont;
         for (cont = 0; cont < vector.length; cont++) {
             acumulador += vector[cont];
         }
-        double media = acumulador / cont;
-        return media;
+     //   double media = 
+        return acumulador / cont;
     }
 
     
@@ -66,6 +66,18 @@ public class Ventas {
             if (vector[i] < 10) {
                 System.out.printf("Mes %2d %s%s(%d): ",i," "," ", vector[i]);
             }
+            for (int j = 0; j < vector[i]; j+=100) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+    }
+    public void grafica2(){
+        System.out.println("Año " + year + ":");
+        for (int i = 0; i < vector.length; i++) {
+          
+            System.out.printf("Mes %2d %5s): ", i, "("+vector[i]);
+           
             for (int j = 0; j < vector[i]; j+=100) {
                 System.out.print("#");
             }
