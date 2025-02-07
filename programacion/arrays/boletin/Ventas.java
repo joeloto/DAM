@@ -49,7 +49,6 @@ public class Ventas {
         for (cont = 0; cont < vector.length; cont++) {
             acumulador += vector[cont];
         }
-     //   double media = 
         return acumulador / cont;
     }
 

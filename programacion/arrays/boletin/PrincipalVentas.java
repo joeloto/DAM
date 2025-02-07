@@ -13,7 +13,7 @@ public class PrincipalVentas {
         int[] vector = new int[12];
         
         if (args.length == 0){
-            file = new File("ventas.txt");
+            file = new File("veas.txt");
         } else{
             file = new File(args[0]);
         }
@@ -26,18 +26,21 @@ public class PrincipalVentas {
             linea2 = f.nextLine();
             String[] datos = linea2.split(";");
             int[] lista = new int[datos.length];
+            for (int i = 0; i < lista.length; i++) {
+                lista[i] = Integer.parseInt(datos[i]);
+            } 
             Ventas v = new Ventas(year, lista);
             f.close();
         } else{
             LocalDate fechaActual = LocalDate.now(); 
             Ventas ventas = new Ventas(fechaActual.getYear() -1);
-            System.out.print("Gráfico de ventas: ");
+            System.out.println("Gráfico de ventas: ");
             ventas.grafica2();
             System.out.printf("La media de los datos es: %.2f", ventas.media());
             PrintWriter e = new PrintWriter("ventas"+ ventas.getYear() + ".txt");
             e.println(ventas.getYear());
-            for (int i = 0; i < vector.length; i++) {
-                e.printf("%d; ",vector[i]);
+            for (int i = 0; i < ventas.vector.length; i++) {
+                e.printf("%d; ", ventas.vector[i]);
             }
             e.close();
         }
