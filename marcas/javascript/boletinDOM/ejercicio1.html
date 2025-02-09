@@ -6,17 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 1</title>
     <script>
-        function contarEnlaces() {
-            
-        }
-        window.onload = function() {
+        window.onload = function () {
             var enlaces = document.getElementsByTagName("a");
-            for (i in enlaces) {
-                enlaces[i] = contarEnlaces;
+            var numEnlaces = enlaces.length;
+
+            var penultimoEnlace = enlaces[numEnlaces - 2].href;
+
+            var numEnlacesPrueba = 0;
+            for (var i = 0; i < enlaces.length; i++) {
+                if (enlaces[i].href === "http://prueba") {
+                    numEnlacesPrueba++;
+                }
             }
+
+            var parrafos = document.getElementsByTagName("p");
+            var enlacesTercerParrafo = parrafos[2].getElementsByTagName("a").length;
+
+            var infoDiv = document.getElementById("informacion");
+            infoDiv.innerHTML = `
+        <p>Número de enlaces en la página: ${numEnlaces}</p>
+        <p>Dirección del penúltimo enlace: ${penultimoEnlace}</p>
+        <p>Número de enlaces que enlazan a http://prueba: ${numEnlacesPrueba}</p>
+        <p>Número de enlaces en el tercer párrafo: ${enlacesTercerParrafo}</p>
+    `;
         }
     </script>
 </head>
+
 <body>
     <div id="informacion" style="border:thin solid silver; padding:.5em"></div>
     <p>Lorem ipsum dolor sit amet, <a href="http://prueba">consectetuer adipiscing
@@ -61,4 +77,5 @@
         ipsum odio euismod tortor, a vestibulum nisl mi at odio. <a href="http://prueba5">Sed
             non lectus non est pellentesque</a> auctor.</p>
 </body>
+
 </html>
