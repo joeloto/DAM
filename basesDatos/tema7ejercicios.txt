@@ -44,3 +44,10 @@
 38  UPDATE empleados SET IDDEPART=NULL WHERE IDDEPART = (SELECT MAX(IDDEPART) FROM empleados);
 39  UPDATE empleados SET Comision = Comision + CASE WHEN OFICIO = 'Empleado' THEN 50 WHEN OFICIO = 'Vendedor' THEN 60 WHEN OFICIO = 'Presidente' THEN 130 ELSE 70 END;
 40  LOAD DATA INFILE "C:\\Users\\Joel\\jugadores1.txt" INTO TABLE jugadores1 COLUMNS TERMINATED BY '\t' LINES TERMINATED BY '\n' IGNORE 2 LINES;
+41  LOAD DATA INFILE "C:\\Users\\Joel\\jugadores2.txt" INTO TABLE jugadores2 COLUMNS TERMINATED BY '#' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+42  LOAD DATA INFILE "C:\\Users\\Joel\\jugadores3.txt" INTO TABLE jugadores3 COLUMNS TERMINATED BY '\t' LINES TERMINATED BY '\n' IGNORE 3 LINES (Partidos,Minutos,Puntos,Rebotes,Tapones,Asistencias,Valoracion,NOMBRE);
+43  LOAD DATA INFILE "C:\\Users\\Joel\\jugadores4.txt" INTO TABLE jugadores4 COLUMNS TERMINATED BY '|' LINES STARTING BY 'JUG ' TERMINATED BY '\n' IGNORE 1 LINES;
+44  SELECT * INTO OUTFILE "C:\\Users\\Joel\\importarjugadores1.txt" FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n' FROM jugadores1;
+45  SELECT * INTO OUTFILE "C:\\Users\\Joel\\importarjugadores2.txt" FIELDS TERMINATED BY '#' ENCLOSED BY '|' LINES TERMINATED BY '\n' FROM jugadores1;
+46  SELECT * INTO OUTFILE "C:\\Users\\Joel\\importarjugadores3.txt" FIELDS TERMINATED BY '|'LINES STARTING BY 'JUG ' TERMINATED BY '\n' FROM jugadores1;
+47  SELECT Valoracion,Partidos,Minutos,Puntos,Rebotes,Tapones,Asistencias,NOMBRE INTO OUTFILE "C:\\Users\\Joel\\importarjugadores4.txt" FIELDS TERMINATED BY '| ' ENCLOSED BY '|' LINES TERMINATED BY '\n' FROM jugadores1;
