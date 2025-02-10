@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event object</title>
+    <script>
+        function pantalla(evento){
+            var info = document.getElementById("info");
+            info.innerHTML = "La coordenada x es: " + evento.clientX + " y la coordenada y es: " + evento.clientY;
+        }
+        function teclado(evento){
+            var info = document.getElementById("info");
+            info.innerHTML = "La tecla pulsada es: " + String.fromCharCode(evento.which) + " y el ASCII asociado es: " + evento.clientY;
+        }
+        function cambioColor(evento){
+            var ancho = window.innerWidth;
+            var alto = window.innerHeight;
+            if (evento.clientX <= ancho/2 && evento.clientY <= alto/2){
+                document.body.style.backgroundColor = "red";
+            }
+            else if (evento.clientX >= ancho/2 && evento.clientY <= alto/2){
+                document.body.style.backgroundColor = "blue";
+            }
+            else if (evento.clientX <= ancho/2 && evento.clientY >= alto/2){
+                document.body.style.backgroundColor = "green";  
+            } else{
+                document.body.style.backgroundColor = "yellow";
+            }
+        }
+        window.onload = function(){
+            document.onmousemove = pantalla;
+            document.onkeypress = teclado;
+            document.onclick = cambioColor;
+        }
+    </script>
+</head>
+<body>
+    <div id="info"></div>
+</body>
+</html>

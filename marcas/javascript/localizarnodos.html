@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hacer(){
+            //localizar el div con id info
+            var info = document.getElementById("info");
+            var lista = document.querySelector(".listado");
+            info.innerHTML = "";
+            // var elementos = lista.childNodes;
+            /*elementos.forEach(function(child){
+                if (child.nodeType === Node.ELEMENT_NODE){
+                    info.innerHTML = info.innerHTML + child.innerHTML + "<br>";
+                }
+            })*/
+            //Hace lo mismo que lo anterior (forEach):
+            var elementos = lista.children;
+            for (var i = 0; i < elementos.length; i++){
+                info.innerHTML = info.innerHTML + elementos[i].innerHTML + "<br>";
+            }
+
+            //childNodes lo devuelve todo
+            //children devuelve nodos HTML
+        }
+        window.onload=function(){
+            var botones = document.getElementsByTagName("button");
+            botones[0].onclick=hacer;
+        }
+    </script>
+</head>
+<body>
+    <ol id="lista" class="listado">
+        <li>Uno</li>
+        <li>Dos</li>
+        <li>Tres</li>
+        <li>Cuatro</li>
+    </ol>
+    <button>Make</button>
+    <div id="info"></div>
+</body>
+</html>
