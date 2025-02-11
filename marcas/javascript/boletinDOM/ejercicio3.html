@@ -8,7 +8,11 @@ xhtml1/DTD/xhtml1-transitional.dtd">
     <script>
         function anade(){
             var lista = document.getElementById("lista");
-            var elemento = prompt("Añade un nuevo elemento");
+            var elemento = prompt("Anade un nuevo elemento");
+            var texto = document.createTextNode(elemento);
+            var componente = document.createElement("li");
+            componente.appendChild(texto);
+            lista.appendChild(componente);
         }
     </script>
 </head>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background image</title>
+    <style>
+        div{
+            width: 800px;
+            height: 650px;
+            background-size: cover;
+        }
+    </style>
+    <script>
+        function fondo(){
+            var contenedor = document.getElementById("container");
+            if (this.innerHTML == "Image 1"){
+                contenedor.style.backgroundImage = "url(\"arthurjohn.jpg\")";
+            } else if (this.innerHTML == "Image 2"){
+                contenedor.style.backgroundImage = "url(\"bigdaddy.jpg\")";
+            } else{
+                contenedor.style.backgroundImage = "url(\"gato.jpg\")";
+            }
+        }
+        window.onload = function(){
+            var headers = document.querySelectorAll("h3");
+            for (var i in headers) {
+                //Dos formas distintas:
+                //headers[i].onmouseover = fondo; 
+                headers[i].addEventListener("mouseover",fondo,false);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Image 1</h3>
+    <h3>Image 2</h3>
+    <h3>Image 3</h3>
+
+    <div id="container"></div>
+</body>
+</html>
