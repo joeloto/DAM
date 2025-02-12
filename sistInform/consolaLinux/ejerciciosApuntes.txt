@@ -1,0 +1,76 @@
+Ver la información del usuario actual.
+> id
+
+Crea dos nuevo usuario y que uno de ellos esté en el grupo sudo.
+> sudo adduser usuario2
+> sudo adduser usuario3
+> sudo adduser usuario2 sudo
+
+Crea un grupo denominado clase y añade los usuarios anteriores a este grupo
+> sudo addgroup clase
+> sudo adduser usuario2 clase
+> sudo adduser usuario3 clase
+
+Ver la información de los nuevos usuarios mediante id
+> id usuario2
+> id usuario3
+
+Probar a ver todos los grupos del nuevo usuario con números y con nombres.
+> id -G usuario2
+> id -nG usuario2
+
+¿Pueden los nuevos usuarios usar sudo?
+
+Compara con la gestión gráfica de usuarios.
+
+Elimina un usuario, un grupo y el otro usuario incluyendo su directorio.
+> sudo deluser --remove-home usuario3
+
+Actividad: Crear en el directorio de usuario (desde el raíz) el siguiente arbol:
+-programas
+-directorios
+-otros
+|
+-documentos
+
+> sudo mkdir programas
+> sudo mkdir directorios
+> sudo mkdir otros
+> cd otros
+> sudo mkdir documentos
+
+Copiar el contenido del escritorio a 'programas' .
+>
+
+Crear un archivo de texto (denominado MisArchivos.texto) en el directorio 'otros' que
+contenga un listado de todo el directorio 'home' y sus subdirectorios incluidos los ocultos y en
+formato largo con información compresible para humanos en cuanto al tamaño.
+>
+
+Mover el documento MisArchivos.texto al directorio 'directorios'
+>
+
+Visualizar el contenido del directorio 'otros' en formato largo
+>
+
+Cambia los permisos de MisArchivos.texto de forma que el usuario lo pueda leer y escribir, el
+grupo sólo leer y el resto nada.
+>
+
+Cambia el propietario y el grupo de MisArchivos.texto.
+>
+
+Ver espacio libre que queda
+>
+
+Ver espacio que ocupa lo que se ha creado
+>
+
+Borrar los archivos que hay en 'programas'
+>
+
+Borrar los 3 directorios creados
+>
+
+Ver el espacio libre que queda
+>
