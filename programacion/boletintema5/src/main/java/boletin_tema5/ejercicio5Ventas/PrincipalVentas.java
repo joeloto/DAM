@@ -1,4 +1,4 @@
-package programacion.arrays.boletin;
+package boletin_tema5.ejercicio5Ventas;
 
 import java.io.File;
 import java.io.FileNotFoundException;

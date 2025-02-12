@@ -1,4 +1,4 @@
-package programacion.arrays.boletin;
+package boletin_tema5.ejercicio5Ventas;
 
 import java.time.LocalDate;
 
@@ -21,7 +21,7 @@ public class Ventas {
 
     public Ventas(int year) {
         for (int i = 0; i < this.vector.length; i++) {
-            this.vector[i] = (int) (Math.random() * 200);
+            this.vector[i] = (int) (Math.random() * 1000);
         }
         setYear(year);
     }
