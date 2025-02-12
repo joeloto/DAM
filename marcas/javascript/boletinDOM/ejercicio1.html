@@ -7,28 +7,30 @@
     <title>Exercise 1</title>
     <script>
         window.onload = function () {
+            var info = document.getElementById("informacion");
+            info.innerHTML = "";
+            //1. Numero de enlaces
             var enlaces = document.getElementsByTagName("a");
-            var numEnlaces = enlaces.length;
-
-            var penultimoEnlace = enlaces[numEnlaces - 2].href;
-
+            var mensaje1 = "El numero de enlaces en total es: " + enlaces.length + "<br>";
+            info.innerHTML = info.innerHTML + mensaje1;
+            //2. Direccion penultimo enlace
+            var penultimoEnlace = enlaces[enlaces.length - 2];
+            var mensaje2 = "La direccion del penultimo enlace es: " + penultimoEnlace.getAttribute("href");
+            info.innerHTML = info.innerHTML + mensaje2 + "<br>";
+            //3. Numero de enlaces que apuntan a http://prueba
             var numEnlacesPrueba = 0;
             for (var i = 0; i < enlaces.length; i++) {
-                if (enlaces[i].href === "http://prueba") {
+                if (enlaces[i].href == "http://prueba/") {
                     numEnlacesPrueba++;
                 }
             }
-
+            var mensaje3 = "Numero de enlaces que apuntan a http://prueba son: " + numEnlacesPrueba + "<br>";
+            info.innerHTML = info.innerHTML + mensaje3 + "<br>"
+            //4. Enlaces parrafo 3
             var parrafos = document.getElementsByTagName("p");
             var enlacesTercerParrafo = parrafos[2].getElementsByTagName("a").length;
-
-            var infoDiv = document.getElementById("informacion");
-            infoDiv.innerHTML = `
-        <p>Número de enlaces en la página: ${numEnlaces}</p>
-        <p>Dirección del penúltimo enlace: ${penultimoEnlace}</p>
-        <p>Número de enlaces que enlazan a http://prueba: ${numEnlacesPrueba}</p>
-        <p>Número de enlaces en el tercer párrafo: ${enlacesTercerParrafo}</p>
-    `;
+            var mensaje4 = "El numero de enlaces del tercer parrafo es: " + enlacesTercerParrafo;
+            info.innerHTML = info.innerHTML + mensaje4
         }
     </script>
 </head>
