@@ -6,7 +6,7 @@ public class PrincipalMatriz {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Matriz m = new Matriz(10);
+        Matriz m = new Matriz(4);
 
         int opcion;
         do {
@@ -23,27 +23,36 @@ public class PrincipalMatriz {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
+                    System.out.println("La matriz:");
                     Matriz.mostrar(m.matriz);
                     break;
                 case 2:
-                    System.out.println("La suma es: " + m.suma());
+                    Matriz.mostrar(m.matriz);
+                    System.out.println("La suma de todos los elementos es: " + m.suma());
                     break;
                 case 3:
+                    Matriz.mostrar(m.matriz);
                     System.out.println("La suma de los elementos de la diagonal es: " + m.suma(true));
                     break;
                 case 4:
+                    Matriz.mostrar(m.matriz);
                     System.out.println("La suma de los elementos que no son de la diagonal es: " + m.suma(false));
                     break;
                 case 5:
-                    System.out.println("¿De qué fila quieres que se sumen los elementos?");
-                    int linea = sc.nextInt();
-                    
-                case 6:
                     Matriz.mostrar(m.matriz);
                     System.out.println("¿De qué fila quieres que se sumen los elementos?");
-                    int linea2 = sc.nextInt();
+                    int fila = sc.nextInt();
+                    System.out.println("La suma de la fila " + fila + " es: " + m.suma(fila));
+                    break;
+                case 6:
+                    Matriz.mostrar(m.matriz);
+                    System.out.println("¿Qué fila quieres borrar?");
+                    fila = sc.nextInt();
+                    System.out.println(m.borraFila(fila));
+                    break;
                 case 7:
                     System.out.println("Hasta otra!");
+                    break;
                 default:
                     System.out.println("Opción no válida.");
                     break;

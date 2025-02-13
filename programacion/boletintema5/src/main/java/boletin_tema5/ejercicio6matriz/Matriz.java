@@ -2,7 +2,7 @@ package boletin_tema5.ejercicio6matriz;
 
 public class Matriz {
 
-    int[][] matriz;
+    public int[][] matriz;
 
     /**
      * construye una matriz de n x n
@@ -89,10 +89,41 @@ public class Matriz {
 
     /**
      * suma los elementos de la linea que se indica
+     * 
      * @param linea representa la linea de la que se quieren sumar los elementos
      * @return devuelve la suma de los elementos de la linea señalada
      */
-    public int suma(int linea){
-        
+    public int suma(int linea) {
+        int acumulador = 0;
+        if (linea < 0 || linea > matriz.length) {
+            return -1;
+        }
+        for (int i = 0; i < matriz[linea].length; i++) {
+            acumulador += matriz[linea][i];
+        }
+        return acumulador;
+    }
+
+    /**
+     * funcion que borra una linea de una matriz
+     * 
+     * @param linea hace referencia a la linea que se quiere borrar
+     * @return devuelve la matriz sin la linea indicada o la matriz completa
+     *         dependiendo de los rangos de la linea
+     */
+    public int[][] borraFila(int linea) {
+        if (linea <= 0 || linea > matriz.length) {
+            return matriz;
+        }
+        int contFilas = 0;
+        int contFilas2 = 0;
+        int[][] m2 = new int[matriz.length - 1][matriz.length];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < m2.length; j++) {
+                
+            }
+        }
+        return m2;
+
     }
 }
