@@ -40,25 +40,25 @@ Actividad: Crear en el directorio de usuario (desde el raíz) el siguiente arbol
 > sudo mkdir documentos
 
 Copiar el contenido del escritorio a 'programas' .
->
+> cp -r Escritorio/ programas/
 
 Crear un archivo de texto (denominado MisArchivos.texto) en el directorio 'otros' que
 contenga un listado de todo el directorio 'home' y sus subdirectorios incluidos los ocultos y en
 formato largo con información compresible para humanos en cuanto al tamaño.
->
+> ls -lahR /home/ > otros/MisArchivos.texto
 
 Mover el documento MisArchivos.texto al directorio 'directorios'
->
+> sudo mv otros/MisArchivos.texto directorios
 
 Visualizar el contenido del directorio 'otros' en formato largo
->
+> ls -l otros
 
 Cambia los permisos de MisArchivos.texto de forma que el usuario lo pueda leer y escribir, el
 grupo sólo leer y el resto nada.
->
+> sudo u+rw,g+r,o-rwx directorios/MisArchivos.texto
 
 Cambia el propietario y el grupo de MisArchivos.texto.
->
+> 
 
 Ver espacio libre que queda
 >
