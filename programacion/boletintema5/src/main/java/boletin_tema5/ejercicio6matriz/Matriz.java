@@ -30,7 +30,6 @@ public class Matriz {
             System.out.printf("%4d", i);
         }
         System.out.println();
-        System.out.println();
         int contFilas = 0;
         for (int[] fila : matriz) {
             System.out.printf("%2d", contFilas);
@@ -115,12 +114,14 @@ public class Matriz {
         if (linea <= 0 || linea > matriz.length) {
             return matriz;
         }
-        int contFilas = 0;
-        int contFilas2 = 0;
         int[][] m2 = new int[matriz.length - 1][matriz.length];
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < m2.length; j++) {
-                
+        for (int i = 0; i < m2.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                if (linea <= i){
+                    m2[i][j] = matriz[i + 1][j];
+                } else{
+                    m2[i][j] = matriz[i][j];
+                } 
             }
         }
         return m2;

@@ -48,7 +48,7 @@ public class PrincipalMatriz {
                     Matriz.mostrar(m.matriz);
                     System.out.println("¿Qué fila quieres borrar?");
                     fila = sc.nextInt();
-                    System.out.println(m.borraFila(fila));
+                    Matriz.mostrar(m.borraFila(fila));
                     break;
                 case 7:
                     System.out.println("Hasta otra!");
