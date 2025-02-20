@@ -68,20 +68,10 @@ public class Matriz {
         int acumulador = 0;
         if (operacion) {
             for (int i = 0; i < this.matriz.length; i++) {
-                for (int j = 0; j < matriz[i].length; j++) {
-                    if (j == i) {
-                        acumulador += matriz[i][j];
-                    }
-                }
+                acumulador += matriz[i][i];
             }
         } else {
-            for (int i = 0; i < this.matriz.length; i++) {
-                for (int j = 0; j < matriz[i].length; j++) {
-                    if (j != i) {
-                        acumulador += matriz[i][j];
-                    }
-                }
-            }
+            acumulador += suma() - acumulador;
         }
         return acumulador;
     }
@@ -94,7 +84,7 @@ public class Matriz {
      */
     public int suma(int linea) {
         int acumulador = 0;
-        if (linea < 0 || linea > matriz.length) {
+        if (linea < 0 || linea >= matriz.length) {
             return -1;
         }
         for (int i = 0; i < matriz[linea].length; i++) {
@@ -111,17 +101,17 @@ public class Matriz {
      *         dependiendo de los rangos de la linea
      */
     public int[][] borraFila(int linea) {
-        if (linea <= 0 || linea > matriz.length) {
+        if (linea <= 0 || linea >= matriz.length) {
             return matriz;
         }
         int[][] m2 = new int[matriz.length - 1][matriz.length];
         for (int i = 0; i < m2.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
-                if (linea <= i){
+                if (linea <= i) {
                     m2[i][j] = matriz[i + 1][j];
-                } else{
+                } else {
                     m2[i][j] = matriz[i][j];
-                } 
+                }
             }
         }
         return m2;

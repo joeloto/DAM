@@ -12,8 +12,16 @@ public class Ejercicio7 {
     }
 
     public static int compara(ArrayList<Integer> coleccion1,ArrayList<Integer> coleccion2){
-        for (int i = 0; i < array.length; i++) {
-            
+        int contador = 0;
+        for (Integer elemento : coleccion1) {
+            if (coleccion2.contains(elemento)) {
+                contador++;
+            }
         }
-    }   
+        return contador;
+    }
+    
+    public static void main(String[] args) {
+        
+    }
 }
