@@ -1,6 +1,6 @@
 package boletin_tema5.ejercicio7;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Ejercicio7 {
     
@@ -20,8 +20,27 @@ public class Ejercicio7 {
         }
         return contador;
     }
+
+    public static void comprueba(int numero){
+        if (numero <= 0 || numero > 49) {
+            System.out.println("Uno o más número está fuera de rangos");
+        }
+    }
     
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        ArrayList <Integer> coleccion = new ArrayList<>();
+
+        System.out.println("Introduce seis números entre 1 y 49 separados por comas");
+        String numeroscomas = sc.nextLine();
+        
+        String[] numeros = numeroscomas.split(",");
+
+        for (String cifra : numeros) {    
+            int numero = Integer.parseInt(cifra);
+            comprueba(numero);
+        }
         
     }
 }
