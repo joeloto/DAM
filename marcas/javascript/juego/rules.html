@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="saturno.ico" type="image/x-icon">
+    <title>Game Rules</title>
+    <style>
+        html {
+            background-image: url(fondo.jpg);
+        }
+
+        *:first-child,
+        li {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        div{
+            position: relative;
+            top: 290px;
+            color: white;
+            height: 350px;
+            width: 600px;
+            background-color: rgba(161,214,248,255);
+            border-radius: 40px;
+        }
+        
+        a{
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover{
+            color: white;
+        }
+
+        #p_uno{
+            position: relative;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Game Rules: Rock, Paper, Scissors</h1>
+        <p id="p_uno">The game is simple. Both players (the human and the machine) select one of the following options:</p>
+        <ul>
+            <li>Rock: Rock beats scissors.</li>
+            <li>Paper: Paper beats rock.</li>
+            <li>Scissors: Scissors beat paper.</li>
+        </ul>
+        <p>The player who correctly chooses the move that beats the opponent's move wins.</p>
+        <a href="index.html">Back to the game</a>
+    </div>
+</body>
+
+</html>
