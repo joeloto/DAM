@@ -1,4 +1,3 @@
-package programacion.POO.boletinPOO.ProyectoEmpresa;
 
 import java.util.*;;
 

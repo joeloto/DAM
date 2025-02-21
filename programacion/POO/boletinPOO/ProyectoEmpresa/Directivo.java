@@ -1,4 +1,4 @@
-package programacion.POO.boletinPOO.ProyectoEmpresa;
+ 
 
 public class Directivo {
 
