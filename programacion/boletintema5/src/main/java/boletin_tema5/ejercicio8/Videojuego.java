@@ -30,8 +30,8 @@ public class Videojuego {
 
     public void setYear(int year) {
         if (year < 1950) {
-            LocalDate localDate = LocalDate.now();
-            this.year = localDate.getYear();
+            LocalDate actual = LocalDate.now();
+            this.year = actual.getYear();
         } else {
             this.year = year;
         }
