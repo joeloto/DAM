@@ -25,6 +25,7 @@ public class Coleccion {
                 case 1:
                     System.out.println("Escribe el titulo del videojuego");
                     String nombre = sc.nextLine();
+                    sc.nextLine();
                     juego.setTitulo(nombre);
                     System.out.println("Inserta su año de salida");
                     int year = sc.nextInt();
@@ -32,33 +33,40 @@ public class Coleccion {
                     System.out.println("Escribe el nombre del fabricante");
                     String fabricante = sc.nextLine();
                     juego.setFabricante(fabricante);
+                    sc.nextLine();
                     String opc;
+                    System.out.println(
+                            "Escribe 'f' si lo quieres poner al final o escribe 'p' si lo quieres poner al principio");
+                    opc = sc.nextLine().trim().toLowerCase();
                     do {
-                        System.out.println(
-                                "Escribe 'f' si lo quieres poner al final o escribe 'p' si lo quieres poner al principio");
-                        opc = sc.nextLine();
                         if (opc == "p") {
                             videojuegos.add(0, juego);
                         } else if (opc == "f") {
                             videojuegos.add(juego);
-                        } else {
-                            System.out.println("Introducción incorrecta");
                         }
-                    } while (opc != "p" || opc != "f");
+                    } while (opc != "p" && opc != "f");
                     break;
                 case 2:
+                    System.out.println("\nListado de Videojuegos");
+                    System.out.println();
+                    System.out.printf("%5s %25s %25s %10s\n", "#", "Título", "Fabricante", "Año");
+                    System.out.println("---------------------------------------------------------------");
+
                     int contFilas = 0;
                     for (Videojuego videojuego : videojuegos) {
-                        if (videojuego.getFabricante().length() > 23) {
-                            videojuego.setFabricante(juego.getFabricante().substring(0, 20) + "...");
+                        String titulo = videojuego.getTitulo();
+                        if (titulo.length() > 23) {
+                            titulo = titulo.substring(0, 20) + "...";
                         }
-                        if (videojuego.getTitulo().length() < 23) {
-                            videojuego.setTitulo(juego.getTitulo().substring(0, 20) + "...");
+
+                        String fabricante2 = videojuego.getFabricante();
+                        if (fabricante2.length() > 23) {
+                            fabricante = fabricante2.substring(0, 20) + "...";
                         }
+
                         contFilas++;
-                        System.out.printf("%3s", contFilas);
-                        System.out.println(videojuego);
-                        System.out.println();
+                        System.out.printf("%5d %25s %25s %10d\n", contFilas, titulo, fabricante2,
+                                videojuego.getYear());
                     }
                     break;
                 case 3:
@@ -81,5 +89,9 @@ public class Coleccion {
                     break;
             }
         } while (opcion != 4);
+    }
+
+    public static void main(String[] args) {
+
     }
 }
