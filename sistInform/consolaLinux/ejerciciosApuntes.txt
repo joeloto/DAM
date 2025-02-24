@@ -58,7 +58,8 @@ grupo sólo leer y el resto nada.
 > sudo u+rw,g+r,o-rwx directorios/MisArchivos.texto
 
 Cambia el propietario y el grupo de MisArchivos.texto.
-> 
+> cd directorios
+> sudo chown joel:100 MisArchivos.texto
 
 Ver espacio libre que queda
 >
@@ -67,10 +68,12 @@ Ver espacio que ocupa lo que se ha creado
 >
 
 Borrar los archivos que hay en 'programas'
->
+> sudo rm -r *
 
 Borrar los 3 directorios creados
->
+>sudo rm -r directorios
+>sudo rm -r programas
+>sudo rm -r otros
 
 Ver el espacio libre que queda
->
+> ls
