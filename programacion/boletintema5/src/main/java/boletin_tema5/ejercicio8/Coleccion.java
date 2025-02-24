@@ -5,6 +5,7 @@ import java.util.*;
 public class Coleccion {
 
     private ArrayList<Videojuego> videojuegos = new ArrayList<>();
+    Videojuego juego = new Videojuego();
 
     public void menu() {
         Scanner sc = new Scanner(System.in);
@@ -22,18 +23,55 @@ public class Coleccion {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
-                    System.out.println("¿Que videojuego quieres insertar?");
-                    String juego = sc.nextLine();
-                    System.out.println(
-                            "Escribe 'f' si lo quieres poner al final o escribe 'p' si lo quieres poner al principio");
-                    String opc = sc.nextLine();
-                    if (opc == "f") {
-                        videojuegos.add();
-                    }
+                    System.out.println("Escribe el titulo del videojuego");
+                    String nombre = sc.nextLine();
+                    juego.setTitulo(nombre);
+                    System.out.println("Inserta su año de salida");
+                    int year = sc.nextInt();
+                    juego.setYear(year);
+                    System.out.println("Escribe el nombre del fabricante");
+                    String fabricante = sc.nextLine();
+                    juego.setFabricante(fabricante);
+                    String opc;
+                    do {
+                        System.out.println(
+                                "Escribe 'f' si lo quieres poner al final o escribe 'p' si lo quieres poner al principio");
+                        opc = sc.nextLine();
+                        if (opc == "p") {
+                            videojuegos.add(0, juego);
+                        } else if (opc == "f") {
+                            videojuegos.add(juego);
+                        } else {
+                            System.out.println("Introducción incorrecta");
+                        }
+                    } while (opc != "p" || opc != "f");
                     break;
                 case 2:
+                    int contFilas = 0;
+                    for (Videojuego videojuego : videojuegos) {
+                        if (videojuego.getFabricante().length() > 23) {
+                            videojuego.setFabricante(juego.getFabricante().substring(0, 20) + "...");
+                        }
+                        if (videojuego.getTitulo().length() < 23) {
+                            videojuego.setTitulo(juego.getTitulo().substring(0, 20) + "...");
+                        }
+                        contFilas++;
+                        System.out.printf("%3s", contFilas);
+                        System.out.println(videojuego);
+                        System.out.println();
+                    }
                     break;
                 case 3:
+
+                    break;
+                case 4:
+                    System.out.println("Indica la posición del videojuego que quieres borrar");
+                    int indice = sc.nextInt();
+                    videojuegos.remove(indice);
+                    System.out.println("Juego eliminado.");
+                    break;
+                case 5:
+
                     break;
                 case 6:
                     System.out.println("Hasta otra!");
