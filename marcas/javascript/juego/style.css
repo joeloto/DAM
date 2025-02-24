@@ -11,7 +11,6 @@ html {
 }
 
 header {
-    background-color: chartreuse;
     height: 20vh;
     display: flex;
     justify-content: center;
@@ -19,7 +18,6 @@ header {
 }
 
 main {
-    background-color: aqua;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +27,6 @@ main {
 
 
 footer {
-    background-color: chartreuse;
     height: 20vh;
     display: flex;
     align-items: center;
@@ -39,7 +36,7 @@ footer {
 #interroganteHumano,
 #interroganteMaquina {
     height: 25vh;
-    border: 10px solid salmon;
+    border: 10px solid rgba(161,214,248,255);
     border-radius: 5%;
     margin: 5vh;
     margin-top: 0vh;
@@ -63,15 +60,25 @@ input {
     height: 50px;
     font-size: 16px;
     padding: 10px;
-    background-color: orange;
+    background-color: rgba(161,214,248,255);
+    color: white;
+    border-color: white;
+}
+
+input:hover{
+    background-color: blue;
 }
 
 a {
     text-decoration: none;
-    color: blue;
-    background-color: aquamarine;
+    color: white;
+    background-color: rgba(161,214,248,255);
     padding: 1vh;
-    border-radius: 15%;
+    border: 1px solid black;
+}
+
+a:hover{
+    background-color: blue;
 }
 
 #resultados {

@@ -6,8 +6,43 @@
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="saturno.ico" type="image/x-icon">
+    <script src="script.js"></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Game of Rock, Paper, Scissors</h1>
+    </header>
+    <main>
+        <div id="resultados">
+            <figure>
+                <img src="izquierda.png"
+                    alt="interroganteHumano" id="interroganteHumano">
+                <figcaption>Your choice</figcaption>
+
+            </figure>
+            <figure>
+                <img src="derecha.png"
+                    alt="interroganteMaquina" id="interroganteMaquina">
+                <figcaption>Machine's choice</figcaption>
+
+            </figure>
+        </div>
+        <div>
+            <h5>
+                Pick the right option (it's a matter of life or death):
+            </h5>
+        </div>
+        <div id="botones">
+            <input type="button" value="Rock" id="piedra">
+            <input type="button" value="Paper" id="papel">
+            <input type="button" value="Scissors" id="tijeras">
+        </div>
+        <div id="divConBotonEnviar"></div>
+    </main>
+    <footer>
+        <a href="rules.html" id="rules-link">View game rules</a>
+
+    </footer>
 </body>
+
 </html>
