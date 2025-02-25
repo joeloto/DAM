@@ -39,33 +39,31 @@ public class Coleccion {
                             "Escribe 'f' si lo quieres poner al final o escribe 'p' si lo quieres poner al principio");
                     opc = sc.nextLine().trim().toLowerCase();
                     do {
-                        if (opc == "p") {
+                        if (opc.equals("p")) {
                             videojuegos.add(0, juego);
-                        } else if (opc == "f") {
+                        } else if (opc.equals("f")) {
                             videojuegos.add(juego);
                         }
-                    } while (opc != "p" && opc != "f");
+                    } while (!opc.equals("p") && !opc.equals("f"));
                     break;
                 case 2:
                     System.out.println("\nListado de Videojuegos");
                     System.out.println();
                     System.out.printf("%5s %25s %25s %10s\n", "#", "Título", "Fabricante", "Año");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------------------------------");
 
                     int contFilas = 0;
                     for (Videojuego videojuego : videojuegos) {
-                        String titulo = videojuego.getTitulo();
-                        if (titulo.length() > 23) {
-                            titulo = titulo.substring(0, 20) + "...";
+                        if (videojuego.getTitulo().length() > 23) {
+                            videojuego.setTitulo(videojuego.getTitulo().substring(0, 20) + "...");
                         }
 
-                        String fabricante2 = videojuego.getFabricante();
-                        if (fabricante2.length() > 23) {
-                            fabricante = fabricante2.substring(0, 20) + "...";
+                        if (videojuego.getFabricante().length() > 23) {
+                            videojuego.setFabricante(videojuego.getFabricante().substring(0, 20) + "...");
                         }
 
                         contFilas++;
-                        System.out.printf("%5d %25s %25s %10d\n", contFilas, titulo, fabricante2,
+                        System.out.printf("%5d %25s %25s %10d\n", contFilas, videojuego.getTitulo(), videojuego.getFabricante(),
                                 videojuego.getYear());
                     }
                     break;
