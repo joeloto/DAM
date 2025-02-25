@@ -2,7 +2,7 @@ package boletin_tema5.examenPrueba;
 
 import java.util.*;
 
-public class Funciones {
+public class Ejercicio1 {
 
     public static int[][] creaMatriz(int magos) {
         int[][] matriz = new int[magos][4];
