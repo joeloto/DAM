@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cambio(evento){
+            var ancho = window.innerWidth;
+            var alto = window.innerHeight;
+            if (evento.clientX <= ancho/2 && evento.clientY <= alto/2){
+                document.body.style.backgroundColor = "red";
+            } else if (evento.clientX >= ancho/2 && evento.clientY <= alto/2){
+                document.body.style.backgroundColor = "yellow";
+            } else if (evento.clientX <= ancho/2 && evento.clientY >= alto/2){
+                document.body.style.backgroundColor = "blue";
+            } else{
+                document.body.style.backgroundColor = "green";
+            }
+        }
+        window.onload = function(){
+            document.onclick = cambio;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

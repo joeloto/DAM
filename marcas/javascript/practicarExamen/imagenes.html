@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cambiar(){
+            var imagen = document.getElementsByTagName("img");
+            if (this.innerHTML == "Imagen 1"){
+                imagen[0].src = "arthurjohn.jpg";
+            } else if (this.innerHTML == "Imagen 2"){
+                imagen[0].src = "bigdaddy.jpg";
+            }
+        }
+        window.onload = function(){
+            var botones = document.getElementsByTagName("button");
+            for (var i = 0; i < botones.length; i++){
+                botones[i].onclick = cambiar;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button>Imagen 1</button>
+    <button>Imagen 2</button>
+    <img src="" alt="">
+</body>
+</html>
