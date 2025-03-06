@@ -12,7 +12,7 @@ Veremos *conceptos* importantes como:
 
 ### Un ejemplo
 
-```bash
+```java
 int numero;
 
    System.out.println("Dime un número entero");
@@ -22,7 +22,7 @@ int numero;
        System.out.println("El númeroe es positivo");
    }
 ```
-A fin de curso subiremos todo a [github](www.github.com)
+A fin de curso subiremos todo a [github](https://www.github.com)
 
 
 ## Consejos para programar 

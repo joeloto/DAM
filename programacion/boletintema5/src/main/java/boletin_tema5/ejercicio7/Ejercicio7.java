@@ -2,11 +2,11 @@ package boletin_tema5.ejercicio7;
 
 import java.util.*;
 
-public class Ejercicio7 {
+public class Ejercicio7 {//TODO coment
 
     public static void rellenaCol(ArrayList<Integer> coleccion) {
         coleccion.clear();
-        for (int i = 0; i <= 6; i++) {
+        for (int i = 0; i <= 6; i++) {// TODO números distintos
             coleccion.add((int) (Math.random() * 50 + 1));
         }
     }
@@ -22,15 +22,18 @@ public class Ejercicio7 {
     }
 
     public static void mostrar(int[] array){
+        int aciertos = 0;
         for (int num : array) {
-            System.out.print(num + " - ");
+            System.out.print(aciertos + " aciertos: " + num);
+            System.out.println();
+            aciertos++;
         }
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<Integer> coleccion = new ArrayList<>();
+        ArrayList<Integer> coleccion = new ArrayList<>();//TODO Comprobaciones sobre la entrada de datos
 
         System.out.println("Introduce seis números entre 1 y 49 separados por comas");
         String numeroscomas = sc.nextLine();
@@ -53,6 +56,7 @@ public class Ejercicio7 {
             int indice = compara(coleccion, loteria);
             victoria[indice]++;
         }
+        System.out.println();
         mostrar(victoria);
 
     }
