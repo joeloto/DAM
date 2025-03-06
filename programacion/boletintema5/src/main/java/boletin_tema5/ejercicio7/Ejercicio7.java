@@ -4,6 +4,10 @@ import java.util.*;
 
 public class Ejercicio7 {//TODO coment
 
+    /**
+     * añade numeros aleatorios a una coleccion
+     * @param coleccion representa la coleccion a la que se añaden los numeros
+     */
     public static void rellenaCol(ArrayList<Integer> coleccion) {
         coleccion.clear();
         for (int i = 0; i <= 6; i++) {// TODO números distintos
@@ -11,6 +15,12 @@ public class Ejercicio7 {//TODO coment
         }
     }
 
+    /**
+     * compara elementos de dos colecciones
+     * @param coleccion1 representa una coleccion
+     * @param coleccion2 representa otra coleccion
+     * @return devuelve las veces que se repiten los elementos
+     */
     public static int compara(ArrayList<Integer> coleccion1, ArrayList<Integer> coleccion2) {
         int contador = 0;
         for (Integer elemento : coleccion1) {
@@ -21,6 +31,10 @@ public class Ejercicio7 {//TODO coment
         return contador;
     }
 
+    /**
+     * muestra los aciertos por pantalla
+     * @param array representa el array con los numeros de aciertos
+     */
     public static void mostrar(int[] array){
         int aciertos = 0;
         for (int num : array) {
