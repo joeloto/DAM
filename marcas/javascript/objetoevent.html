@@ -11,7 +11,7 @@
         }
         function teclado(evento){
             var info = document.getElementById("info");
-            info.innerHTML = "La tecla pulsada es: " + String.fromCharCode(evento.which) + " y el ASCII asociado es: " + evento.clientY;
+            info.innerHTML = "La tecla pulsada es: " + String.fromCharCode(evento.which) + " y el ASCII asociado es: " + evento.which;
         }
         function cambioColor(evento){
             var ancho = window.innerWidth;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function engadir(){
+            var lista = document.getElementById("lista");
+            var texto = prompt("Que quieres añadir")
+            var producto = document.createTextNode(texto);
+            var elemento = document.createElement("li");
+            elemento.appendChild(producto);
+            lista.appendChild(elemento);
+        }
+
+        function borrar(){
+            var elementos = document.getElementsByTagName("li");
+            var producto = prompt("Que quieres eliminar");
+            for (var i = 0; i < elementos.length; i++){
+                if (elementos[i].innerHTML == producto){
+                    elementos[i].style.textDecoration = "line-through";
+                }
+            }
+        }
+        window.onload = function(){
+            var botones = document.getElementsByTagName("button");
+            botones[0].onclick = engadir;
+            botones[1].onclick = borrar;
+        }
+    </script>
+</head>
+<body>
+    <h1>Shopping list</h1>
+    <ol id="lista"></ol>
+    <button>Add product</button>
+    <button>Delete product</button>
+</body>
+</html>
