@@ -1,0 +1,53 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/Joel/tema4-1.0-SNAPSHOT.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'c:/Users/Joel/Desktop/DAM/entornos/tema4ejer4/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2020&#x2013;2025 Organization Name. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'c:/Users/Joel/Desktop/DAM/entornos/tema4ejer4/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ejercicio4tema4 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'c:/Users/Joel/Desktop/DAM/entornos/tema4ejer4/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'ejercicio4tema4 1.0-SNAPSHOT API'
+tema4ejer4
+C:\Users\Joel\tema4-1.0-SNAPSHOT.jar = 1741867104946
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\src\main\java = 1741867454152
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\allclasses-index.html = 1741949826066
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\allclasses.html = 1741949826093
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\allpackages-index.html = 1741949826070
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\constant-values.html = 1741949825805
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\deprecated-list.html = 1741949826086
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\element-list = 1741949825762
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\help-doc.html = 1741949826251
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\index-all.html = 1741949826016
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\index.html = 1741949826242
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\jquery-ui.overrides.css = 1741949826475
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\member-search-index.js = 1741949825963
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\member-search-index.zip = 1741949825978
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\overview-tree.html = 1741949825944
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\package-search-index.js = 1741949825955
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\package-search-index.zip = 1741949825958
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\script.js = 1741949826258
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\search.js = 1741949826261
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\stylesheet.css = 1741949826255
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\type-search-index.js = 1741949825960
+c:\Users\Joel\Desktop\DAM\entornos\tema4ejer4\target\reports\apidocs\type-search-index.zip = 1741949825962
