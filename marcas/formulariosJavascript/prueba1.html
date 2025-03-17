@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms management</title>
+    <script>
+        function mostrar() {
+            //vamos a hacer uso de arrays forms y elements
+            var info = document.getElementById("info");
+            info.innerHTML = "";
+            var formulario = document.forms[0];
+            var elementos = formulario.elements;
+            for (var i = 0; i < elementos.length; i++) {
+                if (elementos[i].type == "button") {
+                    continue;
+                } else {
+                    info.innerHTML = info.innerHTML + elementos[i].value + "<br>";
+                }
+            }
+        }
+        window.onload = function () {
+            var boton = document.querySelector("[type = \"button\"]");
+            boton.onclick = mostrar;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <input type="text" name="nombre" id="nombre" placeholder="Name"><br>
+        <input type="text" name="apellidos" id="apellidos" placeholder="Surnames"><br>
+        <input type="number" name="edad" id="edad" placeholder="Age"><br>
+        <input type="email" name="correo" id="correo" placeholder="Email"><br>
+        <input type="password" name="Contraseña" id="contraseña" placeholder="Password"><br>
+        <input type="button" value="Send">
+    </form>
+    <hr>
+    <div id="info"></div>
+</body>
+
+</html>
