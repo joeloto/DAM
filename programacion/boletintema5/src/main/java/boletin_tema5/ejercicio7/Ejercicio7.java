@@ -36,7 +36,10 @@ public class Ejercicio7 {//TODO coment
     public static void rellenaCol(ArrayList<Integer> coleccion) {
         coleccion.clear();
         for (int i = 0; i <= 6; i++) {// TODO números distintos
-            coleccion.add((int) (Math.random() * 50 + 1));
+            int numero = (int) (Math.random() * 50 + 1);
+            if (!coleccion.contains(numero)) {
+                coleccion.add(numero);
+            } 
         }
     }
 
@@ -74,18 +77,21 @@ public class Ejercicio7 {//TODO coment
 
         ArrayList<Integer> coleccion = new ArrayList<>();//TODO Comprobaciones sobre la entrada de datos
 
+        String[] numeros;
+        do{
         System.out.println("Introduce seis números entre 1 y 49 separados por comas");
         String numeroscomas = sc.nextLine();
-
-        String[] numeros = numeroscomas.split(",");
+        numeros = numeroscomas.split(",");
+        } while (numeros.length != 6);
 
         for (String cifra : numeros) {
             int numero = Integer.parseInt(cifra);
             if (numero <= 0 || numero > 49) {
                 System.out.println("Uno o más números están fuera de rangos");
-            } else {
-                coleccion.add(numero);
+            } 
+            if (coleccion.contains(numero)) {
             }
+            coleccion.add(numero);
         }
 
         int[] victoria = new int[7];
