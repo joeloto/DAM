@@ -1,0 +1,82 @@
+<!-- prisma rectangular, cubo, esfera, cono, piramide, cilindro -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate volume</title>
+    <style>
+        body {
+            margin: 0;
+            height: auto;
+        }
+
+        header {
+            height: 100px;
+            width: 100%;
+            background-color: green;
+            color: greenyellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #seleccionar {
+            background-color: greenyellow;
+            height: 700px;
+        }
+
+        #formulario {
+            position: relative;
+            margin-left: 150px;
+            font-size: 30px;
+            top: 150px;
+        }
+
+        #figura {
+            width: 200px;
+        }
+
+        footer {
+            height: 97px;
+            width: 100%;
+            background-color: green;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: greenyellow;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Calculate the volume of a geometric figure</h1>
+    </header>
+    <div id="seleccionar">
+        <div id="formulario">
+            <form action="#" method="post">
+                <span><strong>Choose a figure</strong></span><br>
+                <select name="figura" id="figura">
+                    <option value="nada">--------------------------------------</option>
+                    <option value="prisma">Prism</option>
+                    <option value="piramide">Pyramid</option>
+                    <option value="cono">Cone</option>
+                    <option value="cilindro">Cylinder</option>
+                    <option value="cubo">Cube</option>
+                    <option value="esfera">Sphere</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <h2>Developed by Joel in 2025</h2>
+    </footer>
+</body>
+
+</html>
