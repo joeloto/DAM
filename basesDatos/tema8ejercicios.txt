@@ -25,4 +25,13 @@
 25  SELECT APELLIDO,COMISION FROM `empleados` WHERE COMISION > (SELECT COMISION FROM empleados WHERE CODEMP = 3);
 26  SELECT COUNT(*) AS 'numero' FROM `empleados` WHERE IDDEPART = (SELECT IDDEPART FROM depart WHERE Nombre = 'Ventas') AND OFICIO = 'Director';
 27 
-40   
+...
+40  SELECT * FROM `empleados` as e1 WHERE EXISTS (SELECT * FROM empleados as e2 WHERE e1.IDDEPART=e2.IDDEPART GROUP by e2.IDDEPART HAVING e1.SALARIO < AVG(e2.SALARIO));
+41  SELECT * FROM `empleados` as e1 WHERE not EXISTS (SELECT * FROM empleados as e2 WHERE e1.CODEMP = e2.JEFE);
+42  SELECT * FROM `empleados` as e1 WHERE EXISTS (SELECT * FROM empleados as e2 WHERE e1.CODEMP = e2.jefe AND e2.SALARIO > 3000);
+43  SELECT * FROM `notas` as n1 where NOT exists (SELECT * FROM notas as n2 where n1.NOTA < n2.NOTA);
+44  SELECT * FROM `asignaturas` as a1 WHERE EXISTS (SELECT * FROM notas as a2 where a1.NOMBRE LIKE "%os%" and a1.COD = a2.asignatura);
+45  SELECT * FROM `asignaturas` as a1 WHERE NOT EXISTS (SELECT * FROM notas as a2 wherE a1.COD = a2.asignatura) ORDER BY COD DESC;
+46  SELECT * FROM `empleados` as e1 WHERE EXISTS (SELECT * from empleados as e2 where e1.OFICIO = e2.OFICIO group by e2.oficio having count(*) = 1);
+47  
+48    
