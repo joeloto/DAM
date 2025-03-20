@@ -1,22 +1,27 @@
 package principal;
 
 public class Animal {
-  public String nombreCientifico;
-  private int edad;
 
-  public int getEdad() {
-    return edad;
-  }
+    public String nombreCientifico;
+    private int edad;
 
-  public void setEdad(int edad) {
-    this.edad = edad;
-  }
+    public int getEdad() {
+      return edad;
+    }
 
-  public Animal() {
-  }
+    public void setEdad(int edad) {
+      this.edad = edad;
+    }
 
-  public Animal(int edad, String nombreCientifico) {
-    this.setEdad(edad);
-    this.nombreCientifico = nombreCientifico;
-  }
+    public Animal() {
+    }
+
+    public Animal(int edad, String nombreCientifico) {
+      this.setEdad(edad);
+      this.nombreCientifico = nombreCientifico;
+    }
+
+    public void muestraDatos() {
+      System.out.printf("Tengo %d años", this.edad);
+    }
 }
