@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculate volume</title>
+    <script src="script.js"></script>
     <style>
         body {
             margin: 0;
@@ -25,6 +26,11 @@
         #seleccionar {
             background-color: greenyellow;
             height: 700px;
+        }
+
+        #seleccionar img{
+            position: relative;
+            left: 600px;
         }
 
         #formulario {
@@ -49,9 +55,6 @@
             color: greenyellow;
         }
     </style>
-    <script>
-
-    </script>
 </head>
 
 <body>
@@ -71,8 +74,14 @@
                     <option value="cubo">Cube</option>
                     <option value="esfera">Sphere</option>
                 </select>
+                <br>
+                <input type="number" name="altura" id="altura" placeholder="Tell me the height"><br>
+                <input type="number" name="radio" id="radio" placeholder="Tell me the radio"><br>
+                <input type="number" name="lado" id="lado" placeholder="Tell me the side"><br>
+                <button>Calculate</button>
             </form>
         </div>
+        <img src="" alt="">
     </div>
     <footer>
         <h2>Developed by Joel in 2025</h2>
