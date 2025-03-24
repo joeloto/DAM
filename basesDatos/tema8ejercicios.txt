@@ -43,3 +43,4 @@
     select empleados.APELLIDO, depart.NOMBRE from empleados JOIN depart ON empleados.IDDEPART = depart.IDDEPART where depart.NOMBRE != 'ventas';
 54  select empleados.*, depart.NOMBRE from empleados,depart where empleados.IDDEPART = depart.IDDEPART and depart.LOC = 'madrid';
 55  select asignaturas.NOMBRE, alumnos.nombre, notas.NOTA from asignaturas,alumnos,notas where asignaturas.COD = notas.asignatura and alumnos.codigo = notas.alumno;
+56  select asignaturas.nombre, alumnos.nombre, alumos.apellidos from asignaturas join alumnos join notas on notas on asignatur.cod = notas.asignatura 
