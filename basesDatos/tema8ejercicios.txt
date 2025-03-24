@@ -34,4 +34,12 @@
 45  SELECT * FROM `asignaturas` as a1 WHERE NOT EXISTS (SELECT * FROM notas as a2 wherE a1.COD = a2.asignatura) ORDER BY COD DESC;
 46  SELECT * FROM `empleados` as e1 WHERE EXISTS (SELECT * from empleados as e2 where e1.OFICIO = e2.OFICIO group by e2.oficio having count(*) = 1);
 47  
-48    
+48   
+49
+50  SELECT * FROM empleados,depart
+51  SELECT * FROM alumnos,asignaturas,notas  
+52  SELECT empleados.apellido, depart.nombre from empleados, depart where empleados.IDDEPART = depart.IDDEPART;
+53  select empleados.APELLIDO, depart.NOMBRE from empleados,depart where empleados.IDDEPART = depart.IDDEPART and depart.NOMBRE != 'ventas';
+    select empleados.APELLIDO, depart.NOMBRE from empleados JOIN depart ON empleados.IDDEPART = depart.IDDEPART where depart.NOMBRE != 'ventas';
+54  select empleados.*, depart.NOMBRE from empleados,depart where empleados.IDDEPART = depart.IDDEPART and depart.LOC = 'madrid';
+55  select asignaturas.NOMBRE, alumnos.nombre, notas.NOTA from asignaturas,alumnos,notas where asignaturas.COD = notas.asignatura and alumnos.codigo = notas.alumno;
