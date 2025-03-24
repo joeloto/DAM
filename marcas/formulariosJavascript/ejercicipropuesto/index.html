@@ -28,7 +28,7 @@
             height: 700px;
         }
 
-        #seleccionar img{
+        #seleccionar img {
             position: relative;
             left: 600px;
         }
@@ -54,7 +54,78 @@
             justify-content: center;
             color: greenyellow;
         }
+
+        .oculto{
+            display: none;
+        }
+
+        .visible{
+            display: flex;
+        }
     </style>
+    <script>
+        var resultado = 0;
+        var medida = document.getElementsByName("medida")[0].value;
+        window.onload = function () {
+            var figuras = document.getElementsByName("figura")[0];
+            var figura = figuras.options[figuras.selectedIndex].value;
+            var imagen = document.getElementsByTagName("img");
+            var lado = document.getElementsByName("lado")[0];
+            var altura = document.getElementsByName("altura")[0];
+            var ancho = document.getElementsByName("ancho")[0];
+            var radio = document.getElementsByName("radio")[0];
+            var lado = document.getElementsByName("lado")[0];
+
+            if (figura === "cubo") {
+                lado.className = "visible";
+                imagen[0].src = "volCubo";
+                resultado = Math.pow(parseFloat(lado.value), 3);
+                boton.className = "visible";
+            }
+            if (figura === "cilindro") {
+                radio.className = "visible";
+                altura.className = "visible";
+                imagen[0].src = "volCilindro";
+                resultado = Math.pow(parseFloat(radio.value), 2) * parseFloat(altura);
+                boton.className = "visible";
+            }
+            if (figura === "prisma") {
+                lado.className = "visible";
+                altura.className = "visible";
+                ancho.className = "visible";
+                imagen[0].src = "volPrisma";
+                resultado = parseFloat(lado) * parseFloat(altura) * parseFloat(ancho);
+                boton.className = "visible";
+            }
+            if (figura === "cono") {
+                lado.className = "visible";
+                altura.className = "visible";
+                imagen[0].src = "volCono";
+                resultado = (1 / 3) * Math.PI * Math.pow(parseFloat(radio.value), 2) * parseFloat(altura);
+                boton.className = "visible";
+            }
+            if (figura === "piramide") {
+                lado.className = "visible";
+                imagen[0].src = "volPiramide";
+                resultado = (1 / 3) * parseFloat(ancho) * parseFloat(lado) * parseFloat(altura);
+                boton.className = "visible";
+            }
+            if (figura === "esfera") {
+                radio.className = "visible";
+                imagen[0].src = "volEsfera";
+                resultado = (4 / 3) * Math.PI * Math.pow(parseFloat(radio.value), 3);
+                boton.className = "visible";
+            }
+
+            var boton = document.getElementsByTagName("button");
+            boton[0].onclick = mostrar;
+        }
+        function mostrar() {
+            var info = document.getElementById("info");
+            info.innerHTML = "";
+            info.innerHTML += "El volumen son " + resultado + " " + medida;
+        }
+    </script>
 </head>
 
 <body>
@@ -75,10 +146,14 @@
                     <option value="esfera">Sphere</option>
                 </select>
                 <br>
-                <input type="number" name="altura" id="altura" placeholder="Tell me the height"><br>
-                <input type="number" name="radio" id="radio" placeholder="Tell me the radio"><br>
-                <input type="number" name="lado" id="lado" placeholder="Tell me the side"><br>
-                <button>Calculate</button>
+                <input type="number" name="altura" id="altura" placeholder="Tell me the height" class="oculto"><br>
+                <input type="number" name="radio" id="radio" placeholder="Tell me the radio" class="oculto"><br>
+                <input type="number" name="lado" id="lado" placeholder="Tell me the side" class="oculto"><br>
+                <input type="number" name="ancho" id="ancho" placeholder="Tell me the width" class="oculto"><br>
+                <input type="text" name="medida" id="medida" placeholder="Tell me the unit of measure" class="oculto"><br>
+                <button class="oculto">Calculate</button>
+                <br>
+                <div id="info"></div>
             </form>
         </div>
         <img src="" alt="">
