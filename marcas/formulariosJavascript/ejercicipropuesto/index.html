@@ -55,76 +55,93 @@
             color: greenyellow;
         }
 
-        .oculto{
+        .oculto {
             display: none;
         }
 
-        .visible{
-            display: flex;
+        .visible {
+            display: block;
         }
     </style>
     <script>
-        var resultado = 0;
-        var medida = document.getElementsByName("medida")[0].value;
         window.onload = function () {
-            var figuras = document.getElementsByName("figura")[0];
-            var figura = figuras.options[figuras.selectedIndex].value;
-            var imagen = document.getElementsByTagName("img");
-            var lado = document.getElementsByName("lado")[0];
-            var altura = document.getElementsByName("altura")[0];
-            var ancho = document.getElementsByName("ancho")[0];
-            var radio = document.getElementsByName("radio")[0];
-            var lado = document.getElementsByName("lado")[0];
+            var boton = document.getElementById("button");
+            var figuras = document.getElementById("figura");
+            var imagen = document.getElementById("img");
+            var lado = document.getElementById("lado");
+            var altura = document.getElementById("altura");
+            var ancho = document.getElementById("ancho");
+            var radio = document.getElementById("radio");
+            var lado = document.getElementById("lado");
 
-            if (figura === "cubo") {
-                lado.className = "visible";
-                imagen[0].src = "volCubo";
-                resultado = Math.pow(parseFloat(lado.value), 3);
-                boton.className = "visible";
-            }
-            if (figura === "cilindro") {
-                radio.className = "visible";
-                altura.className = "visible";
-                imagen[0].src = "volCilindro";
-                resultado = Math.pow(parseFloat(radio.value), 2) * parseFloat(altura);
-                boton.className = "visible";
-            }
-            if (figura === "prisma") {
-                lado.className = "visible";
-                altura.className = "visible";
-                ancho.className = "visible";
-                imagen[0].src = "volPrisma";
-                resultado = parseFloat(lado) * parseFloat(altura) * parseFloat(ancho);
-                boton.className = "visible";
-            }
-            if (figura === "cono") {
-                lado.className = "visible";
-                altura.className = "visible";
-                imagen[0].src = "volCono";
-                resultado = (1 / 3) * Math.PI * Math.pow(parseFloat(radio.value), 2) * parseFloat(altura);
-                boton.className = "visible";
-            }
-            if (figura === "piramide") {
-                lado.className = "visible";
-                imagen[0].src = "volPiramide";
-                resultado = (1 / 3) * parseFloat(ancho) * parseFloat(lado) * parseFloat(altura);
-                boton.className = "visible";
-            }
-            if (figura === "esfera") {
-                radio.className = "visible";
-                imagen[0].src = "volEsfera";
-                resultado = (4 / 3) * Math.PI * Math.pow(parseFloat(radio.value), 3);
-                boton.className = "visible";
+            function resetInputs() {
+                altura.className = "oculto";
+                radio.className = "oculto";
+                lado.className = "oculto";
+                ancho.className = "oculto";
+                boton.className = "oculto";
+                imagen.src = "";
             }
 
-            var boton = document.getElementsByTagName("button");
-            boton[0].onclick = mostrar;
+            figuras.onchange = function () {
+                resetInputs();
+                var figura = figuras.value;
+
+                if (figura === "cubo") {
+                    lado.className = "visible";
+                    imagen.src = "volCubo.png";
+                }
+                else if (figura === "cilindro") {
+                    radio.className = "visible";
+                    altura.className = "visible";
+                    imagen.src = "volCilindro.png";
+                }
+                else if (figura === "prisma") {
+                    lado.className = "visible";
+                    altura.className = "visible";
+                    ancho.className = "visible";
+                    imagen.src = "volPrisma.png";
+                }
+                else if (figura === "cono") {
+                    lado.className = "visible";
+                    altura.className = "visible";
+                    imagen.src = "volCono.png";
+                }
+                else if (figura === "piramide") {
+                    lado.className = "visible";
+                    imagen.src = "volPiramide.png";
+                }
+                else if (figura === "esfera") {
+                    radio.className = "visible";
+                    imagen.src = "volEsfera.png";
+                }
+
+                if (figura !== ""){
+                    boton.className = "visible";
+                }
+            }
+
+            boton.onclick = function () {
+                var resultado = 0;
+                var unidad = document.getElementsByName("medida").value || "units³";
+
+                if (figuras.value === "cubo") {
+                    resultado = Math.pow(parseFloat(lado.value), 3);
+                } else if (figuras.value === "cilindro") {
+                    resultado = Math.PI * Math.pow(parseFloat(radio.value), 2) * parseFloat(altura.value);
+                } else if (figuras.value === "prisma") {
+                    resultado = parseFloat(lado.value) * parseFloat(altura.value) * parseFloat(ancho.value);
+                } else if (figuras.value === "cono") {
+                    resultado = (1 / 3) * Math.PI * Math.pow(parseFloat(radio.value), 2) * parseFloat(altura.value);
+                } else if (figura.value === "piramide") {
+                    resultado = (1 / 3) * parseFloat(lado.value) * parseFloat(altura.value) * parseFloat(ancho.value);
+                } else if (figuras.value === "esfera") {
+                    resultado = (4 / 3) * Math.PI * Math.pow(parseFloat(radio.value), 3);
+                }
+
+                info.innerHTML = "The volume is" + resultado.toFixed(2) + " " + unidad;
         }
-        function mostrar() {
-            var info = document.getElementById("info");
-            info.innerHTML = "";
-            info.innerHTML += "El volumen son " + resultado + " " + medida;
-        }
+    }
     </script>
 </head>
 
@@ -137,7 +154,7 @@
             <form action="#" method="post">
                 <span><strong>Choose a figure</strong></span><br>
                 <select name="figura" id="figura">
-                    <option value="nada">--------------------------------------</option>
+                    <option value="">--------------------------------------</option>
                     <option value="prisma">Prism</option>
                     <option value="piramide">Pyramid</option>
                     <option value="cono">Cone</option>
@@ -150,13 +167,14 @@
                 <input type="number" name="radio" id="radio" placeholder="Tell me the radio" class="oculto"><br>
                 <input type="number" name="lado" id="lado" placeholder="Tell me the side" class="oculto"><br>
                 <input type="number" name="ancho" id="ancho" placeholder="Tell me the width" class="oculto"><br>
-                <input type="text" name="medida" id="medida" placeholder="Tell me the unit of measure" class="oculto"><br>
-                <button class="oculto">Calculate</button>
+                <input type="text" name="medida" id="medida" placeholder="Tell me the unit of measure"
+                    class="oculto"><br>
+                <button class="oculto" id="boton">Calculate</button>
                 <br>
                 <div id="info"></div>
             </form>
         </div>
-        <img src="" alt="">
+        <img id="imagen" src="" alt="">
     </div>
     <footer>
         <h2>Developed by Joel in 2025</h2>
