@@ -65,9 +65,9 @@
     </style>
     <script>
         window.onload = function () {
-            var boton = document.getElementById("button");
+            var boton = document.getElementsByTagName("button");
             var figuras = document.getElementById("figura");
-            var imagen = document.getElementById("img");
+            var imagen = document.getElementsByTagName("img");
             var lado = document.getElementById("lado");
             var altura = document.getElementById("altura");
             var ancho = document.getElementById("ancho");
@@ -116,7 +116,7 @@
                     imagen.src = "volEsfera.png";
                 }
 
-                if (figura !== ""){
+                if (figura !== "nada"){
                     boton.className = "visible";
                 }
             }
@@ -154,7 +154,7 @@
             <form action="#" method="post">
                 <span><strong>Choose a figure</strong></span><br>
                 <select name="figura" id="figura">
-                    <option value="">--------------------------------------</option>
+                    <option value="nada">--------------------------------------</option>
                     <option value="prisma">Prism</option>
                     <option value="piramide">Pyramid</option>
                     <option value="cono">Cone</option>
@@ -169,12 +169,12 @@
                 <input type="number" name="ancho" id="ancho" placeholder="Tell me the width" class="oculto"><br>
                 <input type="text" name="medida" id="medida" placeholder="Tell me the unit of measure"
                     class="oculto"><br>
-                <button class="oculto" id="boton">Calculate</button>
+                <button>Calculate</button>
                 <br>
                 <div id="info"></div>
             </form>
         </div>
-        <img id="imagen" src="" alt="">
+        <img src="" alt="">
     </div>
     <footer>
         <h2>Developed by Joel in 2025</h2>
