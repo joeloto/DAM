@@ -64,66 +64,78 @@
         }
     </style>
     <script>
-        window.onload = function () {
-            var boton = document.getElementsByTagName("button");
-            var figuras = document.getElementById("figura");
-            var imagen = document.getElementsByTagName("img");
-            var lado = document.getElementById("lado");
-            var altura = document.getElementById("altura");
-            var ancho = document.getElementById("ancho");
-            var radio = document.getElementById("radio");
-            var lado = document.getElementById("lado");
+        function resetInputs() {
+            altura.className = "oculto";
+            radio.className = "oculto";
+            lado.className = "oculto";
+            ancho.className = "oculto";
+            medida.className = "oculto";
+            boton.className = "oculto";
+        }
 
-            function resetInputs() {
-                altura.className = "oculto";
-                radio.className = "oculto";
-                lado.className = "oculto";
-                ancho.className = "oculto";
-                boton.className = "oculto";
-                imagen.src = "";
+        function seleccion() {
+            var figuras = document.getElementsByName("figuras")[0];
+            var imagen = document.getElementsByTagName("img")[0];
+            var lado = document.getElementsByName("lado")[0];
+            var altura = document.getElementsByName("altura")[0];
+            var ancho = document.getElementsByName("ancho")[0];
+            var radio = document.getElementsByName("radio")[0];
+            var lado = document.getElementsByName("lado")[0];
+            var medida = document.getElementsByName("medida")[0];
+
+            resetInputs();
+            var figura = figuras.options[figuras.selectedIndex].value;
+
+            if (figura === "cubo") {
+                lado.className = "visible";
+                medida.className = "visible";
+                boton.className = "visible";
+                imagen.setAttribute("src", "volCubo.png");
             }
-
-            figuras.onchange = function () {
-                resetInputs();
-                var figura = figuras.value;
-
-                if (figura === "cubo") {
-                    lado.className = "visible";
-                    imagen.src = "volCubo.png";
-                }
-                else if (figura === "cilindro") {
-                    radio.className = "visible";
-                    altura.className = "visible";
-                    imagen.src = "volCilindro.png";
-                }
-                else if (figura === "prisma") {
-                    lado.className = "visible";
-                    altura.className = "visible";
-                    ancho.className = "visible";
-                    imagen.src = "volPrisma.png";
-                }
-                else if (figura === "cono") {
-                    lado.className = "visible";
-                    altura.className = "visible";
-                    imagen.src = "volCono.png";
-                }
-                else if (figura === "piramide") {
-                    lado.className = "visible";
-                    imagen.src = "volPiramide.png";
-                }
-                else if (figura === "esfera") {
-                    radio.className = "visible";
-                    imagen.src = "volEsfera.png";
-                }
-
-                if (figura !== "nada"){
-                    boton.className = "visible";
-                }
+            else if (figura === "cilindro") {
+                radio.className = "visible";
+                altura.className = "visible";
+                medida.className = "visible";
+                boton.className = "visible";
+                imagen.setAttribute("src", "volCilindro.png");
             }
+            else if (figura === "prisma") {
+                lado.className = "visible";
+                altura.className = "visible";
+                medida.className = "visible";
+                boton.className = "visible";
+                altura.style.position = "relative";
+                altura.style.top = "30px";
+                ancho.className = "visible";
+                imagen.setAttribute("src", "volPrisma.png");
+            }
+            else if (figura === "cono") {
+                lado.className = "visible";
+                altura.className = "visible";
+                boton.className = "visible";
+                imagen.setAttribute("src", "volCono.png");
+            }
+            else if (figura === "piramide") {
+                lado.className = "visible";
+                altura.className = "visible";
+                ancho.className = "visible";
+                medida.className = "visible";
+                boton.className = "visible";
+                altura.style.position = "relative";
+                altura.style.top = "30px";
+                imagen.setAttribute("src", "volPiramide.png");
+            }
+            else if (figura === "esfera") {
+                radio.className = "visible";
+                medida.className = "visible";
+                boton.className = "visible";
+                imagen.setAttribute("src", "volEsfera.png");
+            }
+        }
 
-            boton.onclick = function () {
-                var resultado = 0;
-                var unidad = document.getElementsByName("medida").value || "units³";
+        function mostrarResultado(){
+            var resultado = 0;
+                var unidad = document.getElementsByName("medida").value || medida.value + "³";
 
                 if (figuras.value === "cubo") {
                     resultado = Math.pow(parseFloat(lado.value), 3);
@@ -138,10 +150,18 @@
                 } else if (figuras.value === "esfera") {
                     resultado = (4 / 3) * Math.PI * Math.pow(parseFloat(radio.value), 3);
                 }
-
-                info.innerHTML = "The volume is" + resultado.toFixed(2) + " " + unidad;
+                var info = document.getElementById("info");
+                info.innerHTML = "";
+                info.innerHTML += "The volume is " + resultado.toFixed(2) + " " + unidad;
         }
-    }
+
+        window.onload = function () {
+            var figuras = document.getElementsByName("figuras");
+            figuras.onchange = seleccion;
+
+            var boton = document.querySelector("[type = \"button\"]");
+            boton.onclick = mostrarResultado;
+        }
     </script>
 </head>
 
@@ -153,7 +173,7 @@
         <div id="formulario">
             <form action="#" method="post">
                 <span><strong>Choose a figure</strong></span><br>
-                <select name="figura" id="figura">
+                <select name="figuras" id="figuras">
                     <option value="nada">--------------------------------------</option>
                     <option value="prisma">Prism</option>
                     <option value="piramide">Pyramid</option>
@@ -169,7 +189,7 @@
                 <input type="number" name="ancho" id="ancho" placeholder="Tell me the width" class="oculto"><br>
                 <input type="text" name="medida" id="medida" placeholder="Tell me the unit of measure"
                     class="oculto"><br>
-                <button>Calculate</button>
+                <input type="button" value="Calculate" class="oculto">
                 <br>
                 <div id="info"></div>
             </form>

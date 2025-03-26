@@ -47,4 +47,7 @@
 57  select notas.NOTA from notas,alumnos,asignaturas where alumnos.nombre = 'Ray' and asignaturas.NOMBRE = 'FOL' and alumnos.codigo = notas.alumno and asignaturas.COD = notas.asignatura;
 58  SELECT empleados.apellido, empleados.salario, depart.NOMBRE FROM empleados JOIN depart ON empleados.IDDEPART = depart.IDDEPART WHERE empleados.oficio = (SELECT oficio FROM empleados WHERE apellido = 'GIL') AND (empleados.comision IS NULL OR empleados.comision = 0);
 59  select avg(empleados.SALARIO) as 'media' from empleados,depart where empleados.IDDEPART = depart.IDDEPART and depart.NOMBRE = 'Contabilidad';
-60  
+60  select empleados.APELLIDO from empleados where empleados.SALARIO > ANY (select empleados.SALARIO from empleados where empleados.IDDEPART = (select depart.IDDEPART from depart where depart.nombre = 'ventas'));
+61  SELECT depart.NOMBRE, COUNT(empleados.IDDEPART) AS numero_empleados FROM depart JOIN empleados ON depart.IDDEPART = empleados.IDDEPART GROUP BY depart.IDDEPART;
+62  select max(empleados.SALARIO) as 'maximo', min(empleados.SALARIO) as 'minimo', avg(empleados.SALARIO) as 'promedio' from empleados,depart where depart.NOMBRE = 'ventas' and depart.IDDEPART = empleados.IDDEPART;
+63      
