@@ -40,10 +40,10 @@ public class Ejercicio4 {
      */
     public static void muestraCentrado(String cadena) {
         int consola = 80;
-        int espacios = (consola - cadena.length())/2;
         if (cadena.length() > 80) {
             throw new IllegalArgumentException("La cadena supera el límite");
         }
+        int espacios = (consola - cadena.length())/2;
         for (int i = 0; i < espacios; i++) {
             System.out.print(" ");
         }
