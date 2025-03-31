@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+    <script>
+        function mostrar(){
+            var mensaje = document.getElementById("mensaje");
+            mensaje.innerHTML = "";
+            var asunto = document.getElementsByName("asunto")[0];
+            var opc = asunto.options[asunto.selectedIndex].value;
+            mensaje.innerHTML += opc;
+        }
+        window.onload = function(){
+            var boton = document.querySelector("[type = \"button\"]");
+            boton.onclick = mostrar;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="nombre"><strong>Nombre:</strong></label><br>
+        <input type="text" name="nombre" id="nombre" required placeholder="Escribe tu nombre"><br>
+        <label for="nombre"><strong>Teléfono:</strong></label><br>
+        <input type="text" name="telefono" id="telefono" required placeholder="Escribe tu teléfono"><br>
+        <label for="nombre"><strong>Asunto:</strong></label><br>
+        <select name="asunto" id="asunto">
+            <option value=""></option>
+            <option value="información">Solicitar información</option>
+            <option value="queja">Poner una queja</option>
+            <option value="otros">Otros</option>
+        </select><br>
+        <label for="mensaje"><strong>Escribe un mensaje:</strong></label><br>
+        <textarea name="mensaje" id="mensaje"></textarea><br>
+        <label for="enviar"><strong>Pulsa para enviar:</strong></label><br>
+        <input type="button" name="enviar" id="enviar" value="Enviar consulta"><br>
+    </form>
+</body>
+</html>

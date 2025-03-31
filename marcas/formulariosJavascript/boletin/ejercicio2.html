@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <script>
+        function mostrar(){
+            var info = document.getElementById("info");
+            info.innerHTML = "";
+            var nombre = document.getElementsByName("nombre")[0].value;
+            var correo = document.getElementsByName("correo")[0].value;
+            var telefono = document.getElementsByName("telefono")[0].value;
+            var mensaje = document.getElementsByName("mensaje")[0].value;
+            const fecha = new Date();
+            info.innerHTML += "El mensaje " + mensaje + " fue enviado por " + nombre + " telefono, " + telefono +". Su email es: " + correo + ". Enviado el " + fecha.toLocaleDateString(); 
+        }
+        window.onload = function(){
+            var boton = document.querySelector("[type = \"button\"]");
+            boton.onclick = mostrar;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="">Rellena el siguiente formulario</label>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre"><br>
+        <label for="correo">Email:</label>
+        <input type="email" name="correo" id="correo"><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" id="telefono"><br>
+        <label for="mensaje">Mensaje:</label>
+        <textarea name="mensaje" id="mensaje" placeholder="Escriba aquí su mensaje"></textarea><br>
+        <input type="button" name="enviar" id="enviar" value="Enviar datos">
+    </form>
+    <div id="info"></div>
+</body>
+</html>
