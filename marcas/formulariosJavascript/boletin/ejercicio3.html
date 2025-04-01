@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <script>
+        function mostrar(){
+            var info = document.getElementById("info");
+            info.innerHTML = "El precio total del envío es ";
+            var precio = document.getElementsByName("precio")[0].value;
+            var cantidad = document.getElementsByName("cantidad")[0].value;
+            var descuento = document.getElementsByName("descuento")[0].value;
+            var iva = document.getElementsByName("iva")[0].value;
+            var envios = document.getElementsByName("envios")[0];
+            var envio = envios.options[envios.selectedIndex].value;
+            var resultado = 0;
+            if (envio == "tienda"){
+                resultado = ((parseFloat(precio) + parseFloat(precio) * parseFloat(iva)) - parseFloat(descuento)) * parseFloat(cantidad);
+            }
+            else if (envio == "correos"){
+                resultado = ((parseFloat(precio) + parseFloat(precio) * parseFloat(iva)) - parseFloat(descuento)) * parseFloat(cantidad) + 5;
+            }
+            else if (envio == "seur"){
+                resultado = ((parseFloat(precio) + parseFloat(precio) * parseFloat(iva)) - parseFloat(descuento)) * parseFloat(cantidad) + 8;
+            }
+            info.innerHTML += resultado;
+        }
+        window.onload = function(){
+            var boton = document.querySelector("[type = \"button\"]");
+            boton.onclick = mostrar;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="">Rellena el siguiente formulario para calcular el coste total de envío</label><br>
+        <label for="precio">Precio:</label>
+        <input type="text" name="precio" id="precio" size="5"><br>
+        <label for="cantidad">Cantidad:</label>
+        <input type="text" name="cantidad" id="cantidad" size="5"><br>
+        <label for="descuento">Descuento:</label>
+        <input type="text" name="descuento" id="descuento" size="5"><br>
+        <label for="iva">IVA:</label>
+        <input type="text" name="iva" id="iva" size="3"> %<br>
+        <label for="envio">Método de envío</label>
+        <select name="envios" id="envios">
+            <option value="tienda">Recogida en tienda</option>
+            <option value="correos">Entrega por correos</option>
+            <option value="seur">Entrega por seur</option>
+        </select>
+        <br>
+        <input type="button" name="calcular" id="calcular" value="Calcular precio total"><br>
+        <div id="info"></div>
+    </form>
+</body>
+</html>
