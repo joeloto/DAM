@@ -1,51 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms management 2</title>
     <style>
-        textarea{
+        textarea {
             resize: none;
+        }
+
+        .rojo {
+            color: red;
         }
     </style>
     <script>
-        function mostrar(){
+        function mostrar() {
             var generov = "";
+            var flagerror = true;
+            var checkhobbies = 0;
+            var checkgenero = 0;
             var info = document.getElementById("info");
+            var errornombre = document.getElementById("errornombre");
+            var errorapellidos = document.getElementById("errorapellidos");
+            var erroraedad = document.getElementById("erroredad");
+            var errorcorreo = document.getElementById("errorcorreo");
+            var errorpass = document.getElementById("errorpass");
+            var errorgenero = document.getElementById("errorgenero");
+            var errorhobbies = document.getElementById("errohobbies");
+            var erroridioma = document.getElementById("erroidioma");
+            var errorcomentarios = document.getElementById("errocomentarios");
             info.innerHTML = "";
             var nombre = document.getElementsByName("nombre")[0].value;
-            info.innerHTML += nombre + "<br>";
+            if (nombre == "") {
+                errornombre.innerHTML = "Field name is required";
+                flagerror = false;
+            } else {
+                errornombre.innerHTML = "";
+            }
             var apellidos = document.getElementsByName("apellidos")[0].value;
-            info.innerHTML += apellidos + "<br>";
+            if (apellidos == "") {
+                errorapellidos.innerHTML = "Field surname is required";
+                flagerror = false;
+            } else {
+                errorapellidos.innerHTML = "";
+            }
+
             var edad = document.getElementsByName("edad")[0].value;
-            info.innerHTML += edad + "<br>";
+            if (edad == "") {
+                erroredad.innerHTML = "Field age is required";
+                flagerror = false;
+            } else {
+                erroredad.innerHTML = "";
+            }
             var correo = document.getElementsByName("correo")[0].value;
-            info.innerHTML += correo + "<br>";
-            var contraseña = document.getElementsByName("pass")[0].value;
-            info.innerHTML += contraseña + "<br>";
+            if (correo == "") {
+                errorcorreo.innerHTML = "Field email is required";
+                flagerror = false;
+            } else {
+                errorcorreo.innerHTML = "";
+            }
+            var password = document.getElementsByName("pass")[0].value;
+            if (password == "") {
+                errorpass.innerHTML = "Field password is required";
+                flagerror = false;
+            } else {
+                errorpass.innerHTML = "";
+            }
             var genero = document.getElementsByName("genero");
             for (var i = 0; i < genero.length; i++) {
                 if (genero[i].checked) {
                     generov = genero[i].value;
+                } else {
+                    checkgenero++;
                 }
             }
-            info.innerHTML += "<strong>Género:</strong> "+ "<br>";
-            info.innerHTML = info.innerHTML + generov +"<br>";
+            if (checkgenero == genero.length) {
+                errorgenero.innerHTML = "Field gender is required";
+                flagerror = false;
+            } else {
+                errorgenero.innerHTML = "";
+            }
+
             var hobbies = document.getElementsByName("hobbies[]")
-            info.innerHTML += "<strong>Hobbies:</strong>" + "<br>";
-            for (var i = 0; i < hobbies.length; i++){
-                if (hobbies[i].checked){ 
-                    info.innerHTML = info.innerHTML + hobbies[i].value + "<br>";
+
+            for (var i = 0; i < hobbies.length; i++) {
+                if (!hobbies[i].checked) {
+                    checkhobbies++;
                 }
             }
-            info.innerHTML = info.innerHTML + "<strong>Language choosen:</strong>" + "<br>";
+            if (checkhobbies == hobbies.length) {
+                errorhobbies.innerHTML = "Field gender is required";
+                flagerror = false;
+            } else {
+                errorhobbies.innerHTML = "";
+            }
             var idiomas = document.getElementsByName("language")[0];
             var idioma = idiomas.options[idiomas.selectedIndex].value;
-            info.innerHTML = info.innerHTML + idioma + "<br>"
+            if (idioma == "") {
+                erroridioma.innerHTML = "You must select a language";
+                flagerror = false;
+            } else {
+                erroridioma.innerHTML = "";
+            }
             var comentarios = document.getElementsByName("comentarios")[0].value;
-            info.innerHTML = info.innerHTML + "<strong>Your comments:</strong>" + "<br>";
-            info.innerHTML = info.innerHTML + comentarios;
+            if (comentarios == "") {
+                errorcomentarios.innerHTML = "You must select a language";
+                flagerror = false;
+            } else {
+                errorcomentarios.innerHTML = "";
+            }
+            if (flagerror) {
+                info.innerHTML += nombre + "<br>";
+                info.innerHTML += apellidos + "<br>";
+                info.innerHTML += edad + "<br>";
+                info.innerHTML += correo + "<br>";
+                info.innerHTML += password + "<br>";
+                info.innerHTML += "<strong>Género:</strong> " + "<br>";
+                info.innerHTML = info.innerHTML + generov + "<br>";
+                info.innerHTML += "<strong>Hobbies:</strong>" + "<br>";
+                for (var i = 0; i < hobbies.length; i++) {
+                    if (hobbies[i].checked) {
+                        info.innerHTML += hobbies[i].value + "<br>";
+                    }
+                }
+                info.innerHTML = info.innerHTML + "<strong>Language choosen:</strong>" + "<br>";
+                info.innerHTML = info.innerHTML + idioma + "<br>"
+                info.innerHTML = info.innerHTML + "<strong>Your comments:</strong>" + "<br>";
+                info.innerHTML = info.innerHTML + comentarios;
+            }
         }
         window.onload = function () {
             var boton = document.querySelector("[type = \"button\"]");
@@ -53,42 +136,54 @@
         }
     </script>
 </head>
+
 <body>
     <form action="#" method="post"></form>
-        <input type="text" name="nombre" id="nombre" placeholder="Name"><br>
-        <input type="text" name="apellidos" id="apellidos" placeholder="Surnames"><br>
-        <input type="number" name="edad" id="edad" placeholder="Age"><br>
-        <input type="email" name="correo" id="correo" placeholder="Email"><br>
-        <input type="password" name="pass" id="pass" placeholder="Password"><br>
-        <hr>
-        <span><strong>Gender:</strong></span><br>
-        Man: <input type="radio" name="genero" id="hombre" value="Man">
-        Woman: <input type="radio" name="genero" id="mujer" value="Woman">
-        <br>
-        <hr>
-        <span><strong>Hobbies:</strong></span><br>
-        Reading: <input type="checkbox" name="hobbies[]" id="reading" value="reading"><br>
-        Cinema: <input type="checkbox" name="hobbies[]" id="cinema" value="cinema"><br>
-        Drawing: <input type="checkbox" name="hobbies[]" id="drawing" value="drawing"><br>
-        Music: <input type="checkbox" name="hobbies[]" id="music" value="music"><br>
-        Videogames: <input type="checkbox" name="hobbies[]" id="videogames" value="videogames">
-        <hr>
-        <span><strong>Select a language</strong></span><br>
-        <select name="language" id="language">
-            <option value="english">English</option>
-            <option value="spanish">Spanish</option>
-            <option value="italian">Italian</option>
-            <option value="french">French</option>
-            <option value="german">German</option>
-        </select>
-        <br>
-        <hr>
-        <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Write your comments here"></textarea>  
-        <br>  
-        <input type="button" value="Send">
+    <input type="text" name="nombre" id="nombre" placeholder="Name"><br>
+    <span id="errornombre"></span>
+    <input type="text" name="apellidos" id="apellidos" placeholder="Surnames"><br>
+    <span id="errorapellidos"></span>
+    <input type="number" name="edad" id="edad" placeholder="Age"><br>
+    <span id="erroredad"></span>
+    <input type="email" name="correo" id="correo" placeholder="Email"><br>
+    <span id="errorcorreo"></span>
+    <input type="password" name="pass" id="pass" placeholder="Password"><br>
+    <span id="errorpass"></span>
+    <hr>
+    <span><strong>Gender:</strong></span><br>
+    Man: <input type="radio" name="genero" id="hombre" value="Man">
+    Woman: <input type="radio" name="genero" id="mujer" value="Woman">
+    <span id="errorgenero"></span>
+    <br>
+    <hr>
+    <span><strong>Hobbies:</strong></span><br>
+    Reading: <input type="checkbox" name="hobbies[]" id="reading" value="reading"><br>
+    Cinema: <input type="checkbox" name="hobbies[]" id="cinema" value="cinema"><br>
+    Drawing: <input type="checkbox" name="hobbies[]" id="drawing" value="drawing"><br>
+    Music: <input type="checkbox" name="hobbies[]" id="music" value="music"><br>
+    Videogames: <input type="checkbox" name="hobbies[]" id="videogames" value="videogames">
+    <span id="errorhobbies"></span>
+    <hr>
+    <span><strong>Select a language</strong></span><br>
+    <select name="language" id="language">
+        <option value="">----------</option>
+        <option value="english">English</option>
+        <option value="spanish">Spanish</option>
+        <option value="italian">Italian</option>
+        <option value="french">French</option>
+        <option value="german">German</option>
+    </select>
+    <br>
+    <span id="erroridioma"></span>
+    <hr>
+    <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Write your comments here"></textarea>
+    <br>
+    <span id="errorcomentarios"></span>
+    <input type="button" value="Send">
     </form>
     <hr>
     <h3>User registration data</h3>
     <div id="info"></div>
 </body>
+
 </html>
