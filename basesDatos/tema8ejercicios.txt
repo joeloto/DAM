@@ -50,4 +50,15 @@
 60  select empleados.APELLIDO from empleados where empleados.SALARIO > ANY (select empleados.SALARIO from empleados where empleados.IDDEPART = (select depart.IDDEPART from depart where depart.nombre = 'ventas'));
 61  SELECT depart.NOMBRE, COUNT(empleados.IDDEPART) AS numero_empleados FROM depart JOIN empleados ON depart.IDDEPART = empleados.IDDEPART GROUP BY depart.IDDEPART;
 62  select max(empleados.SALARIO) as 'maximo', min(empleados.SALARIO) as 'minimo', avg(empleados.SALARIO) as 'promedio' from empleados,depart where depart.NOMBRE = 'ventas' and depart.IDDEPART = empleados.IDDEPART;
-63      
+63  select depart.IDDEPART, depart.NOMBRE, max(empleados.SALARIO) as 'maximo', min(empleados.SALARIO) as 'minimo', avg(empleados.SALARIO) as 'promedio' from depart,empleados where empleados.IDDEPART = depart.IDDEPART GROUP by empleados.IDDEPART;
+64  select depart.IDDEPART, depart.NOMBRE, empleados.oficio, max(empleados.SALARIO) as 'maximo', min(empleados.SALARIO) as 'minimo', avg(empleados.SALARIO) as 'promedio' from depart,empleados where empleados.IDDEPART = depart.IDDEPART GROUP by depart.NOMBRE, depart.IDDEPART, empleados.OFICIO;
+    Para listar los con menos de 2000 de salario habría que añadir: having max(empleados.salario) < 2000;
+65  select empleados.* from empleados, depart where depart.NOMBRE = 'ventas' and depart.IDDEPART = empleados.IDDEPART order by empleados.SALARIO desc limit 1;
+66  select depart.IDDEPART, depart.NOMBRE, count(*) as 'total' from depart, empleados where depart.IDDEPART = empleados.IDDEPART GROUP by depart.IDDEPART order by 'total' desc limit 1;
+67  
+68  select empleados.APELLIDO, depart.NOMBRE from empleados,depart where empleados.IDDEPART = depart.IDDEPART ORDER by depart.NOMBRE;
+69  select empleados.APELLIDO, depart.NOMBRE, depart.iddepart from empleados,depart where empleados.IDDEPART = depart.IDDEPART and depart.IDDEPART = 30;
+70  select empleados.APELLIDO, depart.NOMBRE from empleados left join depart on empleados.IDDEPART = depart.IDDEPART;
+71  select empleados.APELLIDO, depart.NOMBRE from empleados right join depart on empleados.IDDEPART = depart.IDDEPART;
+72  select asignaturas.NOMBRE, alumnos.nombre, notas.NOTA from asignaturas,alumnos,notas where notas.NOTA > 5 and notas.alumno = alumnos.codigo and notas.asignatura = asignaturas.COD;
+73  select depart.IDDEPART, depart.nombre from depart,empleados where depart.IDDEPART = empleados.IDDEPART and empleados.SALARIO = (SELECT max(SALARIO) from empleados);
