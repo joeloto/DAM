@@ -8,8 +8,8 @@ import ejercicio2.interfaz.Libreria;
 
 public class Figura implements InterfazUsuario {
     Scanner sc = new Scanner(System.in);
-    public Punto origen;
-    public String nombre;
+    protected Punto origen;
+    protected String nombre;
     boolean error;
 
     public Punto getOrigen() {

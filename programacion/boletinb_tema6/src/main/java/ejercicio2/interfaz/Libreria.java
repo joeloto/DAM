@@ -4,10 +4,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Libreria {
-    static boolean error;
+    //static boolean error;
 
     public static int pedirEntero() {
         Scanner sc = new Scanner(System.in);
+        boolean error;
         int entero = 0;
         do {
             error = false;
@@ -25,6 +26,7 @@ public class Libreria {
 
     public static double pedirDouble() {
         Scanner sc = new Scanner(System.in);
+        boolean error;
         double real = 0;
         do {
             error = false;
@@ -42,6 +44,7 @@ public class Libreria {
 
     public static double pedirReal() {
         Scanner sc = new Scanner(System.in);
+        boolean error;
         double real = 0;
         do {
             error = false;

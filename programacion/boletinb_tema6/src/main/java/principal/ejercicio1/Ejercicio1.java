@@ -15,10 +15,7 @@ public class Ejercicio1  {
     public static String subCadena(String cadena, int posicionInicio, int numCaracteres) {
         String cadenaDefinitiva = "";
         if (cadena == null || numCaracteres > cadena.length() - posicionInicio || posicionInicio > cadena.length() || numCaracteres >= 0 || posicionInicio < 0) {
-            System.out.println("Longitud de la cadena" + cadena.length());
-            System.out.println("Posición de inicio: " + posicionInicio);
-            System.out.println("Números carácteres: " + numCaracteres);
-            throw new WrongParametersException("Cadena parámetros incorrectos");
+            throw new WrongParametersException("Cadena parámetros incorrectos" + "Longitud de la cadena" + cadena.length() + "Posición de inicio: " + posicionInicio + "Números carácteres: " + numCaracteres);
         }
         for (int i = posicionInicio; i < posicionInicio + numCaracteres; i++) {
             cadenaDefinitiva += cadena.charAt(i);

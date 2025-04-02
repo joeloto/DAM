@@ -15,6 +15,6 @@ public class Punto {
 
     @Override
     public String toString(){
-        return "(" + x + ";" + y + ")";
+        return String.format("(%.1d;%.1d)", x,y);
     }
 }
