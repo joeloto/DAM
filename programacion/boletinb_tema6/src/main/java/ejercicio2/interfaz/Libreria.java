@@ -23,6 +23,23 @@ public class Libreria {
         return entero;
     }
 
+    public static double pedirDouble() {
+        Scanner sc = new Scanner(System.in);
+        double real = 0;
+        do {
+            error = false;
+            try {
+                System.out.println("Introduce un número real");
+                real = sc.nextInt();
+            } catch (InputMismatchException e) {
+                error = true;
+                System.out.println("Introduce un número real");
+                sc.nextLine();
+            }
+        } while (error);
+        return real;
+    }
+
     public static double pedirReal() {
         Scanner sc = new Scanner(System.in);
         double real = 0;

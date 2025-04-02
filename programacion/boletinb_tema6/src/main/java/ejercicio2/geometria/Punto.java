@@ -1,4 +1,4 @@
-package ejercicio2.interfaz.geometria;
+package ejercicio2.geometria;
 
 public class Punto {
     public double x;
