@@ -12,7 +12,7 @@ public class Poligono extends Figura{
     }
 
     public Poligono() {
-        this("escaleno", new Punto(0,0), 3);
+        this("triángulo", new Punto(0,0), 3);
         puntos[0] = new Punto(0,0);
         puntos[1] = new Punto(1,1);
         puntos[2] = new Punto(1,0);

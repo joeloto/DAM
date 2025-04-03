@@ -51,8 +51,7 @@ public class Figura implements InterfazUsuario {
 
     @Override
     public void mostrarDatos() {
-        System.out.println("El nombre: " + nombre);
-        System.out.println("Dime el origen: " + origen);
-
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Origen: " + origen);
     }
 }
