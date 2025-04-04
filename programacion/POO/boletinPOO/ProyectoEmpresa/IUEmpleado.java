@@ -1,5 +1,5 @@
 
-import java.util.*;;
+import java.util.*;
 
 public class IUEmpleado {
     Scanner sc = new Scanner(System.in);
@@ -62,7 +62,7 @@ public class IUEmpleado {
     }
 
     // pedir a usuario
+    /// Empleado e = newEmpleado()
+    /// IUEmpleado iue = new IUEmpleado(e);
+    /// iue.mosrtrar()
 }
-/// Empleado e = newEmpleado()
-/// IUEmpleado iue = new IUEmpleado(e);
-/// iue.mosrtrar()

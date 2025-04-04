@@ -37,7 +37,7 @@
             }
             else if (operacionv == "multiplicacion"){
                 resultado = numero1 * numero2;
-                info.innerHTML += "El resultado de la operación " + numero1 + "*" + numero2 + " es: " + resultado;
+                info.innerHTML += "El resultado de la operación " + numero1 + "x" + numero2 + " es: " + resultado;
             }
             else if (operacionv == "division"){
                 resultado = numero1/numero2;
@@ -58,7 +58,7 @@
         <input type="number" name="num2" id="num2"><br>
         <input type="radio" name="operacion" id="suma" value="suma">Suma
         <input type="radio" name="operacion" id="resta" value="resta">Resta
-        <input type="radio" name="operacion" id="multiplicacion" value="multipliacion">Multiplicación
+        <input type="radio" name="operacion" id="multiplicacion" value="multiplicacion">Multiplicación
         <input type="radio" name="operacion" id="division" value="division">División <br>
         <div id="info"></div>
         <input type="button" name="calcular" id="calcular" value="Resultado">
