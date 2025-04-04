@@ -72,37 +72,65 @@ public class App {
                             coleccion.add(new Poligono("cuadrado", new Punto(x1, y1), 4));
                             break;
                         case 4:
-                        coleccion.add(new Circunferencia());
+                            System.out.println("Has elegido introducir una circunferencia");
+                            System.out.println("Introduce el radio:");
+                            double radio = Libreria.pedirDouble();
+                            System.out.println("Define el punto");
+                            System.out.println("Punto x:");
+                            x1 = Libreria.pedirDouble();
+                            System.out.println("Punto y:");
+                            y1 = Libreria.pedirDouble();
+                            coleccion.add(new Circunferencia(new Punto(x1, y1), radio));
                             break;
                         default:
                             break;
                     }
                     break;
                 case 2:
+                    System.out.println("Colección de figuras:");
+                    for (Figura figura : coleccion) {
+                        if (figura instanceof Circunferencia) {
+                            System.out.println(figura.getNombre() + " de radio " + ((Circunferencia) figura).radio);
+                        } else {
+                            System.out.println(figura.getNombre());
+                        }
+                    }
                     break;
-                case 3:
+                case 3://Mejor con comprobación de rangos
+                    System.out.println("¿Cuál es el índice de la figura que quieres mostrar los datos?");
+                    int indice = Libreria.pedirEntero();
+                    if (indice > 0 && indice >= coleccion.size()){
+                        System.out.println("Índice fuera de rangos");
+                    }
+                    coleccion.get(indice).mostrarDatos();
                     break;
                 case 4:
                     System.out.println("Introduce 1 para borrar elementos tipo línea");
-                    System.out.println("Introduce 2 para borrar elementos tipo triángulo");
-                    System.out.println("Introduce 3 para borrar elementos tipo cuadrado");
-                    System.out.println("Introduce 4 para borrar elementos tipo circunferencia");
+                    System.out.println("Introduce 2 para borrar elementos tipo polígono");
+                    System.out.println("Introduce 3 para borrar elementos tipo circunferencia");
                     int opcion3 = Libreria.pedirEntero();
-                    ;
                     switch (opcion3) {
                         case 1:
-
+                            for (int i = coleccion.size() - 1; i >= 0; i--) {
+                                if (coleccion.get(i).getClass() == Linea.class) {
+                                    coleccion.remove(i);
+                                }
+                            }
                             break;
                         case 2:
-
+                            for (int i = coleccion.size() - 1; i >= 0; i--) {//
+                                if (coleccion.get(i).getClass() == Poligono.class) {
+                                    coleccion.remove(i);
+                                }
+                            }
                             break;
                         case 3:
-
+                            for (int i = coleccion.size() - 1; i >= 0; i--) {///
+                                if (coleccion.get(i).getClass() == Circunferencia.class) {
+                                    coleccion.remove(i);
+                                }
+                            }
                             break;
-                        case 4:
-
-                            break;
-
                         default:
                             break;
                     }

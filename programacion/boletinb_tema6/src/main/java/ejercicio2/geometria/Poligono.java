@@ -21,13 +21,6 @@ public class Poligono extends Figura{
     @Override
     public void pedirDatos() {
         super.pedirDatos();
-        System.out.println("Dime el nombre: ");
-        nombre = sc.nextLine();
-        System.out.println("Introduce el centro del punto x");
-        double p1 = sc.nextDouble();
-        System.out.println("Introduce el centro del punto y");
-        double p2 = sc.nextDouble();
-        origen = new Punto(p1,p2);
         System.out.println("Introduce la cantidad de puntos");
         int cantidad = sc.nextInt();
         puntos = new Punto[cantidad];
@@ -44,8 +37,6 @@ public class Poligono extends Figura{
     @Override
     public void mostrarDatos() {
         super.mostrarDatos();
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Origen: " + origen);
         System.out.println("Puntos:");
         for (Punto punto : puntos) {
             System.out.println(punto);
