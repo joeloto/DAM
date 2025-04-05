@@ -55,7 +55,15 @@
     Para listar los con menos de 2000 de salario habría que añadir: having max(empleados.salario) < 2000;
 65  select empleados.* from empleados, depart where depart.NOMBRE = 'ventas' and depart.IDDEPART = empleados.IDDEPART order by empleados.SALARIO desc limit 1;
 66  select depart.IDDEPART, depart.NOMBRE, count(*) as 'total' from depart, empleados where depart.IDDEPART = empleados.IDDEPART GROUP by depart.IDDEPART order by 'total' desc limit 1;
-67  
+67  Select apellido, nombre from empleados left outer join depart on (empleados.IDDEPART=depart.IDDEPART); --- devuelve todos los empleados, incluso si no tienen departamento
+    Select apellido, nombre from empleados join depart using (IDDEPART); --- devuelve los empleados que sí tienen un departamento asignado
+
+    Select apellido, nombre from empleados natural left outer join depart; --- une las tablas con las columnas que se llaman igual, devuelve todos los empleados aunque no tengan departamento
+    Select apellido, nombre from empleados natural join depart; --- también une las tablas por las columnas que tienen el mismo nombre, aunque solo devuelve los empleados que tienen un departamento asociado
+
+    Select apellido, nombre from empleados,depart where empleados.IDDEPART=depart.IDDEPART; --- muestra los empleados que tienen un departamento asociado, es como un inner join 
+    Select apellido, nombre from empleados join depart using (IDDEPART); --- como inner join, utiliza using porque iddepart se llama igual en las dos tablas
+    Select apellido, nombre from empleados inner join depart using (IDDEPART); --- igual que la anteriopr, msólo muestra los empleados con departamento
 68  select empleados.APELLIDO, depart.NOMBRE from empleados,depart where empleados.IDDEPART = depart.IDDEPART ORDER by depart.NOMBRE;
 69  select empleados.APELLIDO, depart.NOMBRE, depart.iddepart from empleados,depart where empleados.IDDEPART = depart.IDDEPART and depart.IDDEPART = 30;
 70  select empleados.APELLIDO, depart.NOMBRE from empleados left join depart on empleados.IDDEPART = depart.IDDEPART;
