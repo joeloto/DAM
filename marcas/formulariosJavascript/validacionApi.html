@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation using API javascript</title>
+    <style>
+        input:valid{
+            color: green;
+        }
+        input:invalid{
+            color: red;
+        }
+        input:focus{
+            background-color: azure;
+        }
+        .rojo {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <label for="nombre">Name:</label><br>
+        <input type="text" name="nombre" id="nombre" minlength="4"><br>
+        <span id="errornombre" class="rojo"></span><br>
+        <label for="nombre">Surnames:</label><br>
+        <input type="text" name="apellidos" id="apellidos" minlength="8"><br>
+        <span id="errorapellidos" class="rojo"></span><br>
+        <label for="edad">Age:</label><br>
+        <input type="number" name="edad" id="edad" min="18"><br>
+        <span id="erroredad" class="rojo"></span><br>
+        <label for="correo">Email:</label><br>
+        <input type="email" name="correo" id="correo"><br>
+        <span id="errorcorreo" class="rojo"></span><br>
+        <label for="dni">DNI:</label><br>
+        <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Z]{1}"><br>
+        <span id="errordni" class="rojo"></span><br>
+        <input type="button" value="Validate" onclick="validar()">
+        <input type="submit" value="Send">
+    </form>
+    <script>
+        function validarCorreo(correo) {
+            var expReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return expReg.test(correo);
+        }
+        function validar() {
+            var errornombre = document.getElementById("errornombre");
+            var errorapellidos = document.getElementById("errorapellidos");
+            var erroredad = document.getElementById("erroredad");
+            var errorcorreo = document.getElementById("errorcorreo");
+            var errordni = document.getElementById("errordni");
+            var nombre = document.getElementsByName("nombre")[0];
+            var apellidos = document.getElementsByName("apellidos")[0];
+            var edad = document.getElementsByName("edad")[0];
+            var correo = document.getElementsByName("correo")[0];
+            var dni = document.getElementsByName("dni")[0];
+
+            if (nombre.value == "") {
+                errornombre.innerHTML = "The field name is required";
+                return false;
+            } else if (nombre.validity.tooShort) {
+                errornombre.innerHTML = "The field name requires at least 4 letters";
+                return false;
+            } else {
+                errornombre.innerHTML = "";
+            }
+            if (apellidos.value == "") {
+                errorapellidos.innerHTML = "The field surnames is required";
+                return false;
+            } else if (apellidos.validity.tooShort) {
+                errorapellidos.innerHTML = "The field surnames requires at least 8 letters";
+                return false;
+            } else {
+                errorapellidos.innerHTML = "";
+            }
+            if (edad.value == "") {
+                erroredad.innerHTML = "The field age is required";
+                return false;
+            } else if (edad.validity.rangeUnderflow) {
+                erroredad.innerHTML = "The field age must be at least 18 years";
+                return false;
+            } else {
+                erroredad.innerHTML = "";
+            }
+            if (correo.value == "") {
+                errorcorreo.innerHTML = "The field email is required";
+                return false;
+            } else if (!validarCorreo(correo.value)) {
+                errorcorreo.innerHTML = "The syntaxis is not correct";
+                return false;
+            } else {
+                errorcorreo.innerHTML = "";
+            }
+            if (dni.value == "") {
+                errordni.innerHTML = "The field dni is required";
+                return false;
+            } else if (dni.validity.patternMismatch) {
+                errordni.innerHTML = "The DNI must have 8 numbers and 1 letter";
+                return false;
+            } else {
+                errordni.innerHTML = "";
+            }
+
+        }
+        //var boton = document.querySelector("[type=\"button\"]");
+    </script>
+</body>
+
+</html>

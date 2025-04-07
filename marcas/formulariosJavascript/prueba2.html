@@ -15,17 +15,17 @@
         }
     </style>
     <script>
-        function validarCampo(valor){
+        function validarCampo(valor) {
             var expReg = /^\s+$/;
             return expReg.test(valor);//true si encuentra espacios en blanco, false si no los encuentra
         }
 
-        function validarPass(valor){
+        function validarPass(valor) {
             var expReg = /^[0-9a-zA-Z]{6}$/;
             return expReg.test(valor);
         }
 
-        function validarCorreo(valor){
+        function validarCorreo(valor) {
             var expReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return expReg.test(valor);
         }
@@ -75,14 +75,14 @@
             } else if (!validarCorreo(correo)) {
                 errorcorreo.innerHTML = "This email must be valid";
                 flagerror = false;
-            } else{
+            } else {
                 errorcorreo.innerHTML = "";
             }
             var password = document.getElementsByName("pass")[0].value;
             if (password == "") {
                 errorpass.innerHTML = "Field password is required";
                 flagerror = false;
-            } else if (!validarPass(password)){
+            } else if (!validarPass(password)) {
                 errorpass.innerHTML = "This password is not valid: only 6 alfanumeric symbols";
                 flagerror = false;
             } else {
@@ -159,48 +159,49 @@
 </head>
 
 <body>
-    <form action="#" method="post"></form>
-    <input type="text" name="nombre" id="nombre" placeholder="Name"><br>
-    <span id="errornombre" class="rojo"></span><br>
-    <input type="text" name="apellidos" id="apellidos" placeholder="Surnames"><br>
-    <span id="errorapellidos" class="rojo"></span><br>
-    <input type="number" name="edad" id="edad" placeholder="Age"><br>
-    <span id="erroredad" class="rojo"></span><br>
-    <input type="email" name="correo" id="correo" placeholder="Email"><br>
-    <span id="errorcorreo" class="rojo"></span><br>
-    <input type="password" name="pass" id="pass" placeholder="Password"><br>
-    <span id="errorpass" class="rojo"></span><br>
-    <hr>
-    <span><strong>Gender:</strong></span><br>
-    Man: <input type="radio" name="genero" id="hombre" value="Man">
-    Woman: <input type="radio" name="genero" id="mujer" value="Woman"><br>
-    <span id="errorgenero" class="rojo"></span><br>
-    <br>
-    <hr>
-    <span><strong>Hobbies:</strong></span><br>
-    Reading: <input type="checkbox" name="hobbies[]" id="reading" value="reading"><br>
-    Cinema: <input type="checkbox" name="hobbies[]" id="cinema" value="cinema"><br>
-    Drawing: <input type="checkbox" name="hobbies[]" id="drawing" value="drawing"><br>
-    Music: <input type="checkbox" name="hobbies[]" id="music" value="music"><br>
-    Videogames: <input type="checkbox" name="hobbies[]" id="videogames" value="videogames"><br>
-    <span id="errorhobbies" class="rojo"></span><br>
-    <hr>
-    <span><strong>Select a language</strong></span><br>
-    <select name="language" id="language">
-        <option value="">----------</option>
-        <option value="english">English</option>
-        <option value="spanish">Spanish</option>
-        <option value="italian">Italian</option>
-        <option value="french">French</option>
-        <option value="german">German</option>
-    </select>
-    <br>
-    <span id="erroridioma" class="rojo"></span><br>
-    <hr>
-    <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Write your comments here"></textarea>
-    <br>
-    <span id="errorcomentarios" class="rojo"></span><br>
-    <input type="button" value="Send">
+    <form action="#" method="post">
+        <input type="text" name="nombre" id="nombre" placeholder="Name"><br>
+        <span id="errornombre" class="rojo"></span><br>
+        <input type="text" name="apellidos" id="apellidos" placeholder="Surnames"><br>
+        <span id="errorapellidos" class="rojo"></span><br>
+        <input type="number" name="edad" id="edad" placeholder="Age"><br>
+        <span id="erroredad" class="rojo"></span><br>
+        <input type="email" name="correo" id="correo" placeholder="Email"><br>
+        <span id="errorcorreo" class="rojo"></span><br>
+        <input type="password" name="pass" id="pass" placeholder="Password"><br>
+        <span id="errorpass" class="rojo"></span><br>
+        <hr>
+        <span><strong>Gender:</strong></span><br>
+        Man: <input type="radio" name="genero" id="hombre" value="Man">
+        Woman: <input type="radio" name="genero" id="mujer" value="Woman"><br>
+        <span id="errorgenero" class="rojo"></span><br>
+        <br>
+        <hr>
+        <span><strong>Hobbies:</strong></span><br>
+        Reading: <input type="checkbox" name="hobbies[]" id="reading" value="reading"><br>
+        Cinema: <input type="checkbox" name="hobbies[]" id="cinema" value="cinema"><br>
+        Drawing: <input type="checkbox" name="hobbies[]" id="drawing" value="drawing"><br>
+        Music: <input type="checkbox" name="hobbies[]" id="music" value="music"><br>
+        Videogames: <input type="checkbox" name="hobbies[]" id="videogames" value="videogames"><br>
+        <span id="errorhobbies" class="rojo"></span><br>
+        <hr>
+        <span><strong>Select a language</strong></span><br>
+        <select name="language" id="language">
+            <option value="">----------</option>
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="italian">Italian</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+        </select>
+        <br>
+        <span id="erroridioma" class="rojo"></span><br>
+        <hr>
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10"
+            placeholder="Write your comments here"></textarea>
+        <br>
+        <span id="errorcomentarios" class="rojo"></span><br>
+        <input type="button" value="Send">
     </form>
     <hr>
     <h3>User registration data</h3>
