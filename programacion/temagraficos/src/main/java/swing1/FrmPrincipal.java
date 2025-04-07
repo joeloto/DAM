@@ -6,8 +6,7 @@ import javax.swing.*;
 
 public class FrmPrincipal extends JFrame {
     public FrmPrincipal() {
-
-        super("Prueba de Layouts");
+        setLayout(null);
         // Ojo, no ordenaremos así el código, esto es solo como ejemplo
         JLabel etiqueta1 = new JLabel("Etiqueta Uno");
         JLabel etiqueta2 = new JLabel("Etiqueta Dos");
@@ -18,10 +17,13 @@ public class FrmPrincipal extends JFrame {
         etiqueta2.setLocation(100, 0);
         boton1.setLocation(0, 100);
         boton2.setLocation(100, 100);
+        etiqueta1.setSize(100,20);
+        etiqueta2.setSize(100,20);
 
         this.add(etiqueta1, BorderLayout.NORTH);
         this.add(etiqueta2, BorderLayout.SOUTH);
         this.add(boton1, BorderLayout.EAST);
         this.add(boton2, BorderLayout.WEST);
     }
+
 }
