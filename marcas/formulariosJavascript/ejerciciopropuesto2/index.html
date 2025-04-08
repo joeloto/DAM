@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register form</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            height: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: auto;
+            height: 80px;
+            position: relative;
+            left: 800px;
+        }
+
+        header h1 {
+            position: relative;
+            left: 30px;
+        }
+
+        .rojo {
+            color: red;
+        }
+
+        .verde {
+            border: 1px solid green;
+        }
+
+        section {
+            width: 50%;
+            height: 500px;
+            float: left;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            top: 100px;
+        }
+
+        aside {
+            margin-top: 50px;
+            width: 45%;
+            height: 500px;
+            float: right;
+            overflow: auto;
+            font-size: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        aside article {
+            width: 70%;
+            height: 450px;
+            position: relative;
+            left: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Register form</h1>
+        <img src="ministerio.png">
+    </header>
+    <div id="formulario">
+        <section>
+            <form action="#" method="post">
+                <label for="nombre">Name:</label><br>
+                <input type="text" name="nombre" id="nombre" minlength="4" class="verde"><br>
+                <span id="errornombre" class="rojo"></span><br>
+                <label for="nombre">Surnames:</label><br>
+                <input type="text" name="apellidos" id="apellidos" minlength="8" class="verde"><br>
+                <span id="errorapellidos" class="rojo"></span><br>
+                <label for="edad">Age:</label><br>
+                <input type="number" name="edad" id="edad" min="18" class="verde"><br>
+                <span id="erroredad" class="rojo"></span><br>
+                <label for="correo">Email:</label><br>
+                <input type="email" name="correo" id="correo" class="verde"><br>
+                <span id="errorcorreo" class="rojo"></span><br>
+                <label for="dni">DNI:</label><br>
+                <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Z]{1}" class="verde"><br>
+                <span id="errordni" class="rojo"></span><br>
+                <input type="button" value="Validate">
+                <input type="submit" value="Send">
+            </form>
+        </section>
+    </div>
+    <div id="foto">
+        <aside>
+            <article>
+
+            </article>
+        </aside>
+    </div>
+</body>
+
+</html>

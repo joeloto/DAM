@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 3</title>
+    <style>
+        .rojo{
+            color: red;
+        }
+    </style>
     <script>
         function mostrar(){
             var info = document.getElementById("info");
@@ -24,7 +29,7 @@
             else if (envio == "seur"){
                 resultado = ((parseFloat(precio) + parseFloat(precio) * parseFloat(iva)) - parseFloat(descuento)) * parseFloat(cantidad) + 8;
             }
-            info.innerHTML += resultado;
+            info.innerHTML += resultado + " €";
         }
         window.onload = function(){
             var boton = document.querySelector("[type = \"button\"]");
@@ -51,7 +56,7 @@
         </select>
         <br>
         <input type="button" name="calcular" id="calcular" value="Calcular precio total"><br>
-        <div id="info"></div>
+        <div id="info" class="rojo"></div>
     </form>
 </body>
 </html>
