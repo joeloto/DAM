@@ -4,9 +4,12 @@ import javax.swing.*;
 
 public class PruebaGUI {
     public static void main(String[] args) {
-        // FrmPrincipal frame = new FrmPrincipal();
+        //FrmPrincipal frame = new FrmPrincipal();
 
-        Eventos2 frame = new Eventos2();
+        //Eventos2 frame = new Eventos2();
+        // CajasTexto frame = new CajasTexto();
+        //Botones frame = new Botones();
+        TimerSwing frame = new TimerSwing();
         frame.setSize(300, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
