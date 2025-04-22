@@ -66,6 +66,14 @@
             left: 50px;
             border: 1px solid black;
         }
+
+        input:valid {
+            color: green;
+        }
+
+        input:invalid {
+            color: red;
+        }
     </style>
 </head>
 
@@ -92,7 +100,8 @@
                 <label for="dni">DNI:</label><br>
                 <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Z]{1}" class="verde"><br>
                 <span id="errordni" class="rojo"></span><br>
-                <input type="button" value="Validate">
+                <input type="file" name="foto"><br><br>
+                <input type="button" value="Validate" onclick="validar()">
                 <input type="submit" value="Send">
             </form>
         </section>
@@ -100,10 +109,117 @@
     <div id="foto">
         <aside>
             <article>
-
+                <img src="" alt="">
             </article>
         </aside>
     </div>
+    <script>
+        function validarCorreo(correo) {
+            var expReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return expReg.test(correo);
+        }
+
+        function validarLetraDni(dni) {
+            const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+            const numero = parseInt(dni.substring(0, 8), 10);
+            const letraIntroducida = dni[8].toUpperCase();
+            const letraCorrecta = letras[numero % 23];
+
+            return letraIntroducida === letraCorrecta;
+        }
+
+        function validar() {
+            var errornombre = document.getElementById("errornombre");
+            var errorapellidos = document.getElementById("errorapellidos");
+            var erroredad = document.getElementById("erroredad");
+            var errorcorreo = document.getElementById("errorcorreo");
+            var errordni = document.getElementById("errordni");
+            var nombre = document.getElementsByName("nombre")[0];
+            var apellidos = document.getElementsByName("apellidos")[0];
+            var edad = document.getElementsByName("edad")[0];
+            var correo = document.getElementsByName("correo")[0];
+            var dni = document.getElementsByName("dni")[0];
+
+            if (nombre.value == "") {
+                errornombre.innerHTML = "The field name is required";
+                return false;
+            } else if (nombre.validity.tooShort) {
+                errornombre.innerHTML = "The field name requires at least 4 letters";
+                return false;
+            } else {
+                errornombre.innerHTML = "";
+            }
+            if (apellidos.value == "") {
+                errorapellidos.innerHTML = "The field surnames is required";
+                return false;
+            } else if (apellidos.validity.tooShort) {
+                errorapellidos.innerHTML = "The field surnames requires at least 8 letters";
+                return false;
+            } else {
+                errorapellidos.innerHTML = "";
+            }
+            if (edad.value == "") {
+                erroredad.innerHTML = "The field age is required";
+                return false;
+            } else if (edad.validity.rangeUnderflow) {
+                erroredad.innerHTML = "The field age must be at least 18 years";
+                return false;
+            } else {
+                erroredad.innerHTML = "";
+            }
+            if (correo.value == "") {
+                errorcorreo.innerHTML = "The field email is required";
+                return false;
+            } else if (!validarCorreo(correo.value)) {
+                alert("The syntaxis is not correct");
+                return false;
+            } else {
+                errorcorreo.innerHTML = "";
+            }
+            if (dni.value == "") {
+                errordni.innerHTML = "The field dni is required";
+                return false;
+            } else if(!validarLetraDni(dni.value)){
+                errordni.innerHTML = "The letter of the DNI is not correct";
+                return false;
+            } else if (dni.validity.patternMismatch) {
+                errordni.innerHTML = "The DNI must have 8 numbers and 1 letter";
+                return false;
+            } else {
+                errordni.innerHTML = "";
+            }
+
+        }
+
+        window.onload = function(){
+            var inputFoto = document.querySelector('input[type="file"]');
+        var contenedor = document.querySelector('aside article');
+
+        inputFoto.addEventListener('change', function () {
+            var archivo = inputFoto.files[0];
+
+            if (archivo && archivo.type.indexOf('image/') === 0) {
+                var lector = new FileReader();
+
+                lector.onload = function (e) {
+                    contenedor.innerHTML = ""; // Limpiar contenido anterior
+
+                    var imagen = document.createElement('img');
+                    imagen.src = e.target.result;
+                    imagen.style.width = "100%";
+                    imagen.style.height = "100%";
+                    imagen.style.objectFit = "cover";
+
+                    contenedor.appendChild(imagen);
+                };
+
+                lector.readAsDataURL(archivo);
+            } else {
+                contenedor.innerHTML = "Please upload a valid image.";
+            }
+        });
+        }
+    </script>
 </body>
 
 </html>
