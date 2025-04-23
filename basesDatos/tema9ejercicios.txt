@@ -23,6 +23,9 @@ hacer 2,4,7,8,9,10,11,15,18,19,20,22,23,25,27,28,30
 28  alter user 'user1'@'localhost' WITH MAX_QUERIES_PER_HOUR 10;
 30  flush privileges;
 
-31  create view tema8.ed (apellido,comision,fecha_alt,iddepart,jefe,oficio,salario) as select apellido,comision,fecha_alt,iddepart,jefe,oficio,salario from tema8.empleados NATURAL join tema8.depart;
-32  SELECT apellido,oficio, depart.nombre FROM `ed`, depart where ed.iddepart = depart.IDDEPART order by depart.nombre;
-33  
+31  create or replace view ed as SELECT empleados.apellido, empleados.CODEMP, empleados.COMISION, empleados.FECHA_ALT, empleados.IDDEPART, empleados.jefe, empleados.OFICIO, empleados.SALARIO, depart.loc, depart.nombre from empleados, depart where empleados.IDDEPART = depart.IDDEPART;
+32  SELECT apellido, OFICIO, nombre FROM `ed`;
+33  create or replace view ed as SELECT empleados.apellido as 'nombre', empleados.CODEMP, empleados.COMISION, empleados.FECHA_ALT, empleados.IDDEPART, empleados.jefe, empleados.OFICIO, empleados.SALARIO, depart.loc, depart.nombre as 'departamento' from empleados, depart where empleados.IDDEPART = depart.IDDEPART;
+34  create view ed2 as select ed.nombre, ed.departamento from ed;
+35  drop view ed;
+36  
