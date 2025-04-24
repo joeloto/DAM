@@ -23,9 +23,18 @@ hacer 2,4,7,8,9,10,11,15,18,19,20,22,23,25,27,28,30
 28  alter user 'user1'@'localhost' WITH MAX_QUERIES_PER_HOUR 10;
 30  flush privileges;
 
-31  create or replace view ed as SELECT empleados.apellido, empleados.CODEMP, empleados.COMISION, empleados.FECHA_ALT, empleados.IDDEPART, empleados.jefe, empleados.OFICIO, empleados.SALARIO, depart.loc, depart.nombre from empleados, depart where empleados.IDDEPART = depart.IDDEPART;
+31  create or replace view ed as SELECT * from empleados join depart using (IDDEPART);
 32  SELECT apellido, OFICIO, nombre FROM `ed`;
-33  create or replace view ed as SELECT empleados.apellido as 'nombre', empleados.CODEMP, empleados.COMISION, empleados.FECHA_ALT, empleados.IDDEPART, empleados.jefe, empleados.OFICIO, empleados.SALARIO, depart.loc, depart.nombre as 'departamento' from empleados, depart where empleados.IDDEPART = depart.IDDEPART;
-34  create view ed2 as select ed.nombre, ed.departamento from ed;
+33  create or replace view ed (nombre,oficio,departamento) as SELECT apellido,oficio,nombre from empleados join depart using(IDDEPART)
 35  drop view ed;
-36  
+36  No se puede ya que no puede coger los valores de una vista eliminada
+37  create or replace view ed as SELECT empleados.apellido as 'nombre', empleados.CODEMP, empleados.COMISION, empleados.FECHA_ALT, empleados.IDDEPART, empleados.jefe, empleados.OFICIO, empleados.SALARIO, depart.loc, depart.nombre as 'departamento' from empleados, depart where empleados.IDDEPART = depart.IDDEPART;
+38  Ahora ya se pueden ver los datos
+39  create view notas_asig_alu as select notas.alumno, notas.asignatura, notas.fecha, notas.NOTA, asignaturas.COD, asignaturas.NOMBRE as 'nombre_asig', alumnos.* from notas join asignaturas join alumnos on alumnos.codigo = notas.alumno and notas.asignatura = asignaturas.COD;
+40  SELECT * FROM `notas_asig_alu`;
+41  describe notas_asig_alu;
+42  show create view notas_asig_alu;
+43  create or REPLACE view notasAlu as SELECT notas_asig_alu.nombre as 'nombre', notas_asig_alu.nombre_asig as 'materia', notas_asig_alu.NOTA as 'calificacion' from notas_asig_alu where notas_asig_alu.NOTA >= 5;
+44  SELECT * FROM `notasalu`;
+45  alter view notasalu as SELECT nombre,asignatura,nota, apellidos from notas_asig_alu;
+46  
