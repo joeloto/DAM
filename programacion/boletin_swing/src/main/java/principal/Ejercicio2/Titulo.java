@@ -4,12 +4,15 @@ import java.awt.FlowLayout;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Titulo extends JFrame implements ActionListener {
+import boletin_tema5.ejercicio4.Ejercicio4;
+
+public class Titulo extends JFrame implements ActionListener, ItemListener{
 
     private JLabel etiqueta1;
     private JTextField txtPedir;
-    private JOptionPane panel;
     private JButton boton;
+    private JCheckBox chkReves;
+    private JCheckBox chkEliminar;
 
     public Titulo() {
         super("Reemplazar título");
@@ -25,6 +28,13 @@ public class Titulo extends JFrame implements ActionListener {
         boton = new JButton("Cambiar el título");
         boton.addActionListener(this);
         this.add(boton);
+
+        chkReves = new JCheckBox("Título del réves");
+        this.add(chkReves);
+
+        chkEliminar = new JCheckBox("Desactivar campo de texto");
+        chkEliminar.addItemListener(this);
+        this.add(chkEliminar);
     }
 
     @Override
@@ -33,6 +43,18 @@ public class Titulo extends JFrame implements ActionListener {
         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (respuesta == JOptionPane.YES_OPTION) {
             setTitle(txtPedir.getText());
+        }
+        if (chkReves.isSelected()) {
+            setTitle(Ejercicio4.alReves(txtPedir.getText()));
+        } 
+    }
+    
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        if (chkEliminar.isSelected()) {
+            txtPedir.setEditable(false);
+        } else {
+            txtPedir.setEditable(true);
         }
     }
 }
