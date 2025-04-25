@@ -1,4 +1,4 @@
-package principal.ejercicio2;
+package principal.ejercicio3;
 
 import java.util.ArrayList;
 
@@ -20,6 +20,9 @@ public class Cadena {
     public boolean equals(Object obj) {
         if (obj.getClass() == Cadena.class && obj.equals(cadena)){
             return true;
+        }
+        if (obj == null ){
+
         }
         
     }

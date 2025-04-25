@@ -2,12 +2,13 @@
 package operaciones;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
 @DisplayName("Application")
 public class ApplicationTest {
@@ -37,6 +38,14 @@ public class ApplicationTest {
     assertFalse(Operaciones.primo(0));
     assertFalse(Operaciones.primo(-10)); // Conveniente probar más negativos
     assertTrue(Operaciones.primo(-7));
+  }
+
+  @Test
+  @Timeout(value = 50, unit = TimeUnit.MILLISECONDS)
+  public void testPrimo2() {
+    assertTrue(Operaciones.primo(1177027));
+    assertTrue(Operaciones.primo(1287961));
+    assertTrue(Operaciones.primo(1299827));
   }
 
   // @Test

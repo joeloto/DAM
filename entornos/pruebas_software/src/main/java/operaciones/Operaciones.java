@@ -1,8 +1,8 @@
 package operaciones;
 
 public class Operaciones {
-    public static int factorial(int n) {
-        int res = 0;
+    public static long factorial(int n) {
+        long res = 0;
         for (int i = 1; i < n; i++) {
             res *= i;
         }
