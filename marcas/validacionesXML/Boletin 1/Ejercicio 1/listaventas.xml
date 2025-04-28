@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="listaventas.dtd" type="application/xml-dtd"?>
+<listaventas>
+    <venta>
+        <importe></importe>
+        <comprador></comprador>
+        <vendedor></vendedor>
+        <fecha></fecha>
+        <codigofactura></codigofactura>
+    </venta>
+</listaventas>

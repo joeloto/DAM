@@ -7,47 +7,49 @@
     <alumno codigo="AB09">
         <nombre></nombre>
         <apellidos></apellidos>
-        <direccion numero="" piso="" puerta=""></direccion>
+        <direccion numero="15" piso="1" puerta="J">Parada</direccion>
         <DNI></DNI>
+        <hombre></hombre>
         <asignaturas>
-            <asignaturas>
+            <asignatura>
                 <nombre></nombre>
                 <codigo></codigo>
                 <horas></horas>
-            </asignaturas>
-            <asignaturas>
+            </asignatura>
+            <asignatura>
                 <nombre></nombre>
                 <codigo></codigo>
                 <horas></horas>
-            </asignaturas>
-            <asignaturas>
+            </asignatura>
+            <asignatura>
                 <nombre></nombre>
                 <codigo></codigo>
                 <horas></horas>
-            </asignaturas>
+            </asignatura>
         </asignaturas>
     </alumno>
-    <alumno codigo="AB09">
+    <alumno codigo="AB19">
         <nombre></nombre>
         <apellidos></apellidos>
-        <direccion></direccion>
+        <direccion numero="22" puerta="Y"></direccion>
         <DNI></DNI>
+        <mujer></mujer>
         <asignaturas>
-            <asignaturas>
+            <asignatura>
                 <nombre></nombre>
                 <codigo></codigo>
                 <horas></horas>
-            </asignaturas>
-            <asignaturas>
+            </asignatura>
+            <asignatura>
                 <nombre></nombre>
                 <codigo></codigo>
                 <horas></horas>
-            </asignaturas>
-            <asignaturas>
+            </asignatura>
+            <asignatura>
                 <nombre></nombre>
                 <codigo></codigo>
                 <horas></horas>
-            </asignaturas>
+            </asignatura>
         </asignaturas>
     </alumno>
 </alumnos>

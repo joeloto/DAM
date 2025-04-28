@@ -1,1 +1,16 @@
 <!ELEMENT alumnos (alumno*)>
+<!ELEMENT alumno (nombre,apellidos,direccion,DNI,(hombre|mujer),asignaturas)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ATTLIST direccion numero (15|22) #REQUIRED>
+<!ATTLIST direccion piso CDATA #IMPLIED>
+<!ATTLIST direccion puerta CDATA #IMPLIED>
+<!ELEMENT DNI (#PCDATA)>
+<!ELEMENT hombre EMPTY>
+<!ELEMENT mujer EMPTY>
+<!ATTLIST alumno codigo ID #REQUIRED>   
+<!ELEMENT asignaturas (asignatura)+>
+<!ELEMENT asignatura (nombre,codigo,horas)>
+<!ELEMENT codigo (#PCDATA)>
+<!ELEMENT horas (#PCDATA)>
