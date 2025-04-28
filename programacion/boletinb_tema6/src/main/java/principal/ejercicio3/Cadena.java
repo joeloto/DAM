@@ -1,6 +1,7 @@
 package principal.ejercicio3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Cadena {
     private ArrayList<Character> cadena = new ArrayList<>();
@@ -18,12 +19,48 @@ public class Cadena {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj.getClass() == Cadena.class && obj.equals(cadena)){
+        if (obj == null || obj.getClass() != Cadena.class | obj.getClass() != String.class | obj.getClass() != char[].class) {
+            throw new IllegalArgumentException("Parámetro inválido");
+        }
+        if (obj.getClass() == Cadena.class) {
+            Cadena comodin = (Cadena) obj;
+            if (cadena.size() != comodin.cadena.size()) {
+                return false;
+            }
+            for (int i = 0; i < cadena.size(); i++) {
+                if (!cadena.get(i).equals(comodin.cadena.get(i))) {
+                    return false;
+                }
+            }
             return true;
         }
-        if (obj == null ){
-
+        if (obj.getClass() == String.class && obj.equals(cadena)) {
+            return true;
         }
-        
+        if (obj.getClass() == char[].class) {
+            String comodin = (String) obj;
+            if (cadena.size() != comodin.length()) {
+                return false;
+            }
+            for (int i = 0; i < cadena.size(); i++) {
+                if (!cadena.get(i).equals(comodin.charAt(i))) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
     }
+
+    public int eliminar(char caracter){
+        int eliminaciones = 0;
+        for (int i = 0; i < cadena.size(); i++) {
+            if (cadena.get(i) == caracter) {
+                cadena.remove(i);
+                eliminaciones++;
+                i--;
+            }
+        }
+        return eliminaciones;
+    }   
 }

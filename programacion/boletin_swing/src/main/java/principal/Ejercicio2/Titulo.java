@@ -51,10 +51,11 @@ public class Titulo extends JFrame implements ActionListener, ItemListener{
     
     @Override
     public void itemStateChanged(ItemEvent e) {
-        if (chkEliminar.isSelected()) {
-            txtPedir.setEditable(false);
-        } else {
-            txtPedir.setEditable(true);
-        }
+        // if (chkEliminar.isSelected()) {//reto: sin if en 1 linea
+        //     txtPedir.setEditable(false);
+        // } else {
+        //     txtPedir.setEditable(true);
+        // }
+        txtPedir.setEditable(!chkEliminar.isSelected());
     }
 }
