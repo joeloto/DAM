@@ -19,7 +19,7 @@ public class Cadena {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null || obj.getClass() != Cadena.class | obj.getClass() != String.class | obj.getClass() != char[].class) {
+        if (obj == null && obj.getClass() != Cadena.class && obj.getClass() != String.class && obj.getClass() != char[].class) {
             throw new IllegalArgumentException("Parámetro inválido");
         }
         if (obj.getClass() == Cadena.class) {
@@ -38,12 +38,12 @@ public class Cadena {
             return true;
         }
         if (obj.getClass() == char[].class) {
-            String comodin = (String) obj;
-            if (cadena.size() != comodin.length()) {
+            char[] comodin = (char[]) obj;
+            if (cadena.size() != comodin.length) {
                 return false;
             }
             for (int i = 0; i < cadena.size(); i++) {
-                if (!cadena.get(i).equals(comodin.charAt(i))) {
+                if (!cadena.get(i).equals(comodin[i])) {
                     return false;
                 }
             }
