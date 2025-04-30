@@ -6,6 +6,7 @@ public class Principal {
     public static void main(String[] args) {
         Cadena c1 = new Cadena();
         c1.setCadena("moon");
+        System.out.println(c1.toString());
         System.out.println("Cadena original: " + c1);
         Cadena c2 = new Cadena();
         c2.setCadena("monster");

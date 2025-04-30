@@ -6,20 +6,33 @@ import java.util.Arrays;
 public class Cadena {
     private ArrayList<Character> cadena = new ArrayList<>();
 
-    public void setCadena(String frase) {
-        for (int i = 0; i < frase.length(); i++) {
-            cadena.add(frase.trim().charAt(i));
+    public void setCadena(String frase) {// TODO hacer trim manual
+        int inicio = 0;
+        int fin = frase.length() - 1;
+        while (inicio < frase.length() && frase.charAt(inicio) == ' ') {
+            inicio++;
+        }
+        while (fin != 0 && frase.charAt(fin) == ' ') {
+            fin--;
+        }
+        for (int i = inicio; i <= fin; i++) {
+            cadena.add(frase.charAt(i));
         }
     }
 
     @Override
     public String toString() {
-        return cadena.toString();
+        String cadAux = "";
+        for (int i = 0; i < cadena.size(); i++) {
+            cadAux += cadena.get(i);
+        }
+        return cadAux;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null && obj.getClass() != Cadena.class && obj.getClass() != String.class && obj.getClass() != char[].class) {
+        if (obj == null && obj.getClass() != Cadena.class && obj.getClass() != String.class
+                && obj.getClass() != char[].class) {
             throw new IllegalArgumentException("Parámetro inválido");
         }
         if (obj.getClass() == Cadena.class) {
@@ -52,7 +65,7 @@ public class Cadena {
         return false;
     }
 
-    public int eliminar(char caracter){
+    public int eliminar(char caracter) {
         int eliminaciones = 0;
         for (int i = 0; i < cadena.size(); i++) {
             if (cadena.get(i) == caracter) {
@@ -62,5 +75,5 @@ public class Cadena {
             }
         }
         return eliminaciones;
-    }   
+    }
 }
