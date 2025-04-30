@@ -1,5 +1,5 @@
 <!ELEMENT productos (producto+)>
-<!ELEMENT producto (raton,teclado,monitor)+>
+<!ELEMENT producto (raton|teclado|monitor)+>
 <!ELEMENT raton (codigo,nombre?,descripcion?)>
 <!ELEMENT teclado (codigo,nombre?,descripcion?)>
 <!ELEMENT monitor (codigo,nombre?,descripcion?)>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="inventario.dtd" type="application/xml-dtd"?>
+<inventario>
+    <cuaderno>
+        <numhojas></numhojas>
+        <estilo></estilo>
+    </cuaderno>
+    <lapiz></lapiz>
+    <boligrafo>
+        <precio></precio>
+        <color></color>
+    </boligrafo>
+</inventario>

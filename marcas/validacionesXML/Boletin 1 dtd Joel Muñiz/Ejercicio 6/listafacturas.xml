@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="listafacturas.dtd" type="application/xml-dtd"?>
+<listafacturas>
+    <factura>
+        <fecha></fecha>
+        <emisor>
+            <nombre></nombre>
+        </emisor>
+        <cif></cif>
+        <pagador>
+            <nombre></nombre>
+            <volumenventas></volumenventas>
+        </pagador>
+        <importe></importe>
+    </factura>
+</listafacturas>
