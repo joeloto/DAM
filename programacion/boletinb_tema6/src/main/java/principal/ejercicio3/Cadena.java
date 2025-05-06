@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Cadena {
     private ArrayList<Character> cadena = new ArrayList<>();
 
-    public void setCadena(String frase) {// TODO hacer trim manual
+    public void setCadena(String frase) {
         int inicio = 0;
         int fin = frase.length() - 1;
         while (inicio < frase.length() && frase.charAt(inicio) == ' ') {
