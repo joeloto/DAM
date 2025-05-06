@@ -7,15 +7,19 @@
             <nombre></nombre>
             <descripcion></descripcion>
         </raton>
-        <teclado>
-            <codigo></codigo>
-            <nombre></nombre>
-            <descripcion></descripcion>
-        </teclado>
+    </producto>
+    <producto>
         <monitor>
             <codigo></codigo>
             <nombre></nombre>
             <descripcion></descripcion>
         </monitor>
+    </producto>
+    <producto>
+        <teclado>
+            <codigo></codigo>
+            <nombre></nombre>
+            <descripcion></descripcion>
+        </teclado>
     </producto>
 </productos>
