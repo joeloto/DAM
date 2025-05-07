@@ -74,4 +74,38 @@ COMMIT;
 Ahora ya aparece el 20 en la tabla
 
 66
+START TRANSACTION;
+INSERT INTO transaccion (Num) VALUES (111);
+SAVEPOINT uno;
+UPDATE transaccion SET num = 101 where num = 100;
+SAVEPOINT dos;
+INSERT INTO transaccion (Num) VALUES (102);
+SAVEPOINT tres;
+INSERT INTO transaccion (Num) VALUES (103);
+ROLLBACK TO tres;
+ROLLBACK TO dos;
+COMMIT;
+ROLLBACK TO uno;
 No se puede volver a un savepoint que esta fuera del commit
+
+67
+START TRANSACTION;
+INSERT INTO transaccion (Num) VALUES(110);
+SAVEPOINT uno;
+INSERT INTO transaccion (Num) VALUES (111)
+CREATE DATABASE tema9
+ROLLBACK TO uno;
+No se puede hacer ya que la creacion de una base de datos no es una de las operaciones permitidas por la Transacciones
+
+68
+START TRANSACTION;
+INSERT INTO transaccion (Num) VALUES(120);
+SAVEPOINT uno;
+INSERT INTO transaccion (Num) VALUES(121);
+SAVEPOINT uno;
+ROLLBACK TO uno;
+INSERT INTO transaccion (Num) VALUES(122);
+COMMIT;
+ROLLBACK TO uno;
+La primera parte funciona ya que si detecta que dos puntos de recuperación se llaman igual elimina el más antiguo. 
+La otra parte no funciona ya que una vez realizado el commit no puedes volver a un punto de recuperación ya que detecta que este no existe, al estar este rollback fuera de la transaccion y el punto de recuperacion dentro.
