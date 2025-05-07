@@ -79,9 +79,9 @@ public class Formulario extends JFrame implements ActionListener {
             } else {
                 try {
                     PrintWriter f = new PrintWriter("datos.txt");
-                    f.println("Nombre: " + txfNombre.getText());
-                    f.println("Edad: " + txfEdad.getText());
-                    f.println("Dirección: " + txfDir.getText());
+                    f.println(txfNombre.getText());
+                    f.println(txfEdad.getText());
+                    f.println(txfDir.getText());
                     f.close();
                 } catch (Exception excp) {
                     JOptionPane.showMessageDialog(null, "No se guardaron los datos", "ERROR!",

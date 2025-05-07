@@ -1,10 +1,10 @@
-package principal.Ejercicio4;
+package principal.Ejercicio5;
 
 public class Principal {
     public static void main(String[] args) {
-        Formulario frame = new Formulario();
+        Tragaperras frame = new Tragaperras();
 
-        frame.setSize(350,350);
         frame.setVisible(true);
+        frame.setSize(300, 300);
     }
 }
