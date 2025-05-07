@@ -1,0 +1,8 @@
+Tipos de datos
+
+- Tipos complejos:
+    - Etiqueta con hijos (otras etiquetas dentro)
+    - Etiqueta con atributos
+
+- Tipos simples:
+    - Etiquetas sin reestrición
