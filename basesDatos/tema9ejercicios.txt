@@ -56,10 +56,13 @@ START TRANSACTION;
 INSERT INTO transaccion (num) values (20);
 SELECT * from transaccion;
 
-59  No aparece el 20
+59  
+ROLLBACK;
+SELECT * FROM transacciones
+No aparece el 20
 
 60  No aparece el 20
-
+ 
 62
 START TRANSACTION;
 INSERT INTO transaccion (num) values (20);
@@ -109,3 +112,14 @@ COMMIT;
 ROLLBACK TO uno;
 La primera parte funciona ya que si detecta que dos puntos de recuperación se llaman igual elimina el más antiguo. 
 La otra parte no funciona ya que una vez realizado el commit no puedes volver a un punto de recuperación ya que detecta que este no existe, al estar este rollback fuera de la transaccion y el punto de recuperacion dentro.
+
+69
+LOCK TABLE transaccion READ;
+INSERT INTO transaccion VALUES (2)
+En la conexion 1 da error al insertar y en la conexion 2 se queda esperando
+UNLOCK TABLES 
+
+70
+LOCK TABLE transaccion WRITE;
+INSERT INTO transaccion VALUES (2);
+En la conexion 1 se funciona y en la conexion 2 espera 
