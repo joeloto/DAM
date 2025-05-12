@@ -5,4 +5,4 @@ Tipos de datos
     - Etiqueta con atributos
 
 - Tipos simples:
-    - Etiquetas sin reestrición
+    - Etiquetas con reestrición

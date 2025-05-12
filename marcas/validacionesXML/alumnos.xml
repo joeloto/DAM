@@ -7,24 +7,24 @@
     <alumno codigo="AB09">
         <nombre></nombre>
         <apellidos></apellidos>
-        <direccion numero="15" piso="1" puerta="J">Parada</direccion>
-        <DNI></DNI>
+        <direccion numero="15" puerta="J">Parada</direccion>
+        <DNI>12345678A</DNI>
         <hombre></hombre>
         <asignaturas>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>SA90</codigo>
+                <horas>1</horas>
             </asignatura>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>SA91</codigo>
+                <horas>2</horas>
             </asignatura>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>SA11</codigo>
+                <horas>3</horas>
             </asignatura>
         </asignaturas>
     </alumno>
@@ -32,23 +32,23 @@
         <nombre></nombre>
         <apellidos></apellidos>
         <direccion numero="22" puerta="Y"></direccion>
-        <DNI></DNI>
+        <DNI>11234567D</DNI>
         <mujer></mujer>
         <asignaturas>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>AA11</codigo>
+                <horas>4</horas>
             </asignatura>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>AA22</codigo>
+                <horas>6</horas>
             </asignatura>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>AA66</codigo>
+                <horas>5</horas>
             </asignatura>
         </asignaturas>
     </alumno>
