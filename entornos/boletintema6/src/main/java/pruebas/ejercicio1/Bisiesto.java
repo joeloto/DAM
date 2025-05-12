@@ -1,5 +1,5 @@
 
-package pruebas;
+package pruebas.ejercicio1;
 
 import java.util.Scanner;
 
@@ -17,5 +17,6 @@ public class Bisiesto {
       year = sc.nextInt();
       System.out.println(bisiesto(year));
     } while (year != 0);
+    sc.close();
   }
 }
