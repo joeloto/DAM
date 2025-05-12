@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -18,6 +20,8 @@ import boletin_tema5.ejercicio4.Ejercicio4;
 
 public class Formulario extends JFrame implements ActionListener {
 
+    // TODO control valor numerico. Archivo incompleto (corrupto). No uses
+    // exception. trim(). Cerrar archivo.
     private JLabel lblNombre;
     private JLabel lblEdad;
     private JLabel lblDir;
@@ -73,23 +77,29 @@ public class Formulario extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnGuardar) {
-            int edad = Integer.parseInt(txfEdad.getText());
-            if (txfDir.getText().equals("") || txfNombre.getText().equals("") || edad < 0) {
-                JOptionPane.showMessageDialog(null, "DATOS ERRÓNEOS", "ERROR!", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                try {
-                    PrintWriter f = new PrintWriter("datos.txt");
-                    f.println(txfNombre.getText());
-                    f.println(txfEdad.getText());
-                    f.println(txfDir.getText());
-                    f.close();
-                } catch (Exception excp) {
-                    JOptionPane.showMessageDialog(null, "No se guardaron los datos", "ERROR!",
-                            JOptionPane.INFORMATION_MESSAGE);
+            try {
+                int edad = Integer.parseInt(txfEdad.getText());
+                if (txfDir.getText().equals("") || txfNombre.getText().equals("") || edad < 0) {
+                    JOptionPane.showMessageDialog(null, "DATOS ERRÓNEOS", "ERROR!", JOptionPane.INFORMATION_MESSAGE);
+
                 }
+            } catch (NumberFormatException exc) {
+                JOptionPane.showMessageDialog(null, "La edad debe ser un número", "ERROR!", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } else {
+            try {
+                PrintWriter f = new PrintWriter("datos.txt");
+                f.println(txfNombre.getText());
+                f.println(txfEdad.getText());
+                f.println(txfDir.getText());
+                f.close();
+            } catch (FileNotFoundException excp) {
+                JOptionPane.showMessageDialog(null, "No se guardaron los datos", "ERROR!",
+                        JOptionPane.INFORMATION_MESSAGE);
             }
         }
         if (e.getSource() == btnCargar) {
+
             try {
                 String linea = "";
                 String linea2 = "";
@@ -98,21 +108,33 @@ public class Formulario extends JFrame implements ActionListener {
                 linea = f.nextLine();
                 linea2 = f.nextLine();
                 linea3 = f.nextLine();
-                if (txfNombre.getText().equals("") && txfEdad.getText().equals("") && txfDir.getText().equals("")) {
-                    txfNombre.setText(linea);
-                    txfEdad.setText(linea2);
-                    txfDir.setText(linea3);
+                f.close();
+                if (txfNombre.getText().trim().equals("") && txfEdad.getText().trim().equals("")
+                        && txfDir.getText().trim().equals("")) {
+                    if (linea.trim().equals("") || linea2.trim().equals("") || linea3.trim().equals("")) {
+                        JOptionPane.showMessageDialog(null, "Error en el archivo", "ERROR!",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        txfNombre.setText(linea);
+                        txfEdad.setText(linea2);
+                        txfDir.setText(linea3);
+                    }
                 } else {
                     int respuesta = JOptionPane.showConfirmDialog(null,
                             "¿Deseas reemplazar los datos?", "Confirmación",
                             JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (respuesta == JOptionPane.YES_OPTION) {
-                        txfNombre.setText(linea);
-                    txfEdad.setText(linea2);
-                    txfDir.setText(linea3);
+                        if (linea.trim().equals("") || linea2.trim().equals("") || linea3.trim().equals("")) {
+                            JOptionPane.showMessageDialog(null, "Error en el archivo", "ERROR!",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            txfNombre.setText(linea);
+                            txfEdad.setText(linea2);
+                            txfDir.setText(linea3);
+                        }
                     }
                 }
-            } catch (FileNotFoundException excp2) {
+            } catch (IOException excp2) {
                 JOptionPane.showMessageDialog(null, "No existe el archivo", "ERROR!", JOptionPane.INFORMATION_MESSAGE);
             }
         }
