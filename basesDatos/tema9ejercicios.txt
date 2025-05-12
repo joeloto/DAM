@@ -123,3 +123,6 @@ UNLOCK TABLES
 LOCK TABLE transaccion WRITE;
 INSERT INTO transaccion VALUES (2);
 En la conexion 1 se funciona y en la conexion 2 espera 
+
+71
+Solo se muestra en la primera
