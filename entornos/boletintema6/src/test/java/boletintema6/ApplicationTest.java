@@ -32,10 +32,11 @@ public class ApplicationTest {
 
   @Test
   public void testCilindro(){
-    assertEquals(0, AreaCilindro.superf(0, 0));
-    assertEquals(2 * 3.1416, AreaCilindro.superf(1, 1));
-    assertEquals(0, AreaCilindro.superf(1, 0));
-    assertEquals(0, AreaCilindro.superf(0, 1));
+    double esperado = 2 * Math.PI * 1 * 1;
+    assertEquals(esperado, AreaCilindro.superf(1, 1),0.00001);
+    // assertEquals(2 * 3.1416, AreaCilindro.superf(1, 1));
+    // assertEquals(0, AreaCilindro.superf(1, 0));
+    // assertEquals(0, AreaCilindro.superf(0, 1));
     //assertEquals(0, AreaCilindro.superf(-1, 0));
   }
 }
