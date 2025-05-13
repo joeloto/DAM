@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="academiaBaile.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
-<bailes>
-    <nombre></nombre>
-    <profesor></profesor>
-    <numAula></numAula>
-    <numPlazas></numPlazas>
-</bailes>
-<alumnos>
-    <DN></DN>
-    <nombre></nombre>
-    <direccion></direccion>
-    <telefono></telefono>
-    <fechaNac></fechaNac>
-    <sexo></sexo>
-</alumnos>
+<academia>
+    <bailes>
+        <nombre></nombre>
+        <profesor></profesor>
+        <numAula>1</numAula>
+        <numPlazas>23</numPlazas>
+    </bailes>
+    <alumnos>
+        <DNI>12345678D</DNI>
+        <nombre></nombre>
+        <direccion>YYTGYTY</direccion>
+        <telefono>641646840</telefono>
+        <fechaNac>2003-02-03</fechaNac>
+        <hombre></hombre>
+    </alumnos>
+    <listado>
+        <nombreBaile></nombreBaile>
+        <diasImpartido></diasImpartido>
+        <horaInicio></horaInicio>
+        <horaFin></horaFin>
+        <DNI>12345678A</DNI>
+    </listado>
+</academia>

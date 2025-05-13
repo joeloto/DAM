@@ -1,10 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="bailes">
+    <xs:element name="academia">
         <xs:complexType>
             <xs:sequence>
-                <xs:element></xs:element>
+                <xs:element name="bailes" type="tipo_bailes"></xs:element>
+                <xs:element name="alumnos" type="tipo_alumnos"></xs:element>
+                <xs:element name="listado" type="tipo_listado"></xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+        <xs:complexType name="tipo_bailes">
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string"></xs:element>
+                <xs:element name="profesor" type="xs:string"></xs:element>
+                <xs:element name="numAula" type="tipo_numAula"></xs:element>
+                <xs:element name="numPlazas" type="tipo_numPlazas"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    <xs:simpleType name="tipo_numAula">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:pattern value="\d{1}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipo_numPlazas">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:maxExclusive value="25"></xs:maxExclusive>
+        </xs:restriction>
+    </xs:simpleType>
+        <xs:complexType name="tipo_alumnos">
+            <xs:sequence>
+                <xs:element name="DNI" type="tipo_dni"></xs:element>
+                <xs:element name="nombre" type="xs:string"></xs:element>
+                <xs:element name="direccion" type="xs:string"></xs:element>
+                <xs:element name="telefono" type="tipo_telefono" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="fechaNac" type="xs:date"></xs:element>
+                <xs:choice>
+                    <xs:element name="hombre"></xs:element>
+                    <xs:element name="mujer"></xs:element>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    <xs:simpleType name="tipo_dni">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{8}[A-Z]{1}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipo_telefono">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{9}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+        <xs:complexType name="tipo_listado">
+            <xs:sequence>
+                <xs:element name="nombreBaile" type="xs:string"></xs:element>
+                <xs:element name="diasImpartido" type="xs:string"></xs:element>
+                <xs:element name="horaInicio" type="xs:string"></xs:element>
+                <xs:element name="horaFin" type="xs:string"></xs:element>
+                <xs:element name="DNI" type="tipo_dni"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
 </xs:schema>
