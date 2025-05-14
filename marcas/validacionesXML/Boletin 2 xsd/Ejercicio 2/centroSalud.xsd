@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="centro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="medico" type="tipo_medico"></xs:element>
+                <xs:element name="paciente" type="tipo_paciente"></xs:element>
+                <xs:element name="citas" type="tipo_citas"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="tipo_medico">
+        <xs:sequence>
+                <xs:element name="numID" type="tipo_numID"></xs:element>
+                <xs:element name="nombre" type="xs:string"></xs:element>
+                <xs:element name="especialidad" type="xs:string"></xs:element>
+                <xs:element name="sala" type="xs:positiveInteger"></xs:element>
+            </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="tipo_numID">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:totalDigits value="5"></xs:totalDigits>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="tipo_paciente">
+        <xs:sequence>
+            <xs:element name="DNI" type="tipo_dni"></xs:element>
+            <xs:element name="nombre" type="xs:string"></xs:element>
+            <xs:element name="direccion" type="xs:string"></xs:element>
+            <xs:element name="telefono" type="tipo_telefono"></xs:element>
+            <xs:element name="numSS" type="tipo_dni"></xs:element>
+            <xs:element name="fechNac" type="xs:date"></xs:element>
+            <xs:choice>
+                <xs:element name="hombre"></xs:element>
+                <xs:element name="mujer"></xs:element>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="tipo_dni">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{8}[A-Z]{1}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipo_telefono">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}-\d{3}-\d{3}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="tipo_citas">
+        <xs:sequence>
+            <xs:element name="fecha" type="xs:date"></xs:element>
+            <xs:element name="numID" type="tipo_numID"></xs:element>
+            <xs:element name="DNI" type="tipo_dni"></xs:element>
+            <xs:element name="tratamiento" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

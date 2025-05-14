@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="centroSalud.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<centro>
+    <medico>
+        <numID>12345</numID>
+        <nombre></nombre>
+        <especialidad></especialidad>
+        <sala>2</sala>
+    </medico>
+    <paciente>
+        <DNI>12345678A</DNI>
+        <nombre></nombre>
+        <direccion></direccion>
+        <telefono>123-123-123</telefono>
+        <numSS>12323123D</numSS>
+        <fechNac>1970-12-12</fechNac>
+        <hombre></hombre>
+    </paciente>
+    <citas>
+        <fecha>2025-05-14</fecha>
+        <numID>12345</numID>
+        <DNI>12345678D</DNI>
+        <tratamiento></tratamiento>
+    </citas>
+</centro>
