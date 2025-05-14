@@ -1,21 +1,6 @@
-package boletin_tema5.ejercicio1;
+package pruebas.ejercicio3;
 
-public class Ejercicio1 {
-
-    public static int[] crear(int n) {
-        int[] vector = new int[n];
-        for (int i = 0; i < n; i++) {
-            vector[i]= (int)(Math.random() * 4001 + 1000);
-        }
-        return vector;
-    }
-
-    public static void mostrar(int[] vector) {
-        for (int num : vector) {
-            System.out.println(num);
-        }
-    }
-
+public class Vectores {
     public static int maximo(int[] vector) { 
         int mayor = vector[0];
         for (int i = 0; i < vector.length; i++) {
@@ -47,14 +32,5 @@ public class Ejercicio1 {
             posiciones = true;
         }
         return posiciones;
-    }
-
-    public static void main(String[] args) {
-        int[] vector = crear(10);
-        mostrar(vector);
-        System.out.println();
-        System.out.println("Valor máximo: " + maximo(vector));
-        System.out.println("Valor mínimo: " + minimo(vector));
-        System.out.println("¿Se pueden intercambiar los valores? " + intercambio(vector, -2, 10));
     }
 }

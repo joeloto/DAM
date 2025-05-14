@@ -4,10 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -16,12 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import boletin_tema5.ejercicio4.Ejercicio4;
-
 public class Formulario extends JFrame implements ActionListener {
 
-    // TODO control valor numerico. Archivo incompleto (corrupto). No uses
-    // exception. trim(). Cerrar archivo.
+ 
     private JLabel lblNombre;
     private JLabel lblEdad;
     private JLabel lblDir;
@@ -78,7 +73,7 @@ public class Formulario extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnGuardar) {
             try {
-                int edad = Integer.parseInt(txfEdad.getText());
+                int edad = Integer.parseInt(txfEdad.getText().trim());
                 if (txfDir.getText().equals("") || txfNombre.getText().equals("") || edad < 0) {
                     JOptionPane.showMessageDialog(null, "DATOS ERRÓNEOS", "ERROR!", JOptionPane.INFORMATION_MESSAGE);
 
