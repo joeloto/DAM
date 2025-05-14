@@ -1,0 +1,13 @@
+1   delimiter $$
+create or replace function cuadrado(num int) returns int
+BEGIN
+	RETURN num*num;
+END $$
+delimiter ;
+
+2   delimiter $$
+create or replace function cortar(cadena varchar(255)) returns varchar(255) 
+begin 
+return concat(cadena,'-',char_length(cadena));
+end $$;
+delimiter ;
