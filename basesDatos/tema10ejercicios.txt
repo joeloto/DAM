@@ -7,7 +7,47 @@ delimiter ;
 
 2   delimiter $$
 create or replace function cortar(cadena varchar(255)) returns varchar(255) 
+comment 'Mi primer procedimiento almacenado'
 begin 
 return concat(cadena,'-',char_length(cadena));
 end $$;
 delimiter ;
+
+3	
+
+4	delimiter $$
+CREATE or replace PROCEDURE prueba()
+BEGIN
+select * from empleados;
+end $$
+delimiter ;
+
+5	show procedure status;
+
+6
+
+7
+
+8
+
+9	show create PROCEDURE prueba;
+
+10	alter procedure prueba
+	sql security definer
+	comment 'Procedimiento de prueba'
+
+11
+
+12
+
+13
+
+14	delimiter $$
+create or replace procedure listarNumero(in num int)
+sql SECURITY invoker
+begin 
+select * from empleados limit num;
+end $$
+delimiter ;	
+
+15	
