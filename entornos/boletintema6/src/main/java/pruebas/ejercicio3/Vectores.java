@@ -33,4 +33,28 @@ public class Vectores {
         }
         return posiciones;
     }
+
+    public static int[] ordenavector(int[] vector) {
+        return null;
+    
+      }
+
+      public static int sumaRango(int[] vector,int inicio,int fin){
+        return 0;
+      }
+
+      public static void main(String[] args) {
+        int[] vector = {5, 2, 8, 1, 4};
+        int[] ordenado = ordenavector(vector);
+
+        System.out.print("Vector original: ");
+        for (int i = 0; i < vector.length; i++) {
+            System.out.print(vector[i] + " ");
+        }
+
+        System.out.print("\nVector ordenado: ");
+        for (int i = 0; i < ordenado.length; i++) {
+            System.out.print(ordenado[i] + " ");
+        }
+      }
 }
