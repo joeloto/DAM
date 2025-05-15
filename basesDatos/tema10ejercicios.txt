@@ -50,4 +50,42 @@ select * from empleados limit num;
 end $$
 delimiter ;	
 
-15	
+15	delimiter $$
+create or replace procedure maxsalario(out salariomax int)
+BEGIN
+select max(salario) into salariomax from empleados;
+end $$
+delimiter ;
+
+16 delimiter $$
+create or replace procedure cuentadepart(out num int)
+BEGIN
+select COUNT(DISTINCT(iddepart)) into num from empleados;
+end $$
+DELIMITER ;
+
+17	delimiter $$
+create or replace procedure insertalu(in inombre varchar(255), in ialtura int, in iapellidos varchar(255), in iaula int)
+sql security invoker
+begin 
+insert into alumnos (nombre,altura,apellidos,aula) values (inombre,ialtura,iapellidos,iaula);
+end $$
+delimiter ;
+
+18	delimiter $$
+create or replace definer=root@localhost function cuentaoficio(p_oficio varchar(255)) returns int 
+begin 
+return (select count(*) from empleados where oficio = p_oficio);
+end $$
+delimiter ;
+
+19	delimiter $$
+create or replace procedure cuentaoficio2(in oficioparametro varchar(255),out num int) 
+BEGIN
+select count(*) into num from empleados where oficio = oficioparametro;
+end $$
+delimiter ;
+
+20
+
+21
