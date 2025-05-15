@@ -2,17 +2,31 @@ package pruebas.ejercicio4;
 
 import java.util.ArrayList;
 
-public class Cadena {
+public class Cadena2 {
     private ArrayList<Character> cadena = new ArrayList<>();
+
+    public void setCadena(String frase) {
+        int inicio = 0;
+        int fin = frase.length() - 1;
+        while (inicio < frase.length() && frase.charAt(inicio) == ' ') {
+            inicio++;
+        }
+        while (fin != 0 && frase.charAt(fin) == ' ') {
+            fin--;
+        }
+        for (int i = inicio; i <= fin; i++) {
+            cadena.add(frase.charAt(i));
+        }
+    }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null && obj.getClass() != Cadena.class && obj.getClass() != String.class
+        if (obj == null && obj.getClass() != Cadena2.class && obj.getClass() != String.class
                 && obj.getClass() != char[].class) {
             throw new IllegalArgumentException("Parámetro inválido");
         }
-        if (obj.getClass() == Cadena.class) {
-            Cadena comodin = (Cadena) obj;
+        if (obj.getClass() == Cadena2.class) {
+            Cadena2 comodin = (Cadena2) obj;
             if (cadena.size() != comodin.cadena.size()) {
                 return false;
             }

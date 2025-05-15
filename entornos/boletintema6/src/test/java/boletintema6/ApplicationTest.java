@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.util.InputMismatchException;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +20,7 @@ import pruebas.ejercicio1.Bisiesto;
 import pruebas.ejercicio1.Potencia;
 import pruebas.ejercicio2.*;
 import pruebas.ejercicio3.Vectores;
+import pruebas.ejercicio4.Cadena2;
 
 @DisplayName("Application")
 public class ApplicationTest {
@@ -44,24 +48,35 @@ public class ApplicationTest {
   }
 
   @Test
-  public void testPotencia() {
+  public void testPotencia() {//TODO completar
     assertEquals(8, Potencia.potencia(2, 3), 0.00001);
     assertEquals(0.25, Potencia.potencia(2, -2), 0.00001);
     assertEquals(1, Potencia.potencia(2, 0), 0.00001);
+    assertEquals(-1, Potencia.potencia(-1, 1), 0.00001);
+    assertEquals(1, Potencia.potencia(-1, 2), 0.00001);
+    assertEquals(0, Potencia.potencia(0, 1), 0.00001);
+    assertEquals(1, Potencia.potencia(-1, 0), 0.00001);
+    assertEquals(1, Potencia.potencia(0, 0), 0.00001);
+    assertEquals(-1, Potencia.potencia(-1, -1), 0.00001);
+    assertEquals(Double.POSITIVE_INFINITY, Potencia.potencia(0, -1), 0.00001);
   }
 
   // EJERCICIO 2
+  static String cadena;
+  @BeforeAll
+  public static void cadenaHola(){
+    cadena = "hola";
+  }
   @Test
-  public void testSubcadena() {
-    String cadena = "hola";
+  public void testSubcadena() { //TODO uso de before
     assertEquals(cadena, Cadena.subCadena(cadena, 0, 4));
     assertEquals("ol", Cadena.subCadena(cadena, 1, 2));
     assertEquals("a", Cadena.subCadena(cadena, 3, 1));
   }
 
+
   @Test
-  public void testSubcadenaException() {
-    String cadena = "hola";
+  public void testSubcadenaException() { 
     try {
       Cadena.subCadena(cadena, 0, 5);
       fail("No salta excepción");
@@ -72,7 +87,6 @@ public class ApplicationTest {
 
   @Test
   public void testSubcadenaException2() {
-    String cadena = "hola";
     try {
       Cadena.subCadena(cadena, 0, -1);
       fail("No salta excepción");
@@ -83,7 +97,6 @@ public class ApplicationTest {
 
   @Test
   public void testSubcadenaException3() {
-    String cadena = "hola";
     try {
       Cadena.subCadena(cadena, -1, 7);
       fail("No salta excepción");
@@ -167,18 +180,18 @@ public class ApplicationTest {
 
   @Test
   public void testOrdenar() {
-    int[] desordenado1 = {2,3,4,5,1};
-    int[] ordenado1 = {1,2,3,4,5};
-    assertArrayEquals(ordenado1,Vectores.ordenavector(desordenado1));
+    int[] desordenado1 = { 2, 3, 4, 5, 1 };
+    int[] ordenado1 = { 1, 2, 3, 4, 5 };
+    assertArrayEquals(ordenado1, Vectores.ordenavector(desordenado1));
 
     assertArrayEquals(ordenado1, Vectores.ordenavector(ordenado1));
 
-    int[] repetidos1 = {1,4,3,3,2};
-    int[] repOrd = {1,2,3,3,4};
+    int[] repetidos1 = { 1, 4, 3, 3, 2 };
+    int[] repOrd = { 1, 2, 3, 3, 4 };
     assertArrayEquals(repOrd, Vectores.ordenavector(repetidos1));
 
-    int[] uno1 = {1};
-    int[] uno2 = {1};
+    int[] uno1 = { 1 };
+    int[] uno2 = { 1 };
     assertArrayEquals(uno2, Vectores.ordenavector(uno1));
 
     int[] vacio1 = {};
@@ -189,15 +202,15 @@ public class ApplicationTest {
   }
 
   @Test
-  public void testSumaIndice(){
-    int[] v1 = {1,2,3,4,5};
+  public void testSumaIndice() {
+    int[] v1 = { 1, 2, 3, 4, 5 };
     assertEquals(9, Vectores.sumaRango(v1, 1, 2));
 
     int[] vacio = {};
     assertEquals(0, Vectores.sumaRango(vacio, 2, 1));
 
-    int[] uno = {3};
-    assertEquals(4, Vectores.sumaRango(uno,3,4));
+    int[] uno = { 3 };
+    assertEquals(4, Vectores.sumaRango(uno, 3, 4));
 
     assertNull(Vectores.sumaRango(null, 2, 3));
 
@@ -206,6 +219,58 @@ public class ApplicationTest {
     assertEquals(0, Vectores.sumaRango(v1, 3, 1));
   }
 
-  //EJERCICIO 4
-  
+  // EJERCICIO 4
+  static Cadena2 c1;
+
+  @BeforeAll
+  public static void creaObj() {
+    c1 = new Cadena2();
+    c1.setCadena("java");
+  }
+
+  @Test
+  public void testEquals() {
+    Cadena2 c2 = new Cadena2();
+    c2.setCadena("java");
+    assertTrue(c1.equals(c2));
+
+    Cadena2 c3 = new Cadena2();
+    c3.setCadena("javac");
+    assertFalse(c1.equals(c3));
+
+    try {
+      c1.equals(null);
+      fail("Se espera error, objeto nulo");
+    } catch (NullPointerException e) {
+      assertTrue(true);
+    }
+
+    try {
+      c1.equals(12);
+      fail("Se espera error, parámetro incorrecto");
+    } catch (IllegalArgumentException e) {
+      assertTrue(true);
+    }
+
+    char[] v1 = {'j','a','v','a'};
+    assertTrue(c1.equals(v1));
+
+    char[] v2 = {'l','a','v','a'};
+    assertFalse(c1.equals(v2));
+
+    assertTrue(c1.equals("java"));
+
+    assertFalse(c1.equals("lava"));
+
+  }
+
+  @Test
+  public void testEliminar(){
+    char caracter = 'a';
+    assertEquals(2,c1.eliminar(caracter));
+
+    char caracter2 = 'y';
+    assertEquals(0,c1.eliminar(caracter2));
+  }
+
 }
