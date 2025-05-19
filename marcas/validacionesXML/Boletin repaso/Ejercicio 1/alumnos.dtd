@@ -1,0 +1,11 @@
+<!ELEMENT listacursos (alumno)+>
+<!ELEMENT alumno (dni,nombre,primerapellido,segundoapellido?,asignaturas)>
+<!ELEMENT dni (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT primerapellido (#PCDATA)>
+<!ELEMENT segundoapellido (#PCDATA)>
+<!ELEMENT asignaturas (asignatura)+>
+<!ELEMENT asignatura (nombre,codigo,profesor)>
+<!ELEMENT codigo (#PCDATA)>
+<!ELEMENT profesor (npr,nombre,primerapellido,segundoapellido?)>
+<!ELEMENT npr (#PCDATA)>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="alumnos.dtd" type="application/xml-dtd"?>
+<listacursos>
+    <alumno>
+        <dni></dni>
+        <nombre></nombre>
+        <primerapellido></primerapellido>
+        <segundoapellido></segundoapellido>
+        <asignaturas>
+            <asignatura>
+                <nombre></nombre>
+                <codigo></codigo>
+                <profesor>
+                    <npr></npr>
+                    <nombre></nombre>
+                    <primerapellido></primerapellido>
+                    <segundoapellido></segundoapellido>
+                </profesor>
+            </asignatura>
+        </asignaturas>
+    </alumno>
+    <alumno>
+        <dni></dni>
+        <nombre></nombre>
+        <primerapellido></primerapellido>
+        <asignaturas>
+            <asignatura>
+                <nombre></nombre>
+                <codigo></codigo>
+                <profesor>
+                    <npr></npr>
+                    <nombre></nombre>
+                    <primerapellido></primerapellido>
+                    <segundoapellido></segundoapellido>
+                </profesor>
+            </asignatura>
+        </asignaturas>
+    </alumno>
+</listacursos>

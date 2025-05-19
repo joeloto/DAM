@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="entrega.dtd" type="application/xml-dtd"?>
+<entrega>
+    <lote>
+        <pale>
+            <numcajas></numcajas>
+            <contenido>
+                <nombrecomp></nombrecomp>
+                <procedencia>
+                    <pais></pais>
+                </procedencia>
+                <numserie></numserie>
+                <peso></peso>
+                <unidadpeso></unidadpeso>
+            </contenido>
+            <peso></peso>
+            <manipulacion></manipulacion>
+        </pale>
+    </lote>
+</entrega>
