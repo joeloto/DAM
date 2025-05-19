@@ -1,5 +1,6 @@
 package principal.boletin2.Ejercicio1;
 
+import java.awt.Color;
 import java.awt.event.*;
 
 import javax.swing.*;
@@ -46,13 +47,13 @@ public class Raton extends JFrame implements ActionListener {
                 lblCoordenadas.setVisible(true);
             }
         });
+        
         this.addMouseListener(new MouseHandler());
-
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        
     }
 
     private class MouseHandler implements MouseMotionListener, MouseListener {
@@ -83,10 +84,18 @@ public class Raton extends JFrame implements ActionListener {
 
         @Override
         public void mousePressed(MouseEvent e) {
+            if (e.getButton() == MouseEvent.BUTTON1) {
+                btnIzquierdo.setBackground(Color.yellow);
+            }
+            if (e.getButton() == MouseEvent.BUTTON3) {
+                btnDerecho.setBackground(Color.RED);
+            }
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
+            btnDerecho.setBackground(null);
+            btnIzquierdo.setBackground(null);
         }
 
         @Override
