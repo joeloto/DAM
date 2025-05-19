@@ -86,6 +86,41 @@ select count(*) into num from empleados where oficio = oficioparametro;
 end $$
 delimiter ;
 
-20
+20	DELIMITER $$
+CREATE FUNCTION calificar_salario(salario DECIMAL(10,2))
+RETURNS VARCHAR(10)
+DETERMINISTIC
+BEGIN
+    IF salario >= 5000 THEN RETURN 'Alto';
+    ELSEIF salario >= 3000 THEN RETURN 'Medio';
+    ELSE RETURN 'Bajo';
+    END IF;
+END$$
+DELIMITER ;
 
-21
+21	delimiter $$
+create or replace procedure buscapatron(in patron varchar(255))
+BEGIN
+select * from empleados where apellido like patron;
+end $$
+delimiter ;
+
+22	delimiter $$
+create or replace procedure sumasalario(in empleado varchar(255),in suma varchar(255))
+BEGIN
+update empleados set salario=salario + suma where apellido = empleado;
+end $$
+delimiter ;
+
+23	delimiter $$
+create or replace function duracion(codempleado int) returns int 
+BEGIN
+declare alta date;
+declare anio int;
+select fecha_alt into alta from empleados where codemp = codempleado;
+set anio = year(now()) - year(alta);
+return anio;
+end $$
+delimiter ;
+
+
