@@ -123,4 +123,42 @@ return anio;
 end $$
 delimiter ;
 
+24  delimiter $$
+create or replace procedure buscapatron2(in patron varchar(255))
+BEGIN
+select COUNT(*) from empleados where apellido like patron;
+END $$
+delimiter ;
+
+25  delimiter $$
+create or replace procedure buscapatron3(in patron1 varchar(255),in patron2 varchar(255))
+begin 
+select * from empleados where (patron1 is null or apellido like patron1) and (patron2 is null or apellido like patron2);
+end $$
+delimiter ;
+
+26  DELIMITER $$
+CREATE or replace definer=user@localhost procedure calificar_salario(in codigo int, out calif varchar(255))
+sql SECURITY invoker
+BEGIN
+declare sueldo int;
+select salario into sueldo from empleados where codigo=codemp;
+    IF sueldo < 2000 THEN set calif = 'Bajo';
+    ELSEIF sueldo >= 2000 and sueldo <4000 THEN set calif = 'Medio';
+    ELSE set calif = 'Alto';
+    END IF;
+END$$
+DELIMITER ;
+
+27  delimiter $$
+create or replace function asignasalario(sueldo int, asig int) returns int
+begin 
+    if asig = 0 then return (select COUNT(*) from empleados where sueldo = salario);
+    elseif asig = 1 then return (select COUNT(*) from empleados where sueldo < salario);
+    elseif asig = -1 then return (select COUNT(*) from empleados where sueldo > salario);
+    else return null;
+end if; 
+end $$
+delimiter ;
+
 
