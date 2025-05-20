@@ -19,7 +19,7 @@
         </xs:complexType>
     <xs:simpleType name="tipo_numAula">
         <xs:restriction base="xs:positiveInteger">
-            <xs:pattern value="\d{1}"></xs:pattern>
+            <xs:totalDigits value="1"></xs:totalDigits>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="tipo_numPlazas">
