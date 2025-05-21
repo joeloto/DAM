@@ -6,10 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-
-import java.util.InputMismatchException;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -48,7 +47,7 @@ public class ApplicationTest {
   }
 
   @Test
-  public void testPotencia() {//TODO completar
+  public void testPotencia() {
     assertEquals(8, Potencia.potencia(2, 3), 0.00001);
     assertEquals(0.25, Potencia.potencia(2, -2), 0.00001);
     assertEquals(1, Potencia.potencia(2, 0), 0.00001);
@@ -63,20 +62,21 @@ public class ApplicationTest {
 
   // EJERCICIO 2
   static String cadena;
+
   @BeforeAll
-  public static void cadenaHola(){
+  public static void cadenaHola() {
     cadena = "hola";
   }
+
   @Test
-  public void testSubcadena() { //TODO uso de before
+  public void testSubcadena() {
     assertEquals(cadena, Cadena.subCadena(cadena, 0, 4));
     assertEquals("ol", Cadena.subCadena(cadena, 1, 2));
     assertEquals("a", Cadena.subCadena(cadena, 3, 1));
   }
 
-
   @Test
-  public void testSubcadenaException() { 
+  public void testSubcadenaException() {
     try {
       Cadena.subCadena(cadena, 0, 5);
       fail("No salta excepción");
@@ -105,16 +105,42 @@ public class ApplicationTest {
     }
   }
 
-  // EJERCICIO 3
+  // EJERCICIO 3 (pendiente validar)
+
+  // TODO usar before para inicializacion de vetores
+  static int[] vector;
+  static int[] v2;
+  static int[] vacio;
+  static int[] vacio2;
+  static int[] uno;
+  static int[] otro;
+  static int[] desordenado1;
+  static int[] ordenado1;
+  static int[] repetidos1;
+  static int[] repOrd;
+
+  @BeforeAll
+  public static void iniciaVector() {
+    vector = new int[] { 6, 3, 1, 4, 5 };
+    uno = new int[] { 4 };
+    otro = new int[] { 4 };
+    vacio = new int[] {};
+    vacio2 = new int[] {};
+    v2 = new int[] { 1, 3, 8, 4, 5 };
+    desordenado1 = new int[] { 2, 3, 4, 5, 1 };
+    ordenado1 = new int[] { 1, 2, 3, 4, 5 };
+    repetidos1 = new int[] { 1, 4, 3, 3, 2 };
+    repOrd = new int[] { 1, 2, 3, 3, 4 };
+  }
+
   @Test
   public void testVectoresMax() {
-    int[] vector = { 1, 2, 3, 4, 5 };
-    assertEquals(5, Vectores.maximo(vector));
+    assertEquals(6, Vectores.maximo(vector));// TODO más pruebas
+    assertEquals(8, Vectores.maximo(v2));
+    assertEquals(5, Vectores.maximo(ordenado1));
 
-    int[] uno = { 4 };
     assertEquals(4, Vectores.maximo(uno));
 
-    int[] vacio = {};
     try {
       Vectores.maximo(vacio);
       fail("Se espera error, vector vacío");
@@ -132,13 +158,12 @@ public class ApplicationTest {
 
   @Test
   public void testVectoresMin() {
-    int[] vector = { 1, 2, 3, 4, 5 };
-    assertEquals(1, Vectores.minimo(vector));
+    assertEquals(1, Vectores.minimo(vector));// TODO más pruebas
+    assertEquals(1, Vectores.minimo(v2));
+    assertEquals(1, Vectores.maximo(desordenado1));
 
-    int[] uno = { 4 };
     assertEquals(4, Vectores.minimo(uno));
 
-    int[] vacio = {};
     try {
       Vectores.minimo(vacio);
       fail("Se espera error, vector vacío");
@@ -156,18 +181,46 @@ public class ApplicationTest {
 
   @Test
   public void testVectoresIntercambio() {
-    int[] vector = { 1, 2, 3, 4, 5 };
-    assertTrue(Vectores.intercambio(vector, 1, 2));
+    assertTrue(Vectores.intercambio(vector, 0, 2));// TODO más pruebas y completar
+    assertArrayEquals(new int[] { 1, 3, 6, 4, 5 }, vector);
 
-    int[] v2 = { 1, 3, 2, 4, 5 };
-    assertArrayEquals(v2, vector);
+    vector = new int[] { 6, 3, 1, 4, 5 };
+    assertTrue(Vectores.intercambio(vector, 0, vector.length - 1));
+    assertArrayEquals(new int[] { 5, 3, 1, 4, 6 }, vector);
 
-    int[] uno = { 4 };
+    vector = new int[] { 6, 3, 1, 4, 5 };
+    assertTrue(Vectores.intercambio(vector, vector.length - 1, 2));
+    assertArrayEquals(new int[] { 6, 3, 5, 4, 1 }, vector);
+
+    vector = new int[] { 6, 3, 1, 4, 5 };
+    assertTrue(Vectores.intercambio(vector, 2, 3));
+    assertArrayEquals(new int[] { 6, 3, 4, 1, 5 }, vector);
+
+    vector = new int[] { 6, 3, 1, 4, 5 };
+    assertTrue(Vectores.intercambio(vector, 2, 2));
+    assertArrayEquals(new int[] { 6, 3, 1, 4, 5 }, vector);
+
+    vector = new int[] { 6, 3, 1, 4, 5 };
+    assertTrue(Vectores.intercambio(vector, 2, 0));
+    assertArrayEquals(new int[] { 1, 3, 6, 4, 5 }, vector);
+
+    repetidos1 = new int[] { 1, 4, 3, 3, 2 };
+    assertTrue(Vectores.intercambio(repetidos1, 2, 3));
+    assertArrayEquals(new int[] { 1, 4, 3, 3, 2 }, repetidos1);
+
+    assertFalse(Vectores.intercambio(vector, -2, 0));
+
+    assertFalse(Vectores.intercambio(vector, 2, -4));
+
+    assertFalse(Vectores.intercambio(vector, 0, vector.length));
+
+    assertFalse(Vectores.intercambio(vector, -1, vector.length - 1));
+
+    assertFalse(Vectores.intercambio(vector, vector.length, 2));
+
     assertTrue(Vectores.intercambio(uno, 0, 0));
-    int[] otro = { 4 };
     assertArrayEquals(otro, uno);
 
-    int[] vacio = {};
     assertFalse(Vectores.intercambio(vacio, 1, 4));
 
     try {
@@ -180,46 +233,55 @@ public class ApplicationTest {
 
   @Test
   public void testOrdenar() {
-    int[] desordenado1 = { 2, 3, 4, 5, 1 };
-    int[] ordenado1 = { 1, 2, 3, 4, 5 };
     assertArrayEquals(ordenado1, Vectores.ordenavector(desordenado1));
-
     assertArrayEquals(ordenado1, Vectores.ordenavector(ordenado1));
-
-    int[] repetidos1 = { 1, 4, 3, 3, 2 };
-    int[] repOrd = { 1, 2, 3, 3, 4 };
     assertArrayEquals(repOrd, Vectores.ordenavector(repetidos1));
-
-    int[] uno1 = { 1 };
-    int[] uno2 = { 1 };
-    assertArrayEquals(uno2, Vectores.ordenavector(uno1));
-
-    int[] vacio1 = {};
-    int[] vacio2 = {};
-    assertArrayEquals(vacio2, Vectores.ordenavector(vacio1));
+    assertArrayEquals(otro, Vectores.ordenavector(uno));
+    assertArrayEquals(vacio2, Vectores.ordenavector(vacio));
 
     assertNull(Vectores.ordenavector(null));
   }
 
   @Test
-  public void testSumaIndice() {
-    int[] v1 = { 1, 2, 3, 4, 5 };
-    assertEquals(9, Vectores.sumaRango(v1, 1, 2));
+  public void testSumaRango() {// TODO más pruebas
+    assertEquals(11, Vectores.sumaRango(v2, 1, 2));
+    assertEquals(4, Vectores.sumaRango(v2, 0, 1));
+    assertEquals(13, Vectores.sumaRango(v2, 2, v2.length - 1));
+    assertEquals(6, Vectores.sumaRango(v2, 0, v2.length - 1));
 
     int[] vacio = {};
     assertEquals(0, Vectores.sumaRango(vacio, 2, 1));
 
-    int[] uno = { 3 };
-    assertEquals(4, Vectores.sumaRango(uno, 3, 4));
+    try {
+      Vectores.sumaRango(v2, 2, v2.length);
+      fail("Se espera error, parámetro inválido");
+    } catch (IllegalArgumentException e) {
+      assertTrue(true);
+    }
 
-    assertNull(Vectores.sumaRango(null, 2, 3));
+    try {
+      Vectores.sumaRango(v2, -1, 3);
+      fail("Se espera error, parámetro inválido");
+    } catch (IllegalArgumentException e) {
+      assertTrue(true);
+    }
 
-    assertEquals(5, Vectores.sumaRango(v1, -1, 8));
+    try {
+      Vectores.sumaRango(v2, -4, 8);
+      fail("Se espera error, parámetros inválidos");
+    } catch (IllegalArgumentException e) {
+      assertTrue(true);
+    }
 
-    assertEquals(0, Vectores.sumaRango(v1, 3, 1));
+    try {
+      Vectores.sumaRango(null, 0, 2);
+      fail("Se espera error, parámetro inválido");
+    } catch (IllegalArgumentException e) {
+      assertTrue(true);
+    }
   }
 
-  // EJERCICIO 4
+  // EJERCICIO 4 (pendiente validar)
   static Cadena2 c1;
 
   @BeforeAll
@@ -252,10 +314,10 @@ public class ApplicationTest {
       assertTrue(true);
     }
 
-    char[] v1 = {'j','a','v','a'};
+    char[] v1 = { 'j', 'a', 'v', 'a' };
     assertTrue(c1.equals(v1));
 
-    char[] v2 = {'l','a','v','a'};
+    char[] v2 = { 'l', 'a', 'v', 'a' };
     assertFalse(c1.equals(v2));
 
     assertTrue(c1.equals("java"));
@@ -265,12 +327,12 @@ public class ApplicationTest {
   }
 
   @Test
-  public void testEliminar(){
+  public void testEliminar() {
     char caracter = 'a';
-    assertEquals(2,c1.eliminar(caracter));
+    assertEquals(2, c1.eliminar(caracter));
 
     char caracter2 = 'y';
-    assertEquals(0,c1.eliminar(caracter2));
+    assertEquals(0, c1.eliminar(caracter2));
   }
 
 }
