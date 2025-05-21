@@ -125,6 +125,7 @@ delimiter ;
 
 24  delimiter $$
 create or replace procedure buscapatron2(in patron varchar(255))
+comment 'busca de procedimiento'
 BEGIN
 select COUNT(*) from empleados where apellido like patron;
 END $$
