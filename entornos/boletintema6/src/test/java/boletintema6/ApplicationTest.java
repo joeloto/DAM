@@ -107,7 +107,6 @@ public class ApplicationTest {
 
   // EJERCICIO 3 (pendiente validar)
 
-  // TODO usar before para inicializacion de vetores
   static int[] vector;
   static int[] v2;
   static int[] vacio;
@@ -118,7 +117,8 @@ public class ApplicationTest {
   static int[] ordenado1;
   static int[] repetidos1;
   static int[] repOrd;
-
+  
+  // TODO usar before para inicializacion de vetores
   @BeforeAll
   public static void iniciaVector() {
     vector = new int[] { 6, 3, 1, 4, 5 };
