@@ -1,7 +1,6 @@
 package principal.ejercicio3;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Cadena {
     private ArrayList<Character> cadena = new ArrayList<>();
