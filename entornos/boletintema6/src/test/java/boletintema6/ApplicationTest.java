@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -105,7 +104,7 @@ public class ApplicationTest {
     }
   }
 
-  // EJERCICIO 3 (pendiente validar)
+  // EJERCICIO 3 
 
   static int[] vector;
   static int[] v2;
@@ -118,7 +117,6 @@ public class ApplicationTest {
   static int[] repetidos1;
   static int[] repOrd;
   
-  // TODO usar before para inicializacion de vetores
   @BeforeAll
   public static void iniciaVector() {
     vector = new int[] { 6, 3, 1, 4, 5 };
@@ -135,7 +133,7 @@ public class ApplicationTest {
 
   @Test
   public void testVectoresMax() {
-    assertEquals(6, Vectores.maximo(vector));// TODO más pruebas
+    assertEquals(6, Vectores.maximo(vector)); 
     assertEquals(8, Vectores.maximo(v2));
     assertEquals(5, Vectores.maximo(ordenado1));
 
@@ -158,7 +156,7 @@ public class ApplicationTest {
 
   @Test
   public void testVectoresMin() {
-    assertEquals(1, Vectores.minimo(vector));// TODO más pruebas
+    assertEquals(1, Vectores.minimo(vector)); 
     assertEquals(1, Vectores.minimo(v2));
     assertEquals(1, Vectores.maximo(desordenado1));
 
@@ -181,7 +179,7 @@ public class ApplicationTest {
 
   @Test
   public void testVectoresIntercambio() {
-    assertTrue(Vectores.intercambio(vector, 0, 2));// TODO más pruebas y completar
+    assertTrue(Vectores.intercambio(vector, 0, 2));
     assertArrayEquals(new int[] { 1, 3, 6, 4, 5 }, vector);
 
     vector = new int[] { 6, 3, 1, 4, 5 };
@@ -243,7 +241,7 @@ public class ApplicationTest {
   }
 
   @Test
-  public void testSumaRango() {// TODO más pruebas
+  public void testSumaRango() {
     assertEquals(11, Vectores.sumaRango(v2, 1, 2));
     assertEquals(4, Vectores.sumaRango(v2, 0, 1));
     assertEquals(13, Vectores.sumaRango(v2, 2, v2.length - 1));
@@ -327,9 +325,35 @@ public class ApplicationTest {
   }
 
   @Test
-  public void testEliminar() {
+  public void testEliminar() {//TODO más pruebas y comprobar
     char caracter = 'a';
     assertEquals(2, c1.eliminar(caracter));
+    assertTrue(c1.equals(new char[]{'j','v'}));
+
+    Cadena2 c3 = new Cadena2();
+    c3.setCadena("alma");
+    assertEquals(2, c3.eliminar(caracter));
+    assertTrue(c3.equals(new char[]{'l','m'}));
+
+    Cadena2 c4 = new Cadena2();
+    c4.setCadena("aantrc");
+    assertEquals(2, c4.eliminar(caracter));
+    assertTrue(c4.equals(new char[]{'n','t','r','c'}));
+
+    Cadena2 c5 = new Cadena2();
+    c5.setCadena("diaa");
+    assertEquals(2, c5.eliminar(caracter));
+    assertTrue(c5.equals(new char[]{'d','i'}));
+
+    Cadena2 c6 = new Cadena2();
+    c6.setCadena("maas");
+    assertEquals(2, c6.eliminar(caracter));
+    assertTrue(c6.equals(new char[]{'m','s'}));
+
+    Cadena2 c7 = new Cadena2();
+    c7.setCadena("antarc");
+    assertEquals(2, c7.eliminar(caracter));
+    assertTrue(c7.equals(new char[]{'n','t','r','c'}));
 
     char caracter2 = 'y';
     assertEquals(0, c1.eliminar(caracter2));
