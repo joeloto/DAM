@@ -325,7 +325,7 @@ public class ApplicationTest {
   }
 
   @Test
-  public void testEliminar() {//TODO más pruebas y comprobar
+  public void testEliminar() {
     char caracter = 'a';
     assertEquals(2, c1.eliminar(caracter));
     assertTrue(c1.equals(new char[]{'j','v'}));

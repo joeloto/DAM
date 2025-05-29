@@ -1,0 +1,5 @@
+Diferenciar bien herencia de implementación
+Lbrería no herda ni implementa. No usa Punto.
+boolean error no existe//
+No hay ctor de Circ en Fig//
+Revisat ctor de Polig //
