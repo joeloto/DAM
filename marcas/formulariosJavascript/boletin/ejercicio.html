@@ -1,72 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 4</title>
     <style>
-        #id{
+        #id {
             color: red;
         }
     </style>
     <script>
         function mostrar() {
-    var info = document.getElementById("info");
-    info.innerHTML = "";
-    var resultado = 0;
+            var info = document.getElementById("info");
+            info.innerHTML = "";
+            var resultado = 0;
 
-    // Convertimos los valores a números
-    var numero1 = parseFloat(document.getElementsByName("numero1")[0].value);
-    var numero2 = parseFloat(document.getElementsByName("numero2")[0].value);
+            // Convertimos los valores a números
+            var numero1 = parseFloat(document.getElementsByName("numero1")[0].value);
+            var numero2 = parseFloat(document.getElementsByName("numero2")[0].value);
 
-    var operacionv = "";
-    var operacion = document.getElementsByName("operacion");
+            var operacionv = "";
+            var operacion = document.getElementsByName("operacion");
 
-    // Determinar qué radio button está seleccionado
-    for (var i = 0; i < operacion.length; i++) {
-        if (operacion[i].checked) {
-            operacionv = operacion[i].value;
-            break;
+            // Determinar qué radio button está seleccionado
+            for (var i = 0; i < operacion.length; i++) {
+                if (operacion[i].checked) {
+                    operacionv = operacion[i].value;
+                    break;
+                }
+            }
+
+            // Verificar si se seleccionó una operación
+            if (operacionv === "") {
+                info.innerHTML = "Por favor, selecciona una operación.";
+                return;
+            }
+
+            // Evitar división por cero
+            if (operacionv == "division" && numero2 === 0) {
+                window.alert("No se puede dividir entre 0");
+                return;
+            }
+
+            // Realizar la operación correspondiente
+            if (operacionv == "suma") {
+                resultado = numero1 + numero2;
+                info.innerHTML = `El resultado de la operación ${numero1} + ${numero2} es: ${resultado}`;
+            }
+            else if (operacionv == "resta") {
+                resultado = numero1 - numero2;
+                info.innerHTML = `El resultado de la operación ${numero1} - ${numero2} es: ${resultado}`;
+            }
+            else if (operacionv == "multiplicacion") {
+                resultado = numero1 * numero2;
+                info.innerHTML = `El resultado de la operación ${numero1} * ${numero2} es: ${resultado}`;
+            }
+            else if (operacionv == "division") {
+                resultado = numero1 / numero2;
+                info.innerHTML = `El resultado de la operación ${numero1} / ${numero2} es: ${resultado}`;
+            }
         }
-    }
 
-    // Verificar si se seleccionó una operación
-    if (operacionv === "") {
-        info.innerHTML = "Por favor, selecciona una operación.";
-        return;
-    }
-
-    // Evitar división por cero
-    if (operacionv == "division" && numero2 === 0) {
-        window.alert("No se puede dividir entre 0");
-        return;
-    }
-
-    // Realizar la operación correspondiente
-    if (operacionv == "suma") {
-        resultado = numero1 + numero2;
-        info.innerHTML = `El resultado de la operación ${numero1} + ${numero2} es: ${resultado}`;
-    } 
-    else if (operacionv == "resta") {
-        resultado = numero1 - numero2;
-        info.innerHTML = `El resultado de la operación ${numero1} - ${numero2} es: ${resultado}`;
-    } 
-    else if (operacionv == "multiplicacion") {
-        resultado = numero1 * numero2;
-        info.innerHTML = `El resultado de la operación ${numero1} * ${numero2} es: ${resultado}`;
-    } 
-    else if (operacionv == "division") {
-        resultado = numero1 / numero2;
-        info.innerHTML = `El resultado de la operación ${numero1} / ${numero2} es: ${resultado}`;
-    }
-}
-
-window.onload = function () {
-    var boton = document.querySelector("[type='button']");
-    boton.onclick = mostrar;
-};
+        window.onload = function () {
+            var boton = document.querySelector("[type='button']");
+            boton.onclick = mostrar;
+        };
     </script>
 </head>
+
 <body>
     <form action="#" method="post">
         <label for="op1">Operando 1:</label>
@@ -81,4 +83,5 @@ window.onload = function () {
         <input type="button" name="calcular" id="calcular" value="Resultado">
     </form>
 </body>
+
 </html>
