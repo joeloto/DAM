@@ -61,5 +61,6 @@ public class Ejercicio1  {
                 sc.nextLine();
             }
         } while (error);
+        sc.close();
     }
 }

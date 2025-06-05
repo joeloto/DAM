@@ -18,7 +18,6 @@ public class App {
         int opcion2;
         double x1;
         double y1;
-        String nombre;
         do {
             System.out.println("Menú de opciones");
             System.out.println("----------------");
@@ -96,7 +95,7 @@ public class App {
                         }
                     }
                     break;
-                case 3://Mejor con comprobación de rangos
+                case 3:
                     System.out.println("¿Cuál es el índice de la figura que quieres mostrar los datos?");
                     int indice = Libreria.pedirEntero();
                     if (indice > 0 && indice >= coleccion.size()){
@@ -143,5 +142,6 @@ public class App {
                     break;
             }
         } while (opcion != 5);
+        sc.close();
     }
 }

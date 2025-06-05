@@ -21,6 +21,7 @@ public class Libreria {
                 sc.nextLine();
             }
         } while (error);
+        sc.close();
         return entero;
     }
 
@@ -39,6 +40,7 @@ public class Libreria {
                 sc.nextLine();
             }
         } while (error);
+        sc.close();
         return real;
     }
 
@@ -57,6 +59,8 @@ public class Libreria {
                 sc.nextLine();
             }
         } while (error);
+        sc.close();
         return real;
     }
+    
 }

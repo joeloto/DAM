@@ -1,7 +1,5 @@
 package principal.ejercicio3;
 
-import java.util.ArrayList;
-
 public class Principal {
     public static void main(String[] args) {
         Cadena c1 = new Cadena();

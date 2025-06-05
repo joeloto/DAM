@@ -1,6 +1,5 @@
 package ejercicio2.geometria;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import ejercicio2.interfaz.InterfazUsuario;

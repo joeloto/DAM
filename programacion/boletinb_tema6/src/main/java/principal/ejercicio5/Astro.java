@@ -11,13 +11,13 @@ public class Astro {
     public String getNombre(char c) {
         String definitivo = "";
             for (int i = 0; i < nombre.length(); i++) {
-                definitivo += nombre.charAt(i) + c;
+                definitivo += nombre.charAt(i) + c;//Quitar el último
             }
         return definitivo;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre.toUpperCase().trim();
+        this.nombre = nombre.toUpperCase().trim(); 
     }
 
     public double getRadio() {
@@ -31,9 +31,14 @@ public class Astro {
         this.radio = radio;
     }
 
+    public Astro(String nombre, double radio) {
+        this.nombre = nombre;
+        this.radio = radio;
+    }
+
     @Override
     public boolean equals(Object obj) {
-        if (obj.getClass() == this.getClass() && this == obj) {
+        if (obj.getClass() == this.getClass() && this.getNombre() == ((Astro)obj).getNombre()) {//Comparar getNombre de ambas
             return true; 
         } else {
             return false;
@@ -42,6 +47,6 @@ public class Astro {
 
     @Override
     public String toString() {
-        return String.format("El nombre es %s y el radio es de %.2d",getNombre(),this.radio);
+        return String.format("El nombre es %s y el radio es de %.2f",getNombre(),this.radio);
     }
 }
